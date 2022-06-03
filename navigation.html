@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<ul id="navigation">
+
+    {% for item in navigation %}
+
+        <li><a href="{{ '/%s'%item.lower() }}"> 
+
+        	{% if (crumb.lower()|string() == item.lower()|string()) %}
+
+        		<b> > {{ item }} < <b> 
+        		
+        	{% else %}
+
+        		{{ item }}
+
+        	{% endif %}
+
+        </a></li>
+
+    {% endfor %}
+
+</ul>
+
+</html>
