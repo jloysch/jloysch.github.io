@@ -1,0 +1,29 @@
+body {
+  background-color: #303030;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+div.navbar {
+	display: table;
+	height: 64px;
+	background-color: #5C5C5C;
+    width: 100%;
+    table-layout: fixed;    /* For cells of equal size */
+}
+
+div.navbar span {
+	display: table-cell;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+    
+}
+
+a[href] {
+ 	color: #FFFFFF;
+}
+

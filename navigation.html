@@ -3,15 +3,19 @@
 
 <html>
 
-<ul id="navigation">
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+<div class="navbar">
 
     {% for item in navigation %}
 
-        <li><a href="{{ '/%s'%item.lower() }}"> 
+        <span id=link> <a href="{{ url_for(item.lower()|string()) }}", id="navlink"> 
 
         	{% if (crumb.lower()|string() == item.lower()|string()) %}
 
-        		<b> > {{ item }} < <b> 
+        		 <b>> {{ item }} <</b>
         		
         	{% else %}
 
@@ -19,10 +23,18 @@
 
         	{% endif %}
 
-        </a></li>
+        </a>
+
+    	</span>
 
     {% endfor %}
 
-</ul>
+</div>
+
+</head>
+
+<body>
+
+</body>
 
 </html>
