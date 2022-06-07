@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+	
+
+	<head>
+		
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+		{% include 'navigation.html' %}
+
+	</head>
+
+	<body>
+		
+		<video autoplay muted loop id="video-background">
+		  <source src="static/styles/bgvid.mp4" type="video/mp4">
+		</video>
+
+		<div class="baseNavigationDiv"></div>
+
+		{% block index %}
+		{% endblock %}
+
+		{% block projectList %}
+		{% endblock %}
+
+		{% block contact %}
+		{% endblock %}
+
+		{% block about %}
+		{% endblock %}
+			
+	</body>
+		
+
+</html>

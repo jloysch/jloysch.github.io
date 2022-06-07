@@ -7,6 +7,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 :root {
+
+
   --red: #1e90ff;
   --orange: #ffffff;
   --yellow: #ffffff;
@@ -21,11 +23,25 @@
   --paletteShadeD: #FFFFFF; /*text*/
   --paletteShadeE: #EBEBF5; /*texthighlights*/
 
+  --projectListHoverColor: #FFFF00;
+
+
 }
 
 
 body {
-  background-color: var(--paletteShadeA);
+
+  /* background-color: var(--paletteShadeA); */
+
+  /* background-image:url('http://www.example.com/yourfile.gif') */
+
+  /* <iframe src="https://gifer.com/embed/gyp" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p><a href="https://gifer.com">via GIFER</a></p> */
+
+  /* https://i.gifer.com/gyp.gif */
+
+	/*background-image: url("background.gif");*/
+
+	background-size: cover;
 }
 
 h1 {
@@ -39,7 +55,7 @@ div.navbar {
 	background-color: var(--paletteShadeB);
     width: 100%;
     table-layout: fixed;    /* For cells of equal size */
-    opacity: 0.7;
+    opacity: 0.9;
 
     border-radius: 25px;
 }
@@ -89,10 +105,27 @@ div.projectListWireframeContent {
 	
 	background-color: var(--paletteShadeB);
 	justify-content: center;
-	height: 12px;
+	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 	content: "";
 
-	opacity: 0.3;
+	opacity: 0.9;
+
+	border-radius: 0px 0px 0px 8px;
+}
+
+div.projectListWireframeContentAlt {
+
+	display: block;
+	white-space: pre-line;
+	margin-left: 2%;
+	width: 96%;
+	
+	background-color: var(--paletteShadeB);
+	justify-content: center;
+	height: 12px; /*12px to create cool effect, 256 to keep ideal expansion */
+	content: "";
+
+	opacity: 0.9;
 
 	border-radius: 0px 0px 0px 8px;
 }
@@ -102,9 +135,18 @@ div.projectListWireframeContent img {
 	max-height:100%;
 }
 
+div.projectListWireframeContentAlt img {
+	max-width:100%;
+	max-height:100%;
+}
+
 div.projectListWireframe:hover  {
 	background-color: var(--paletteShadeB) !important;
 
+}
+
+div.projectListWireframe a:hover  {
+	color: var(--projectListHoverColor) !important;
 }
 
 div.projectListWireframeContent:hover {
@@ -113,6 +155,35 @@ div.projectListWireframeContent:hover {
 	opacity: 1.0
 
 }
+
+div.projectListWireframeContentAlt:hover {
+	background-color: var(--paletteShadeB) !important;
+	height: 256px;
+	opacity: 1.0
+
+}
+
+#video-background {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*
+@media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("static/styles/bgvideo.mp4") no-repeat;
+      background-size: cover;
+    }
+}
+*/
 
 a.projectListWireframeTitle {
 	color: var(--paletteShadeD);
@@ -135,6 +206,11 @@ div.projectWireframeTweenPadding {
 }
 
 div.divPadA {
+	width: 100%;
+	height: 50px;
+}
+
+div.baseNavigationDiv {
 	width: 100%;
 	height: 50px;
 }

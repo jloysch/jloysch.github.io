@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 
 <html>
-
-	<head>
-		
+	{% extends "base.html" %}
+	<head>	
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
-
-		{% include 'navigation.html' %}
-
 	</head>
-
 	<body>
-		
-
-			
-		</div>
+			{% block projectList %}
+				{{ testHTML|safe }}
+			{% endblock %}
 	</body>
-
 </html>
