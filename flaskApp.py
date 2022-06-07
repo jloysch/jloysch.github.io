@@ -10,7 +10,7 @@ navigation_sections = ['Home', 'Projects', 'About', 'Contact']
 
 noProjectDescriptionDefaultMessage = "No description available"
 
-projectShowcaseFolder = "/media/_showcase/"
+projectShowcaseFolder = "media/showcase/"
 projectFolder = "static/projects/"
 projectDescriptionFile = "project.oneliner"
 
@@ -62,13 +62,14 @@ def projects():
 
 
 				try: #need seperate phases here otherwise I'd wrap into one try / except
-					if len(os.listdir(projectFolder + projectName + '/' + projectShowcaseFolder)) > 0:
+					if len(os.listdir(projectFolder + projectName + '/' + projectShowcaseFolder)) > 0: 
 
 						mediaPoolForThisProject = []
 
 						for imageName in os.listdir(projectFolder + projectName + '/' + projectShowcaseFolder):
 							if (not imageName.startswith('.') and not imageName.startswith('_')):
-								mediaPoolForThisProject.append(projectFolder + projectName + projectShowcaseFolder + imageName)
+								mediaPoolForThisProject.append(projectFolder + projectName + '/' + projectShowcaseFolder + imageName)
+								#print(imageName + " added to pool for " + projectName)
 
 						#for x in mediaPoolForThisProject:
 							#print(x, file=sys.stdout)	
@@ -78,9 +79,11 @@ def projects():
 
 					else:
 						mediaPool[projectName] = ""
+						#print("No media files to showcase for '" + projectName + "'")
 
 				except OSError as e:
 					mediaPool[projectName] = ""
+					#print(e, file=sys.stdout)
 			else:
 				continue
 	except:
