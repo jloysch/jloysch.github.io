@@ -1,0 +1,140 @@
+
+/* Shooting to use 'Graphite Gray Color Pallette' https://www.color-hex.com/color-palette/1013236 */
+
+/* Matrix Scheme -- https://www.schemecolor.com/matrix-code-green.php */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+:root {
+  --red: #1e90ff;
+  --orange: #ffffff;
+  --yellow: #ffffff;
+  --green: #ffffff;
+  --blue: #ffffff;
+  --indigo: #ffffff;
+  --violet: #ffffff;
+
+  --paletteShadeA: #000000; /* Arrange them dark to light, left to right */ /*Background*/
+  --paletteShadeB: #767680; /*navbar*/
+  --paletteShadeC: #3A3A3C; /*wireframes*/
+  --paletteShadeD: #FFFFFF; /*text*/
+  --paletteShadeE: #EBEBF5; /*texthighlights*/
+
+}
+
+
+body {
+  background-color: var(--paletteShadeA);
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+div.navbar {
+	display: table;
+	height: 64px;
+	background-color: var(--paletteShadeB);
+    width: 100%;
+    table-layout: fixed;    /* For cells of equal size */
+    opacity: 0.7;
+
+    border-radius: 25px;
+}
+
+div.navbar:hover {
+	display: table;
+	height: 64px;
+	background-color: var(--paletteShadeB);
+    width: 100%;
+    table-layout: fixed;    /* For cells of equal size */
+    opacity: 1.0;
+}
+
+
+div.navbar span {
+	display: table-cell;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+a[href] {
+ 	color: var(--paletteShadeD);
+}
+
+
+div.projectListWireframe {
+	display: block;
+	white-space: pre-line;
+	width: 98%;
+	margin-left: 2%;
+	background-color: var(--paletteShadeC);
+	justify-content: center;
+	height: 32px;
+	content: "";
+
+	border-radius: 8px 0px 0px 0px;
+}
+
+
+div.projectListWireframeContent {
+
+	display: block;
+	white-space: pre-line;
+	margin-left: 2%;
+	width: 96%;
+	
+	background-color: var(--paletteShadeB);
+	justify-content: center;
+	height: 12px;
+	content: "";
+
+	opacity: 0.3;
+
+	border-radius: 0px 0px 0px 8px;
+}
+
+div.projectListWireframeContent img {
+	max-width:100%;
+	max-height:100%;
+}
+
+div.projectListWireframe:hover  {
+	background-color: var(--paletteShadeB) !important;
+
+}
+
+div.projectListWireframeContent:hover {
+	background-color: var(--paletteShadeB) !important;
+	height: 256px;
+	opacity: 1.0
+
+}
+
+a.projectListWireframeTitle {
+	color: var(--paletteShadeD);
+	font-size: 20px;
+	margin-left: 12px;
+	margin-top: 12px;
+}
+
+a.projectListWireframeDescription {
+	color: var(--paletteShadeD);
+	font-size: 20px;
+	margin-left: 32px;
+	margin-top: 12px;
+	font-style: italic;
+}
+
+div.projectWireframeTweenPadding {
+	width: 100%;
+	height: 32px;
+}
+
+div.divPadA {
+	width: 100%;
+	height: 50px;
+}
