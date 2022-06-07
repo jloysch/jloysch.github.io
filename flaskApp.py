@@ -12,9 +12,13 @@ noProjectDescriptionDefaultMessage = "No description available"
 
 projectShowcaseFolder = "media/showcase/"
 projectFolder = "static/projects/"
+
 projectDescriptionFile = "project.oneliner"
 
+buildFolder = "docs"
+
 app = Flask(__name__, template_folder=template_directory)
+app.config['FREEZER_DESTINATION'] = buildFolder
 
 #app.config['STATIC_FOLDER'] = template_directory
 
@@ -113,4 +117,4 @@ def contact():
 freezer.freeze()
 
 if __name__ == '__main__':
-    freezer.freeze()
+	freezer.freeze()
