@@ -21,9 +21,10 @@ app = Flask(__name__, template_folder=template_directory)
 freezer = Freezer(app)
 
 @app.route("/")
-@app.route("/home.html")
+@app.route("/index")
+@app.route("/index.html")
 def home():
-    return render_template('home.html', navigation=navigation_sections, crumb="home", mimetype='text/html')
+    return render_template('index.html', navigation=navigation_sections, crumb="home", mimetype='text/html')
 
 @app.route("/projects.html")
 def projects():
