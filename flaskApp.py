@@ -10,6 +10,9 @@ navigation_sections = ['Home', 'Projects', 'About', 'Contact']
 
 noProjectDescriptionDefaultMessage = "No description available"
 
+projectShowcaseFolder = "/media/_showcase/"
+projectFolder = "static/projects/"
+projectDescriptionFile = "project.oneliner"
 
 app = Flask(__name__, template_folder=template_directory)
 
@@ -31,40 +34,57 @@ def projects():
 
 	mediaPool = {}
 
-	for projectName in os.listdir('static/publicProjects'):
+	
+	try:
 
-		if not (projectName.startswith('.')): #Don't put hidden folders.
-			allProjects.append(projectName)
+		for projectName in os.listdir(projectFolder): 
 
-			try:
-				with open('static/publicProjects/' + projectName + '/' + 'project.oneliner') as f:
-					
-					if not f:
-						continue;
-					
-					for line in f:
-						#print(line, file=sys.stdout)
-						#(k, v) = line.split("=")
-						allDescriptors[projectName] = line
+			if  (not projectName.startswith('.') and not projectName.startswith('_')): #Don't put hidden folders.
 
-					#print(f, file=sys.stdout)
+				allProjects.append(projectName)
 
-			except OSError as e:
-				allDescriptors[projectName] = noProjectDescriptionDefaultMessage
+				try:
+					with open(projectFolder + projectName + '/' + projectDescriptionFile) as f:
+						
+						if not f:
+							continue;
+						
+						for line in f:
+							#print(line, file=sys.stdout)
+							#(k, v) = line.split("=")
+							allDescriptors[projectName] = line
+
+						#print(f, file=sys.stdout)
+
+				except OSError as e:
+					allDescriptors[projectName] = noProjectDescriptionDefaultMessage
 
 
-			try: #need seperate phases here otherwise I'd wrap into one try / except
-				if len(os.listdir('static/publicProjects/' + projectName + '/' + 'media/')) > 0:
-					mediaPool[projectName] = os.listdir('static/publicProjects/' + projectName + '/' + 'media/')
-				else:
+				try: #need seperate phases here otherwise I'd wrap into one try / except
+					if len(os.listdir(projectFolder + projectName + '/' + projectShowcaseFolder)) > 0:
+
+						mediaPoolForThisProject = []
+
+						for imageName in os.listdir(projectFolder + projectName + '/' + projectShowcaseFolder):
+							if (not imageName.startswith('.') and not imageName.startswith('_')):
+								mediaPoolForThisProject.append(projectFolder + projectName + projectShowcaseFolder + imageName)
+
+						#for x in mediaPoolForThisProject:
+							#print(x, file=sys.stdout)	
+						#mediaPool[projectName] = os.listdir('static/publicProjects/' + projectName + '/' + 'media/')
+
+						mediaPool[projectName] = mediaPoolForThisProject
+
+					else:
+						mediaPool[projectName] = ""
+
+				except OSError as e:
 					mediaPool[projectName] = ""
-			except OSError as e:
-				mediaPool[projectName] = ""
-			
-
-
-		else:
-			continue
+			else:
+				continue
+	except:
+		pass
+		
 
 
 

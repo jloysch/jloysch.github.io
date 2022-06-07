@@ -17,12 +17,8 @@
 		{% for project in availableProjects %}
 
 			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">{{project}}</a></b> <a class="projectListWireframeDescription"> {{descriptors[project]}} </a></div>
+			<div class= "projectListWireframeContent">{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
 
-			<div class= "projectListWireframeContent">
-				{{mediaPool[project]}}
-			</div>
-
-			
 			<div class= "projectWireframeTweenPadding"></div>
 
 		{% endfor %}
