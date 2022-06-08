@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+	</head>
+
+	<div class= "divPadA"></div>
+
+	{% block projectList %}
+
+	<body>
+
+		{% for project in availableProjects %}
+
+			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">{{project}}</a></b><a class="projectListWireframeDescription">{{descriptors[project]}}</a></div>
+			<div class= 
+			{% if hideNav %}
+				"projectListWireframeContentAlt"
+			{% else %}
+				"projectListWireframeContent"
+			{% endif %}
+			>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+
+			<div class= "projectWireframeTweenPadding"></div>
+
+		{% endfor %}
+
+	</body>
+
+	{% endblock %}
+
+</html>

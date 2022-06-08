@@ -170,7 +170,7 @@ def projectsNoNav():
 		
 		PACKAGED_INFO = getProjectMediaDescriptions()
 
-		return render_template('projects.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', availableProjects=sorted(PACKAGED_INFO[0]), descriptors=PACKAGED_INFO[1], mediaPool=PACKAGED_INFO[2], hideNav=True)
+		return render_template('projectsModule.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', availableProjects=sorted(PACKAGED_INFO[0]), descriptors=PACKAGED_INFO[1], mediaPool=PACKAGED_INFO[2], hideNav=True)
 	
 
 @app.route("/projects/<path:subpath>/")
