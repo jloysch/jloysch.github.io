@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 	<!DOCTYPE html>
 
 <html>
@@ -9,6 +10,17 @@
 
 	<head>
 		
+		<style type="text/css">
+    .hidden {display:none;}
+  </style>
+  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
+  <script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
+
 		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
 		
@@ -17,6 +29,18 @@
 <html>
 
 <head>
+
+		
+		<style type="text/css">
+    .hidden {display:none;}
+  </style>
+  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
+  <script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
 
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
@@ -110,6 +134,18 @@
 
 	<head>
 
+		<style type="text/css">
+    .hidden {display:none;}
+  </style>
+  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
+  <script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
+
+
 		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
 	</head>
@@ -121,37 +157,40 @@
 	<body>
 
 		
+			<div id="somebigcontainer">
+				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Body Monitor</a></b><a class="projectListWireframeDescription">The health companion, what health could be!</a></div>
+				<div class= 
+				
+					"projectListWireframeContentAlt"
+				,
+				id= "projectMediaPoolContainer"><img src="static/projects/Body Monitor/media/showcase/2.png"></img><img src="static/projects/Body Monitor/media/showcase/3.png"></img><img src="static/projects/Body Monitor/media/showcase/1.png"></img><img src="static/projects/Body Monitor/media/showcase/0.png"></img></div>
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Body Monitor</a></b><a class="projectListWireframeDescription">The health companion, what health could be!</a></div>
-			<div class= 
-			
-				"projectListWireframeContentAlt"
-			
-			><img src="static/projects/Body Monitor/media/showcase/2.png"></img><img src="static/projects/Body Monitor/media/showcase/3.png"></img><img src="static/projects/Body Monitor/media/showcase/1.png"></img><img src="static/projects/Body Monitor/media/showcase/0.png"></img></div>
-
-			<div class= "projectWireframeTweenPadding"></div>
-
-		
-
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Portfolio Page</a></b><a class="projectListWireframeDescription">A simple website to display some of my work</a></div>
-			<div class= 
-			
-				"projectListWireframeContentAlt"
-			
-			></div>
-
-			<div class= "projectWireframeTweenPadding"></div>
+				<div class= "projectWireframeTweenPadding"></div>
+			</div>
 
 		
+			<div id="somebigcontainer">
+				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Portfolio Page</a></b><a class="projectListWireframeDescription">A simple website to display some of my work</a></div>
+				<div class= 
+				
+					"projectListWireframeContentAlt"
+				,
+				id= "projectMediaPoolContainer"></div>
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Qwixx</a></b><a class="projectListWireframeDescription">Encryption thought differently</a></div>
-			<div class= 
-			
-				"projectListWireframeContentAlt"
-			
-			></div>
+				<div class= "projectWireframeTweenPadding"></div>
+			</div>
 
-			<div class= "projectWireframeTweenPadding"></div>
+		
+			<div id="somebigcontainer">
+				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Qwixx</a></b><a class="projectListWireframeDescription">Encryption thought differently</a></div>
+				<div class= 
+				
+					"projectListWireframeContentAlt"
+				,
+				id= "projectMediaPoolContainer"></div>
+
+				<div class= "projectWireframeTweenPadding"></div>
+			</div>
 
 		
 

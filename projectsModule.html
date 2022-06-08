@@ -4,6 +4,18 @@
 
 	<head>
 
+		<style type="text/css">
+    .hidden {display:none;}
+  </style>
+  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
+  <script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
+
+
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
 	</head>
@@ -15,17 +27,18 @@
 	<body>
 
 		{% for project in availableProjects %}
+			<div id="somebigcontainer">
+				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">{{project}}</a></b><a class="projectListWireframeDescription">{{descriptors[project]}}</a></div>
+				<div class= 
+				{% if hideNav %}
+					"projectListWireframeContentAlt"
+				{% else %}
+					"projectListWireframeContent"
+				{% endif %},
+				id= "projectMediaPoolContainer">{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">{{project}}</a></b><a class="projectListWireframeDescription">{{descriptors[project]}}</a></div>
-			<div class= 
-			{% if hideNav %}
-				"projectListWireframeContentAlt"
-			{% else %}
-				"projectListWireframeContent"
-			{% endif %}
-			>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
-
-			<div class= "projectWireframeTweenPadding"></div>
+				<div class= "projectWireframeTweenPadding"></div>
+			</div>
 
 		{% endfor %}
 
