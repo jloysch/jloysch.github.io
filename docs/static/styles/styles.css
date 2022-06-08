@@ -39,7 +39,9 @@ html {
 
   /* https://i.gifer.com/gyp.gif */
 
-	background-color: #000000;
+	/* background-color: #000000;*/
+
+	background-image: url("altbackground.jpg");
 
 	background-size: cover;
 }
