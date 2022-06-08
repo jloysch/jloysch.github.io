@@ -29,7 +29,7 @@
 }
 
 
-html {
+html, body {
 
   /* background-color: var(--paletteShadeA); */
 
@@ -171,6 +171,8 @@ div.projectListWireframeContentAlt:hover {
 	transition-duration: 1s;
 }
 
+/*
+
 #video-background {
   width: 100vw;
   height: 100vh;
@@ -182,6 +184,8 @@ div.projectListWireframeContentAlt:hover {
   bottom: 0;
   z-index: -1;
 }
+
+*/
 
 /*
 @media (max-width: 750px) {
