@@ -2,29 +2,20 @@
 
 <html>
 
-	
+<!--
+
+	'projects.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant for the actual static route /projects, this will generate project modules dependent upon static/projects/ and display them in a list.
+
+-->
 	
 	<head>
 
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
-
 		{% if not hideNav %}
-
 			{% extends "base.html" %}
-
 		{% endif %}
 
 	</head>
@@ -37,7 +28,9 @@
 
 		{% for project in availableProjects %}
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">{{project}}</a></b><a2 class="projectListWireframeDescription">{{descriptors[project]}}</a2></div>
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription">{{descriptors[project]}}</a2></div>
 			<div class= 
 			{% if hideNav %}
 				"projectListWireframeContentAlt"
@@ -46,8 +39,10 @@
 			{% endif %}
 			>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
 
-			<div class= "projectWireframeTweenPadding"></div>
+			<div class= "projectDisplayListTweenPadding"></div>
 
+		</div>
+		
 		{% endfor %}
 
 	</body>

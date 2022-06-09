@@ -1,209 +1,123 @@
-
-/* Shooting to use 'Graphite Gray Color Pallette' https://www.color-hex.com/color-palette/1013236 */
-
-/* Matrix Scheme -- https://www.schemecolor.com/matrix-code-green.php */
-
 * {
   font-family: 'Montserrat', sans-serif;
 }
+
 :root {
 
-
-  --red: #1e90ff;
-  --orange: #ffffff;
-  --yellow: #ffffff;
-  --green: #ffffff;
-  --blue: #ffffff;
-  --indigo: #ffffff;
-  --violet: #ffffff;
-
-  --paletteShadeA: #000000; /* Arrange them dark to light, left to right */ /*Background*/
+  --paletteShadeA: #000000; /* Arrange them dark to light, left to right */ /*Background*/ /* Graphite Gray Color Pallette' https://www.color-hex.com/color-palette/1013236 */
   --paletteShadeB: #767680; /*navbar*/
   --paletteShadeC: #3A3A3C; /*wireframes*/
   --paletteShadeD: #FFFFFF; /*text*/
   --paletteShadeE: #EBEBF5; /*texthighlights*/
 
-  --projectListHoverColor: #FFFF00;
+  --hoverColorA: #FFFF00;
 
+  --h1fontSize: 16px;
+  --h2fontSize: 14px;
 
+  /*
+  	|| Navigation Bar 
+  */
+
+  --navigationBarBorderRadius: 25px;
+  --navigationBarHeight: 64px;
+  --navigationBarWidth: 100%;
+  --navigationBarFontSize: 24px;
 }
 
+
+/*
+	Using DFC Convention (Display > Format > Constraint) (my convention)
+*/
 
 html, body {
 
-  /* background-color: var(--paletteShadeA); */
-
-  /* background-image:url('http://www.example.com/yourfile.gif') */
-
-  /* <iframe src="https://gifer.com/embed/gyp" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p><a href="https://gifer.com">via GIFER</a></p> */
-
-  /* https://i.gifer.com/gyp.gif */
-
-	/* background-color: #000000;*/
-
-	background-image: url("altbackground.jpg");
-
-	background-size: cover;
-
+	background-image: url("koi.png");
+	/*background-size: cover;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
-	
 }
 
-h1 {
-  color: navy;
-  margin-left: 20px;
-}
+div.navigationBar {
 
-div.navbar {
 	display: table;
-	height: 64px;
+	table-layout: fixed; /* For cells of equal size */
+
 	background-color: var(--paletteShadeB);
-    width: 100%;
-    table-layout: fixed;    /* For cells of equal size */
-    opacity: 0.9;
-    border-radius: 25px;
+	opacity: 0.9;
+
+    border-radius: var(--navigationBarBorderRadius);
+	height: var(--navigationBarHeight);
+    width: var(--navigationBarWidth);
 }
 
-@media (max-width: 400px) {
-  div.navbar {
-    background-color: #000000;
-    width: 100%;
-    height: 32px;
-  }
-}
+div.navigationBar:hover { opacity: 1.0; }
 
-div.navbar:hover {
-	display: table;
-	height: 64px;
-	background-color: var(--paletteShadeB);
-    width: 100%;
-    table-layout: fixed;    /* For cells of equal size */
-    opacity: 1.0;
-}
+div.navigationBar span {
 
-div.navbar span {
 	display: table-cell;
+
+	line-height: normal;
     text-align: center;
-    font-size: 24px;
-    /*padding-top: 20px;*/
     vertical-align: middle;
-  	line-height: normal;
+  
+    font-size: var(--navigationBarFontSize);
+    
 }
 
-@media (max-width: 400px) {
-  div.navbar span {
-	display: table-cell;
-    text-align: center;
-    font-size: 14px;
-    /*padding-top: 20px;*/
-    vertical-align: middle;
-  	line-height: normal;
-}
+a[href] { color: var(--paletteShadeD); }
 
-}
+div.projectDisplayModuleHeader {
 
-a[href] {
- 	color: var(--paletteShadeD);
-}
-
-
-div.projectListWireframe {
 	display: block;
 	
 	white-space: pre-line;
+	background-color: var(--paletteShadeC);
+	text-overflow: ellipsis;
+	content: "";
+	
+	border-radius: 8px 0px 0px 0px;
 	width: 98%;
 	margin-left: 2%;
-	background-color: var(--paletteShadeC);
-	
 	height: 32px;
-	content: "";
-
-	border-radius: 8px 0px 0px 0px;
-
-	text-overflow: ellipsis;
-
 
 }
-
-@media (max-width: 400px) {
-
-	div.projectListWireframe {
-	display: block;
-	
-	white-space: pre-line;
-	width: 98%;
-	margin-left: 2%;
-	background-color: var(--paletteShadeC);
-	
-	height: 24px;
-	content: "";
-
-	border-radius: 8px 0px 0px 0px;
-
-	text-overflow: ellipsis;
-
-
-}
-}
-
 
 div.projectListWireframeContent {
 
 	display: block;
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
 	white-space: pre-line;
+	justify-content: center;
+	
 	margin-left: 2%;
 	width: 96%;
-	
-	background-color: var(--paletteShadeB);
-	justify-content: center;
 	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
-	content: "";
-
-	opacity: 0.9;
-
 	border-radius: 0px 0px 0px 8px;
 }
 
 div.projectListWireframeContentAlt { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
 
 	display: block;
-	white-space: pre-line;
-	margin-left: 2%;
-	width: 96%;
 	
 	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
 	justify-content: center;
+	white-space: pre-line;
+
+	margin-left: 2%;
+	width: 96%;
 	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
-	content: "";
-
-	opacity: 0.9;
-
 	border-radius: 0px 0px 0px 8px;
-}
-
-@media (max-width: 400px) {
-	div.projectListWireframeContentAlt { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
-
-	display: block;
-	white-space: pre-line;
-	margin-left: 2%;
-	width: 96%;
-	
-	background-color: var(--paletteShadeB);
-	justify-content: center;
-	height: 12px; /*12px to create cool effect, 256 to keep ideal expansion */
-	content: "";
-
-	opacity: 0.9;
-
-	border-radius: 0px 0px 0px 8px;
-	}
 }
 
 div.projectListWireframeContent img {
-	max-width:100%;
-	max-height:100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 div.projectListWireframeContentAlt img {
@@ -211,173 +125,82 @@ div.projectListWireframeContentAlt img {
 	max-height:100%;
 }
 
-div.projectListWireframe:hover/*, div.projectListWireframe:active .projectListWireframe*/{
+div.projectDisplayModuleHeader:hover/*, div.projectListWireframe:active .projectListWireframe*/{
 	background-color: var(--paletteShadeB) !important;
 
 }
 
-div.projectListWireframe a:hover  { /* Titlebar for project list */
-	color: var(--projectListHoverColor) !important;
+div.projectDisplayModuleHeader a:hover  { /* Titlebar for project list */
+	color: var(--hoverColorA) !important;
 }
 
-@media (max-width: 400px) {
-	div.projectListWireframeContentAlt { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
-
-	display: block;
-	white-space: pre-line;
-	margin-left: 2%;
-	width: 96%;
-	
-	background-color: var(--paletteShadeB);
-	justify-content: center;
-	height: 12px; /*12px to create cool effect, 256 to keep ideal expansion */
-	content: "";
-
-	opacity: 0.9;
-
-	border-radius: 0px 0px 0px 8px;
-	}
+div.projectDisplayModuleHeader a2:hover  { /* Titlebar for project list */
+	color: var(--hoverColorA) !important;
 }
 
 div.projectListWireframeContent:hover {
 	background-color: var(--paletteShadeB) !important;
-	height: 256px;
 	opacity: 1.0
+
+	height: 256px;
 }
 
 div.projectListWireframeContentAlt:hover {
 	background-color: var(--paletteShadeB) !important;
-	height: 256px;
 	opacity: 1.0
 
-}
-
-#projectWireframeTitleBar:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother */
-	background-color: var(--paletteShadeB) !important;
 	height: 256px;
-	opacity: 1.0 
-	transition-duration: 1s;
 }
 
-/*
+#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother */
 
-#video-background {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: .3s;
+
+	height: 256px;
 }
 
-*/
-
-/*
-@media (max-width: 750px) {
-    #background-video { display: none; }
-    body {
-      background: url("static/styles/bgvideo.mp4") no-repeat;
-      background-size: cover;
-    }
-}
-*/
-
-a.projectListWireframeTitle {
-	
+a.projectDisplayModuleTitle {
 
 	color: var(--paletteShadeD);
-	font-size: 20px;
-
-  	vertical-align: middle;
+	
   	line-height: normal;
-	font-style: italic;
-	white-space: nowrap;
+  	vertical-align: middle;
+
+  	margin-left: 12px;
+	font-size: 20px;
 	width: 10px;
 	max-width: 100%;
-
-
-	white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-@media (max-width: 400px) {
-	a.projectListWireframeTitle {
+a2.projectDisplayModuleDescription {
+
 	color: var(--paletteShadeD);
-	font-size: 32px;
-	font-style: italic;
-	white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-	width: 100px;
 
-	
-	}
-}
-
-a2.projectListWireframeDescription {
-	width: 200px;
-	display:inline-block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-
-	vertical-align: center;
-
-
-}
-
-@media (max-width: 400px) {
-	a2.projectListWireframeDescription {
-		color: var(--paletteShadeD);
-
-		width: 220px;
-		margin-left: 12px;
-		white-space:nowrap;
-		text-overflow: ellipsis;
-
-
-		font-size: 16px;
-		
-		font-style: italic;
-	line-height: normal;
 	vertical-align: middle;
 
-
+	max-width: 100%;
+	width: 100px;
+	margin-left: 12px;
 		
-
-		
-		/*
-		
-		
-		margin-right: 64px;
-		
-		
-		font-style: italic;
-		vertical-align: middle;
-	  	line-height: normal;
-		font-style: italic;
-		*/
-
-		
-	}
 }
 
-div.projectWireframeTweenPadding {
+/*
+ 	|| Various Padding ||
+*/
+
+div.projectDisplayListTweenPadding {
 	width: 100%;
 	height: 32px;
 }
-
 
 div.divPadA {
 	width: 100%;
 	height: 50px;
 }
 
-div.baseNavigationDiv {
+div.navigationBarBottomPad {
 	width: 100%;
 	height: 50px;
 }

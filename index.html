@@ -2,28 +2,27 @@
 
 <html>
 
+<!--
+
+	'index.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The 'home page' or main landing page for the site. Will include content from around the site to give the a user a nice single-page experience upon view.
+	I'm sticking with static deployment of the website (free hosting via Github Pages) so there will be some caveats, but nothing that can't be worked around.
+
+-->
+
 	{% extends "base.html" %}
+
 	<head>	
 
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 	</head>
+
 	<body>
 			{% block projectList %}
 				{{ testHTML|safe }}
 			{% endblock %}
 	</body>
+
 </html>

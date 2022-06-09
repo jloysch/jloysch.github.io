@@ -2,23 +2,20 @@
 
 <html>
 
+<!--
+
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
 	
-
 	<head>
-		<meta http-equiv="Cache-control" content="public"> <!-- For caching -->
 
+		<meta http-equiv="Cache-control" content="public">
 		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
 
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
@@ -28,8 +25,7 @@
 
 	<body>
 		
-
-		<div class="baseNavigationDiv"></div>
+		<div class="navigationBarBottomPad"></div>
 
 		{% block index %}
 		{% endblock %}
@@ -45,5 +41,4 @@
 			
 	</body>
 		
-
 </html>

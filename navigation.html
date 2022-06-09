@@ -3,50 +3,46 @@
 
 <html>
 
-<head>
+<!--
 
-		
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
-<div class="navbar">
+	<div class="navigationBar">
 
-    {% for item in navigation %}
+	    {% for item in navigation %}
 
-        <span id=link> <a href="{{ url_for(item.lower()|string()) }}", id="navlink"> 
+	        <span id=link> 
 
-        	{% if (crumb.lower()|string() == item.lower()|string()) %}
+	        	<a href="{{ url_for(item.lower()|string()) }}", id="navlink"> 
 
-        		 <b>> {{ item }} <</b>
-        		
-        	{% else %}
+	        	{% if (crumb.lower()|string() == item.lower()|string()) %}
 
-        		{{ item }}
+	        		 <b>{{ item }}</b>
+	        		
+	        	{% else %}
 
-        	{% endif %}
+	        		{{ item }}
 
-        </a>
+	        	{% endif %}
 
-    	</span>
+	        </a>
 
-    {% endfor %}
+	    	</span>
 
-</div>
+	    {% endfor %}
+
+	</div>
 
 </head>
-
-<body>
-
-</body>
 
 </html>

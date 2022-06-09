@@ -2,33 +2,23 @@
 
 <html>
 
+<!--
+
+	'about.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	My personal info / etc to share.
+
+-->
 
 	<head>
-
-
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/jquery.js') }}"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
 		{% extends "base.html" %}
 
 	</head>
 
 	<body>
-
-		
-
 
 	</body>
 
