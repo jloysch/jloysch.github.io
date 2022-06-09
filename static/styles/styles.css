@@ -307,7 +307,7 @@ a.projectListWireframeTitle {
 @media (max-width: 400px) {
 	a.projectListWireframeTitle {
 	color: var(--paletteShadeD);
-	font-size: 14px;
+	font-size: 32px;
 	font-style: italic;
 	white-space: nowrap;
   overflow: hidden;
@@ -334,13 +334,13 @@ a2.projectListWireframeDescription {
 	a2.projectListWireframeDescription {
 		color: var(--paletteShadeD);
 
-		width: 250px;
+		width: 220px;
 		margin-left: 12px;
 		white-space:nowrap;
 		text-overflow: ellipsis;
 
 
-		font-size: 12px;
+		font-size: 16px;
 		
 		font-style: italic;
 	line-height: normal;
