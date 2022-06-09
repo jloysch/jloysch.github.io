@@ -189,7 +189,11 @@ def contact():
 	
 	return render_template('about.html', navigation=navigation_sections, crumb="contact", mimetype='text/html', hideNav=False)
 
-freezer.freeze()
+#freezer.freeze()
 
 if __name__ == '__main__':
 	freezer.freeze()
+	app.run(host='0.0.0.0', port=5000, debug=True, threaded=False)
+
+
+
