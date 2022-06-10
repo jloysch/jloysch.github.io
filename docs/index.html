@@ -2,25 +2,52 @@
 
 <html>
 
+<!--
+
+	'index.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The 'home page' or main landing page for the site. Will include content from around the site to give the a user a nice single-page experience upon view.
+	I'm sticking with static deployment of the website (free hosting via Github Pages) so there will be some caveats, but nothing that can't be worked around.
+
+-->
+
 	<!DOCTYPE html>
 
 <html>
 
-	
+<!--
 
-	<head>
-		<meta http-equiv="Cache-control" content="public">
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
 	
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	<head>
+
+		<meta http-equiv="Cache-control" content="public">
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 
 		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
@@ -29,89 +56,91 @@
 
 <html>
 
-<head>
+<!--
 
-		
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
 
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
-<div class="navbar">
+	<div class="navigationBar">
 
-    
+	    
 
-        <span id=link> <a href="/index.html", id="navlink"> 
+	        <span id=link> 
 
-        	
+	        	<a href="/index.html", id="navlink"> 
 
-        		 <b>> Home <</b>
-        		
-        	
+	        	
 
-        </a>
+	        		 <b>Home</b>
+	        		
+	        	
 
-    	</span>
+	        </a>
 
-    
+	    	</span>
 
-        <span id=link> <a href="/projects.html", id="navlink"> 
+	    
 
-        	
+	        <span id=link> 
 
-        		Projects
+	        	<a href="/projects.html", id="navlink"> 
 
-        	
+	        	
 
-        </a>
+	        		Projects
 
-    	</span>
+	        	
 
-    
+	        </a>
 
-        <span id=link> <a href="/about.html", id="navlink"> 
+	    	</span>
 
-        	
+	    
 
-        		About
+	        <span id=link> 
 
-        	
+	        	<a href="/about.html", id="navlink"> 
 
-        </a>
+	        	
 
-    	</span>
+	        		About
 
-    
+	        	
 
-        <span id=link> <a href="/contact.html", id="navlink"> 
+	        </a>
 
-        	
+	    	</span>
 
-        		Contact
+	    
 
-        	
+	        <span id=link> 
 
-        </a>
+	        	<a href="/contact.html", id="navlink"> 
 
-    	</span>
+	        	
 
-    
+	        		Contact
 
-</div>
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	</div>
 
 </head>
-
-<body>
-
-</body>
 
 </html>
 
@@ -119,8 +148,7 @@
 
 	<body>
 		
-
-		<div class="baseNavigationDiv"></div>
+		<div class="navigationBarBottomPad"></div>
 
 		
 		
@@ -130,64 +158,146 @@
 
 <html>
 
+<!--
+
+	'projectsModule.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The modular, headless version of 'projects.html' to be included for the single-page view on 'index.html'
+
+-->
+
 	<head>
 
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
-
 	</head>
-
-	<div class= "divPadA"></div>
 
 	
 
 	<body>
 
 		
-			<div id="somebigcontainer">
-				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Body Monitor</a></b><a class="projectListWireframeDescription">The health companion, what health could be!</a></div>
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Body Monitor"><a class= "projectDisplayModuleTitle", href="/projects/Body Monitor"><b>Body Monitor</b></a><a2 class="projectDisplayModuleDescription", href="">The health companion, what health could be!</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
 				
-					"projectListWireframeContentAlt"
+					
+						"projectDisplayModuleGalleryCollapsed"
+					
 				,
-				id= "projectMediaPoolContainer"><img src="static/projects/Body Monitor/media/showcase/2.png"></img><img src="static/projects/Body Monitor/media/showcase/3.png"></img><img src="static/projects/Body Monitor/media/showcase/1.png"></img><img src="static/projects/Body Monitor/media/showcase/0.png"></img></div>
 
-				<div class= "projectWireframeTweenPadding"></div>
+				id= 
+
+			
+				
+					projectMediaPoolContainer
+				
+
+				><img src="static/projects/Body Monitor/media/gallery/2.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/3.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/1.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/0.png", href="/projects/Body Monitor"></img></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
 			</div>
 
 		
-			<div id="somebigcontainer">
-				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Portfolio Page</a></b><a class="projectListWireframeDescription">A simple website to display some of my work</a></div>
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Portfolio Page"><a class= "projectDisplayModuleTitle", href="/projects/Portfolio Page"><b>Portfolio Page</b></a><a2 class="projectDisplayModuleDescription", href="">My portfolio page that you sear here!</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
 				
-					"projectListWireframeContentAlt"
+					
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					
 				,
-				id= "projectMediaPoolContainer"></div>
 
-				<div class= "projectWireframeTweenPadding"></div>
+				id= 
+
+			
+				
+					""
+				
+
+				></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
 			</div>
 
 		
-			<div id="somebigcontainer">
-				<div class= "projectListWireframe", id="projectWireframeTitleBar"><b><a class= "projectListWireframeTitle">Qwixx</a></b><a class="projectListWireframeDescription">Encryption thought differently</a></div>
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Qwixx"><a class= "projectDisplayModuleTitle", href="/projects/Qwixx"><b>Qwixx</b></a><a2 class="projectDisplayModuleDescription", href="">The health companion, what health could be!</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
 				
-					"projectListWireframeContentAlt"
+					
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					
 				,
-				id= "projectMediaPoolContainer"></div>
 
-				<div class= "projectWireframeTweenPadding"></div>
+				id= 
+
+			
+				
+					""
+				
+
+				></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
+			</div>
+
+		
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/projectShowcasePlaceholder.jpeg"><a class= "projectDisplayModuleTitle", href="/projects/projectShowcasePlaceholder.jpeg"><b>projectShowcasePlaceholder.jpeg</b></a><a2 class="projectDisplayModuleDescription", href="">No description available</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
+				<div class= 
+				
+					
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					
+				,
+
+				id= 
+
+			
+				
+					""
+				
+
+				></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
 			</div>
 
 		
@@ -204,8 +314,11 @@
 
 		
 		
+
+		
+		
 			
 	</body>
+	
 		
-
 </html>

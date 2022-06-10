@@ -2,44 +2,53 @@
 
 <html>
 
+<!--
+
+	'about.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	My personal info / etc to share.
+
+-->
 
 	<head>
-
-
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
 		<!DOCTYPE html>
 
 <html>
 
-	
+<!--
 
-	<head>
-		<meta http-equiv="Cache-control" content="public">
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
 	
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	<head>
+
+		<meta http-equiv="Cache-control" content="public">
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 
 		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
@@ -48,89 +57,91 @@
 
 <html>
 
-<head>
+<!--
 
-		
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
 
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
-<div class="navbar">
+	<div class="navigationBar">
 
-    
+	    
 
-        <span id=link> <a href="/index.html", id="navlink"> 
+	        <span id=link> 
 
-        	
+	        	<a href="/index.html", id="navlink"> 
 
-        		Home
+	        	
 
-        	
+	        		Home
 
-        </a>
+	        	
 
-    	</span>
+	        </a>
 
-    
+	    	</span>
 
-        <span id=link> <a href="/projects.html", id="navlink"> 
+	    
 
-        	
+	        <span id=link> 
 
-        		Projects
+	        	<a href="/projects.html", id="navlink"> 
 
-        	
+	        	
 
-        </a>
+	        		Projects
 
-    	</span>
+	        	
 
-    
+	        </a>
 
-        <span id=link> <a href="/about.html", id="navlink"> 
+	    	</span>
 
-        	
+	    
 
-        		 <b>> About <</b>
-        		
-        	
+	        <span id=link> 
 
-        </a>
+	        	<a href="/about.html", id="navlink"> 
 
-    	</span>
+	        	
 
-    
+	        		 <b>About</b>
+	        		
+	        	
 
-        <span id=link> <a href="/contact.html", id="navlink"> 
+	        </a>
 
-        	
+	    	</span>
 
-        		Contact
+	    
 
-        	
+	        <span id=link> 
 
-        </a>
+	        	<a href="/contact.html", id="navlink"> 
 
-    	</span>
+	        	
 
-    
+	        		Contact
 
-</div>
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	</div>
 
 </head>
-
-<body>
-
-</body>
 
 </html>
 
@@ -138,8 +149,10 @@
 
 	<body>
 		
+		<div class="navigationBarBottomPad"></div>
 
-		<div class="baseNavigationDiv"></div>
+		
+		
 
 		
 		
@@ -154,6 +167,6 @@
 		
 			
 	</body>
+	
 		
-
 </html>

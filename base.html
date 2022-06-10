@@ -16,6 +16,23 @@
 
 		<meta http-equiv="Cache-control" content="public">
 		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
@@ -38,7 +55,11 @@
 
 		{% block about %}
 		{% endblock %}
+
+		{% block projectSpec %}
+		{% endblock %}
 			
 	</body>
+	
 		
 </html>

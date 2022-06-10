@@ -2,46 +2,54 @@
 
 <html>
 
-	
+<!--
+
+	'projects.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant for the actual static route /projects, this will generate project modules dependent upon static/projects/ and display them in a list.
+
+-->
 	
 	<head>
 
-
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
-
-
-		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
-
 		
-
 			<!DOCTYPE html>
 
 <html>
 
-	
+<!--
 
-	<head>
-		<meta http-equiv="Cache-control" content="public">
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
 	
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	<head>
+
+		<meta http-equiv="Cache-control" content="public">
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 
 		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
@@ -50,89 +58,91 @@
 
 <html>
 
-<head>
+<!--
 
-		
-		<style type="text/css">
-    .hidden {display:none;}
-  </style>
-  <script type="text/javascript" src="/static/scripts/jquery.js"></script>
-  <script type="text/javascript">
-    $('html').addClass('hidden');
-    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
-      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
-   </script>
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
 
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
-<div class="navbar">
+	<div class="navigationBar">
 
-    
+	    
 
-        <span id=link> <a href="/index.html", id="navlink"> 
+	        <span id=link> 
 
-        	
+	        	<a href="/index.html", id="navlink"> 
 
-        		Home
+	        	
 
-        	
+	        		Home
 
-        </a>
+	        	
 
-    	</span>
+	        </a>
 
-    
+	    	</span>
 
-        <span id=link> <a href="/projects.html", id="navlink"> 
+	    
 
-        	
+	        <span id=link> 
 
-        		 <b>> Projects <</b>
-        		
-        	
+	        	<a href="/projects.html", id="navlink"> 
 
-        </a>
+	        	
 
-    	</span>
+	        		 <b>Projects</b>
+	        		
+	        	
 
-    
+	        </a>
 
-        <span id=link> <a href="/about.html", id="navlink"> 
+	    	</span>
 
-        	
+	    
 
-        		About
+	        <span id=link> 
 
-        	
+	        	<a href="/about.html", id="navlink"> 
 
-        </a>
+	        	
 
-    	</span>
+	        		About
 
-    
+	        	
 
-        <span id=link> <a href="/contact.html", id="navlink"> 
+	        </a>
 
-        	
+	    	</span>
 
-        		Contact
+	    
 
-        	
+	        <span id=link> 
 
-        </a>
+	        	<a href="/contact.html", id="navlink"> 
 
-    	</span>
+	        	
 
-    
+	        		Contact
 
-</div>
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	</div>
 
 </head>
-
-<body>
-
-</body>
 
 </html>
 
@@ -140,8 +150,7 @@
 
 	<body>
 		
-
-		<div class="baseNavigationDiv"></div>
+		<div class="navigationBarBottomPad"></div>
 
 		
 		
@@ -152,36 +161,67 @@
 
 		
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Body Monitor</a></b><a class="projectListWireframeDescription">The health companion, what health could be!</a></div>
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="/projects/Body Monitor"><b>Body Monitor</b></a><a2 class="projectDisplayModuleDescription", href="/projects/Body Monitor">The health companion, what health could be!</a2></div>
 			<div class= 
 			
-				"projectListWireframeContent"
-			
-			><img src="static/projects/Body Monitor/media/showcase/2.png"></img><img src="static/projects/Body Monitor/media/showcase/3.png"></img><img src="static/projects/Body Monitor/media/showcase/1.png"></img><img src="static/projects/Body Monitor/media/showcase/0.png"></img></div>
+				
+					"projectDisplayModuleGalleryExpanded"
+				
+			><img src="static/projects/Body Monitor/media/gallery/2.png"></img><img src="static/projects/Body Monitor/media/gallery/3.png"></img><img src="static/projects/Body Monitor/media/gallery/1.png"></img><img src="static/projects/Body Monitor/media/gallery/0.png"></img></div>
 
-			<div class= "projectWireframeTweenPadding"></div>
+			<div class= "projectDisplayListTweenPadding"></div>
+
+		</div>
 
 		
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Portfolio Page</a></b><a class="projectListWireframeDescription">A simple website to display some of my work</a></div>
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="/projects/Portfolio Page"><b>Portfolio Page</b></a><a2 class="projectDisplayModuleDescription", href="/projects/Portfolio Page">My portfolio page that you sear here!</a2></div>
 			<div class= 
 			
-				"projectListWireframeContent"
-			
+				
+					projectDisplayModuleGalleryEmptyCollapsed
+				
 			></div>
 
-			<div class= "projectWireframeTweenPadding"></div>
+			<div class= "projectDisplayListTweenPadding"></div>
+
+		</div>
 
 		
 
-			<div class= "projectListWireframe"><b><a class= "projectListWireframeTitle">Qwixx</a></b><a class="projectListWireframeDescription">Encryption thought differently</a></div>
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="/projects/Qwixx"><b>Qwixx</b></a><a2 class="projectDisplayModuleDescription", href="/projects/Qwixx">The health companion, what health could be!</a2></div>
 			<div class= 
 			
-				"projectListWireframeContent"
-			
+				
+					projectDisplayModuleGalleryEmptyCollapsed
+				
 			></div>
 
-			<div class= "projectWireframeTweenPadding"></div>
+			<div class= "projectDisplayListTweenPadding"></div>
+
+		</div>
+
+		
+
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="/projects/projectShowcasePlaceholder.jpeg"><b>projectShowcasePlaceholder.jpeg</b></a><a2 class="projectDisplayModuleDescription", href="/projects/projectShowcasePlaceholder.jpeg">No description available</a2></div>
+			<div class= 
+			
+				
+					projectDisplayModuleGalleryEmptyCollapsed
+				
+			></div>
+
+			<div class= "projectDisplayListTweenPadding"></div>
+
+		</div>
 
 		
 
@@ -194,8 +234,11 @@
 
 		
 		
+
+		
+		
 			
 	</body>
+	
 		
-
 </html>

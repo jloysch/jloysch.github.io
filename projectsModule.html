@@ -24,17 +24,37 @@
 
 			<div id="projectDisplayModule">
 
-				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription">{{descriptors[project]}}</a2></div>
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="{{ hrefs[project] }}"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription", href="{{projectLink}}">{{ descriptors[project] }}</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
 				{% if hideNav %}
-					"projectListWireframeContentAlt"
+					{% if mediaPool[project]|length > 0 %}
+						"projectDisplayModuleGalleryCollapsed"
+					{% else %}
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					{% endif %}
 				{% else %}
-					"projectListWireframeContent"
+					"projectDisplayModuleGalleryExpanded"
 				{% endif %},
-				id= "projectMediaPoolContainer">{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+
+				id= 
+
+			
+				{% if mediaPool[project]|length > 0 %}
+					projectMediaPoolContainer
+				{% else %}
+					""
+				{% endif %}
+
+				>{% for image in mediaPool[project] %}<img src="{{image}}", href="{{ hrefs[project] }}"></img>{% endfor %}</div>
 
 				<div class= "projectDisplayListTweenPadding"></div>
-				
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
 			</div>
 
 		{% endfor %}

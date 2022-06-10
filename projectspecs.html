@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'proejctspecs.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant to display all the relevant media and descriptions related to each project!
+
+-->
+	
+	<head>
+
+		{% extends "base.html" %}
+
+
+	</head>
+
+	<div class= "divPadA"></div>
+
+	
+	{% block projectSpec %}
+
+	
+
+	<body>
+
+			<div class="projectSpecOut">
+				<div class="projectGalleryShowcaseImage"><img src={% if showcaseImage %}
+																  	"{{showcaseImage}}"
+																  {% else %}
+																  	{{ url_for('static',filename='projects/_projectShowcasePlaceholder.jpeg') }}
+																  {% endif %}></img></div>
+				<div class="projectWriteup">
+
+					<h3>{{projectTitle}}</h3>
+					<p class="projectSpecParagraph">{{projectDescription}}</p>
+					<p><b>Platform:</b></p><p class="projectSpecParagraph">{{platform}}</p>
+					
+					<p><b>Technologies:</b></p><p class="projectSpecParagraph">{{technologiesUsed|safe}}</p>
+					{% if gallery|length > 0 %}
+						<p><b>Gallery:</b></p>
+					{% else %}
+						<p><b>Gallery (empty):</b></p>
+					{% endif %}
+					
+
+					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}"></img>{% endfor %} </div>
+				</div>
+			</div>
+
+			<div class= "divPadA"></div>
+
+			<div class="projectSpecAssetOutlet"> 
+
+				<button type="button", class=	{% if hasAssets %} 
+													"buttonAssetDownload"
+												{% else %}
+													"buttonAssetDownloadNoAssets"
+												{% endif %}>{% if hasAssets %} 
+													DOWNLOAD ASSET(S)
+												{% else %}
+													Download Unavailable
+												{% endif %}</button> 
+
+			</div>
+
+			
+	</body>
+
+	{% endblock %}
+	
+
+</html>

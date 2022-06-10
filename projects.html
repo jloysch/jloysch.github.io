@@ -30,19 +30,22 @@
 
 		<div id="projectDisplayModule">
 
-			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription">{{descriptors[project]}}</a2></div>
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription", href="{{ hrefs[project] }}">{{descriptors[project]}}</a2></div>
 			<div class= 
 			{% if hideNav %}
-				"projectListWireframeContentAlt"
+				"projectDisplayModuleGalleryCollapsed"
 			{% else %}
-				"projectListWireframeContent"
-			{% endif %}
-			>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+				{% if mediaPool[project]|length > 0 %}
+					"projectDisplayModuleGalleryExpanded"
+				{% else %}
+					projectDisplayModuleGalleryEmptyCollapsed
+				{% endif %}
+			{% endif %}>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
 
 			<div class= "projectDisplayListTweenPadding"></div>
 
 		</div>
-		
+
 		{% endfor %}
 
 	</body>
