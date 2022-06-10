@@ -225,12 +225,10 @@ def generateProjectShowcaseModule():
 		return render_template('projectsModule.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', availableProjects=sorted(PACKAGED_INFO[0]), descriptors=PACKAGED_INFO[1], mediaPool=PACKAGED_INFO[2], hideNav=True, hrefs=PACKAGED_INFO[3])
 	
 
-@app.route("/projects/<path:subpath>/")
+@app.route("/projects/<path:subpath>/", methods=['GET', 'POST'])
 
 def getProjectSpec(subpath):
 	# show the subpath after /path/
-
-
 
 	#try:
 		#print("Attempting to open '" + projectFolder + subpath + "'", file=sys.stdout)
@@ -327,6 +325,9 @@ def getProjectSpec(subpath):
 
 
 		
+
+		with app.test_request_context('/api'):
+			url_for('projectspecs.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) )
 
 		return render_template('projectspecs.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) )
 	else:

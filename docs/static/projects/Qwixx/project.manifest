@@ -1,11 +1,11 @@
-{"title": "Body Monitor", 
+{"title": "QWIXX", 
 
-"description": "Body Monitor is the next step in fitness and taking care of your health. Body monitor aims to be a fully customizable app so that each user gets the most they can out of the app. Equipped with various features such as caloric breakdown with an informative chart, water tracking with reminders, exercise logs and much more.", 
+"description": "A new way to think of encryption.", 
 
-"technologies":"Java, SQL, Firebase CloudStore / CloudSync, Firebase Authentication, Android/Android OS (Oreo-target at time of writing), Android Studio, Adobe XD, SQL, Android's Room DAO, XML", 
+"technologies":"Java, SQL, etc..", 
 
-"platform":"Android OS",
+"platform":"PWA/Universal",
 
-"shortDescription" : "The health companion, what health could be!",
+"shortDescription" : "A new way to think of encryption.",
 
 "assets": ""}
