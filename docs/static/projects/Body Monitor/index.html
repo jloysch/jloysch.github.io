@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'index.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The 'home page' or main landing page for the site. Will include content from around the site to give the a user a nice single-page experience upon view.
+	I'm sticking with static deployment of the website (free hosting via Github Pages) so there will be some caveats, but nothing that can't be worked around.
+
+-->
+
+	<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
+	
+	<head>
+
+		<meta http-equiv="Cache-control" content="public">
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+
+		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+		
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+	<div class="navigationBar">
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/index.html", id="navlink"> 
+
+	        	
+
+	        		 <b>Home</b>
+	        		
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/projects.html", id="navlink"> 
+
+	        	
+
+	        		Projects
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/about.html", id="navlink"> 
+
+	        	
+
+	        		About
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/contact.html", id="navlink"> 
+
+	        	
+
+	        		Contact
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	</div>
+
+</head>
+
+</html>
+
+	</head>
+
+	<body>
+		
+		<div class="navigationBarBottomPad"></div>
+
+		
+		
+
+		
+				<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'projectsModule.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The modular, headless version of 'projects.html' to be included for the single-page view on 'index.html'
+
+-->
+
+	<head>
+
+	</head>
+
+	
+
+	<body>
+
+		
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/static/projects/Body Monitor"><a class= "projectDisplayModuleTitle", href="/static/projects/Body Monitor"><b>Body Monitor</b></a><a2 class="projectDisplayModuleDescription", href="">The health companion, what health could be!</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
+				<div class= 
+				
+					
+						"projectDisplayModuleGalleryCollapsed"
+					
+				,
+
+				id= 
+
+			
+				
+					projectMediaPoolContainer
+				
+
+				><img src="static/projects/Body Monitor/media/gallery/2.png", href="/static/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/3.png", href="/static/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/1.png", href="/static/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/0.png", href="/static/projects/Body Monitor"></img></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
+			</div>
+
+		
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/static/projects/Portfolio Page"><a class= "projectDisplayModuleTitle", href="/static/projects/Portfolio Page"><b>Portfolio Page</b></a><a2 class="projectDisplayModuleDescription", href="">My portfolio page that you see here!</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
+				<div class= 
+				
+					
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					
+				,
+
+				id= 
+
+			
+				
+					""
+				
+
+				></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
+			</div>
+
+		
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/static/projects/Qwixx"><a class= "projectDisplayModuleTitle", href="/static/projects/Qwixx"><b>Qwixx</b></a><a2 class="projectDisplayModuleDescription", href="">A new way to think of encryption.</a2></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
+				<div class= 
+				
+					
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					
+				,
+
+				id= 
+
+			
+				
+					""
+				
+
+				></div>
+
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
+			</div>
+
+		
+
+	</body>
+
+	
+
+</html>
+			
+
+		
+		
+
+		
+		
+
+		
+		
+			
+	</body>
+	
+		
+</html>
