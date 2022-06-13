@@ -76,7 +76,7 @@ def projects():
 
 				allProjects.append(projectName)
 
-				hrefs[projectName] = '/static/projects/' + projectName
+				hrefs[projectName] = '/projects/' + projectName
 				'''
 				try:
 
@@ -154,7 +154,7 @@ def getProjectMediaDescriptions():
 
 				allProjects.append(projectName)
 
-				hrefs[projectName] = '/static/projects/' + projectName
+				hrefs[projectName] = '/projects/' + projectName
 
 				'''
 				try:
@@ -232,12 +232,8 @@ def generateProjectShowcaseModule():
 def projectspecs():
 	return render_template('projectspecs.html')
 
-
-#@app.route("/projects/<subpath>", methods=['GET', 'POST'])
-@app.route("/static/projects/<string:subpath>")
-@app.route("/static/projects/<subpath>/", methods=['GET', 'POST'])
-@app.route("/static/projects/<subpath>", methods=['GET', 'POST'])
-
+@app.route("/projects/<subpath>", methods=['GET', 'POST'])
+@app.route("/projects/<subpath>/")
 
 #@freezer.register_generator
 def getProjectSpec(subpath):
@@ -263,8 +259,6 @@ def getProjectSpec(subpath):
 
 	#return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
-	
-
 	if (os.path.exists(projectFolder + subpath + "/")):
 
 		showcase=None
@@ -281,7 +275,6 @@ def getProjectSpec(subpath):
 				for imageName in os.listdir(projectFolder + subpath + '/' + projectShowcaseFolder): #Should only be one there anyway
 					if (not imageName.startswith('.') and not imageName.startswith('_')):
 						showcase = ('/' + projectFolder + subpath + '/' + projectShowcaseFolder + imageName) #Had weird broken image glitch on spec-out, doing this fixes that problem.
-						
 			else:
 				pass
 
@@ -367,7 +360,15 @@ def contact():
 	
 	return render_template('about.html', navigation=navigation_sections, crumb="contact", mimetype='text/html', hideNav=False)
 
-#freezer.freeze()
+
+@freezer.register_generator
+def getProjectSpec():
+	for projectName in os.listdir(projectFolder):
+		if (not projectName.startswith('.') and not projectName.startswith('_')):
+			print("Yielding (manually) '" + projectName + "' with main ", file=sys.stdout)
+			yield {'subpath': projectName}
+
+freezer.freeze()
 
 if __name__ == '__main__':
 
@@ -381,6 +382,3 @@ if __name__ == '__main__':
 	#app.run(host='0.0.0.0', port=5000, debug=True, threaded=False)
 else:
 	print("NON MAIN RUN", file=sys.stdout)
-
-freezer.freeze()
-
