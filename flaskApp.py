@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import json
 import sys
@@ -21,6 +21,7 @@ buildFolder = "docs"
 
 app = Flask(__name__, template_folder=template_directory)
 app.config['FREEZER_DESTINATION'] = buildFolder
+app.config['SECRET_KEY'] = 'someCrazySecrets'  
 
 #app.config['STATIC_FOLDER'] = template_directory
 
@@ -223,10 +224,18 @@ def generateProjectShowcaseModule():
 		#print(PACKAGED_INFO[3], file=sys.stdout)
 
 		return render_template('projectsModule.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', availableProjects=sorted(PACKAGED_INFO[0]), descriptors=PACKAGED_INFO[1], mediaPool=PACKAGED_INFO[2], hideNav=True, hrefs=PACKAGED_INFO[3])
-	
 
-@app.route("/projects/<path:subpath>/", methods=['GET', 'POST'])
 
+#@app.route("/static/projects/<path:subpath>/", methods=['GET', 'POST'])
+
+@app.route('/projectspecs')
+def projectspecs():
+	return render_template('projectspecs.html')
+
+@app.route("/projects/<subpath>", methods=['GET', 'POST'])
+@app.route("/projects/<subpath>/")
+
+#@freezer.register_generator
 def getProjectSpec(subpath):
 	# show the subpath after /path/
 
@@ -325,11 +334,17 @@ def getProjectSpec(subpath):
 
 
 		
+		crumb="projects"
+		mimetype="text/html"
 
-		with app.test_request_context('/api'):
-			url_for('projectspecs.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) )
+		#session['projectSpec'] = [navigation_sections, crumb, mimetype, showcase, projectManifest['title'], projectManifest['description'], projectManifest['technologies'], gallery, projectManifest['platform'], (len(projectManifest['assets']) > 0)]
+		
+		#return set(page.url for page in self.getProjectSpec(subpath))
 
-		return render_template('projectspecs.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) )
+		#return redirect(url_for('projectspecs', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) ))
+
+		#return redirect(url_for('projectspecs'))
+		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) )
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
@@ -345,9 +360,16 @@ def contact():
 	
 	return render_template('about.html', navigation=navigation_sections, crumb="contact", mimetype='text/html', hideNav=False)
 
-freezer.freeze()
+#freezer.freeze()
 
 if __name__ == '__main__':
+
+	def getProjectSpec():
+
+		for projectName in os.listdir(projectFolder):
+			if (not projectName.startswith('.') and not projectName.startswith('_')):
+				yield {'subpath': projectname}
+
 	freezer.freeze()
 	#app.run(host='0.0.0.0', port=5000, debug=True, threaded=False)
 

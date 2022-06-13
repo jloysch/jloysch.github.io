@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'proejctspecs.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant to display all the relevant media and descriptions related to each project!
+
+-->
+	
+	<head>
+
+		<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
+	
+	<head>
+
+		<meta http-equiv="Cache-control" content="public">
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+
+		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+		
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+	<div class="navigationBar">
+
+	    
+
+	</div>
+
+</head>
+
+</html>
+
+	</head>
+
+	<body>
+		
+		<div class="navigationBarBottomPad"></div>
+
+		
+		
+
+		
+		
+
+		
+		
+
+		
+		
+
+		
+
+	<body>
+
+			<div class="projectSpecOut">
+				<div class="projectGalleryShowcaseImage"><img src=
+																  	/static/projects/_projectShowcasePlaceholder.jpeg
+																  ></img></div>
+				<div class="projectWriteup">
+
+					<h3></h3>
+					<p class="projectSpecParagraph"></p>
+					<p><b>Platform:</b></p><p class="projectSpecParagraph"></p>
+					
+					<p><b>Technologies:</b></p><p class="projectSpecParagraph"></p>
+					
+						<p><b>Gallery (empty):</b></p>
+					
+					
+
+					<div class="projectSpecGallery">  </div>
+				</div>
+			</div>
+
+
+
+			<div class= "divPadA"></div>
+
+			<div class="projectSpecAssetOutlet"> 
+
+				<button type="button", class=	
+													"buttonAssetDownloadNoAssets"
+												>
+													Download Unavailable
+												</button> 
+
+			</div>
+
+			
+	</body>
+
+	
+			
+	</body>
+	
+		
+</html>
