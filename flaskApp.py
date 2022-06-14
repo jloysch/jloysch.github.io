@@ -1,3 +1,13 @@
+'''
+
+	'flaskApp.py' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The code behind the dynamic -> static generation of my portfolio page
+
+'''
+
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import json
@@ -68,7 +78,7 @@ def projects():
 
 	hrefs = {}
 
-	
+
 	try:
 
 		for projectName in os.listdir(projectFolder): 
