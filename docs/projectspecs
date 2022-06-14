@@ -105,8 +105,8 @@
 
 			<div class="projectSpecOut">
 				<div class="projectGalleryShowcaseImage"><img src=
-																  	"/static/projects/_projectShowcasePlaceholder.jpeg"
-																   alt="_projectShowcasePlaceholder"></img></div>
+																  	"/static/projectShowcasePlaceholder.jpeg"
+																  ></img></div>
 				<div class="projectWriteup">
 
 					<h3></h3>
