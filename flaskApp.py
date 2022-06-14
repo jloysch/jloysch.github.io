@@ -68,6 +68,7 @@ def projects():
 
 	hrefs = {}
 
+	
 	try:
 
 		for projectName in os.listdir(projectFolder): 
