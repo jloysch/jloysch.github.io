@@ -28,7 +28,7 @@
 				<div class="projectGalleryShowcaseImage"><img src={% if showcaseImage %}
 																  	"{{showcaseImage}}"
 																  {% else %}
-																  	{{ url_for('static',filename='projects/_projectShowcasePlaceholder.jpeg') }}
+																  	"{{ url_for('static',filename='projects/_projectShowcasePlaceholder.jpeg') }}"
 																  {% endif %}></img></div>
 				<div class="projectWriteup">
 
