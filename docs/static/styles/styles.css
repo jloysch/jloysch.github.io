@@ -68,7 +68,7 @@
 
 html, body {
 
-	background-image: url("koi.png");
+	background-image: url("koi5.png");
 	/*background-size: cover;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -82,7 +82,9 @@ html, body {
 }
 
 
-div.gradientMask { /
+div.gradientMask { 
+
+	/*
 	background: rgb(0,0,0);
 background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(107, 202, 226, 1)
  100%);
@@ -96,6 +98,17 @@ background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(107
     z-index: -1;
 
     opacity: 0.5;
+    */
+
+    background-color: #0000002D;
+    z-index: -1;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
   
 }
 /*
@@ -167,7 +180,7 @@ div.navigationBar {
 	*/
 
 	background-color: #181818;
-	opacity: 0.9;
+	
 
     border-radius: var(--navigationBarBorderRadius);
 	height: var(--navigationBarHeight);
@@ -188,7 +201,7 @@ div.navigationBar a {
 	text-decoration: none;
 }
 
-div.navigationBar:hover { opacity: 1.0; }
+div.navigationBar:hover {  }
 
 div.navigationBar span {
 
@@ -223,7 +236,8 @@ div.projectDisplayModuleHeader {
 	display: block;
 	
 	white-space: pre-line;
-	background-color: var(--paletteShadeC);
+	/*background-color: var(--paletteShadeC);*/
+	background-color: #181818;
 
 
 	/*background-color: #181818;*/
@@ -246,70 +260,107 @@ div.projectDisplayModuleGalleryExpanded {
 	background-color: var(--paletteShadeB);
 	opacity: 0.9;
 	content: "";
-	white-space: pre-line;
+		 white-space: nowrap;
 	justify-content: center;
 	
 	margin-left: 2%;
 	width: 96%;
 	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
-
-	
 	border-radius: 0px 0px 0px 8px;
 
-	 position: relative;
-    z-index: 2;
+}
+
+div.projectDisplayModuleGalleryExpanded img {
+	max-width: 100%
+	max-height: 100%;
+
+	
+	  overflow: hidden;
+	  object-fit: contain;
+
+
+	  height:100%;
+	  width:auto;
+
+	   justify-content: space-around;
+	    align-items: flex-start;
+}
+
+/* Clear floats after image containers */
+div.projectDisplayModuleGalleryExpanded::after {
+  content: "";
+  clear: both;
+  display: table;
+
 }
 
 div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
 
-	display: block;
 	
+
+	display: block;
+
 	background-color: var(--paletteShadeB);
 	opacity: 0.9;
 	content: "";
+		 white-space: nowrap;
 	justify-content: center;
-	white-space: pre-line;
-
 	margin-left: 2%;
 	width: 96%;
 	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
 	border-radius: 0px 0px 0px 8px;
 
 	 position: relative;
+
     z-index: 2;
-}
 
-div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
 
-	display: block;
-	
-	background-color: var(--paletteShadeB);
-	opacity: 0.9;
-	content: "";
-	justify-content: center;
-	white-space: pre-line;
 
-	margin-left: 2%;
-	width: 96%;
-	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
-	border-radius: 0px 0px 0px 8px;
 
-	 position: relative;
-    z-index: 2;
-}
 
-div.projectDisplayModuleGalleryExpanded img {
-	max-width: 100%;
-	max-height: 100%;
 }
 
 div.projectDisplayModuleGalleryCollapsed img {
-	max-width:100%;
-	max-height:100%;
+	max-width: 100%
+	max-height: 100%;
+
+	
+	  overflow: hidden;
+	  object-fit: contain;
+
+
+	  height:100%;
+	  width:auto;
+
+	   justify-content: space-around;
+	    align-items: flex-start;
 }
 
+
+div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
+
+	display: flex;
+	
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+	justify-content: center;
+	white-space: pre-line;
+
+	margin-left: 2%;
+	width: 96%;
+	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+	 position: relative;
+    z-index: 2;
+}
+
+
+
+
 div.projectDisplayModuleHeader:hover/*, div.projectListWireframe:active .projectListWireframe*/{
-	background-color: var(--paletteShadeB) !important;
+	background-color: #000000 !important;
 
 }
 
@@ -411,6 +462,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 
 
 
+	overflow: hidden;
 
 
 
@@ -433,6 +485,9 @@ max-width: 100%;
   
 
 */
+
+ border-radius: 15%;
+
 display: flex;
   height: 100%;
 box-sizing: border-box;
@@ -446,8 +501,10 @@ vertical-align: middle;
 
 max-height: 100%;
   max-width: 100%;
-
+  overflow: hidden;
   object-fit: contain;
+
+
 
 }
 
@@ -493,7 +550,7 @@ div.projectWriteup p {
 div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/ 
 	
 	display:flex;
-  background-color: #181818CC;
+  background-color: #000000CC;
 
   padding-top: var(--projectSpecOutContainerTopBottomPad);
   padding-bottom: var(--projectSpecOutContainerTopBottomPad);
@@ -502,8 +559,16 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
   vertical-align: middle;
 
 
-  height: 80vh;
-  width: 100%;
+  height: 80%;
+  width: 96%;
+
+  margin-right: 2%;
+  margin-left: 2%;
+
+  padding-bottom: 20%;
+  margin-bottom: 20%;
+
+  border-radius: 12px;
 
   /*opacity: 0.5;*/
   
@@ -535,7 +600,7 @@ div.projectSpecOut img { /* Clear floats after the columns [W3C Adaptation]*/
 
 
 div.projectSpecGallery {
-	display: block;
+	display: flex;
 
 	background-color: #181818;
 	
@@ -553,8 +618,23 @@ div.projectSpecGallery img {
 	max-width: 100%
 	max-height: 100%;
 
+	 border-radius: 15%;
 
+	display: flex;
+	  height: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
 
+	vertical-align: middle;
+
+	  justify-content: center;
+
+	max-height: 100%;
+	  max-width: 100%;
+	  overflow: hidden;
+	  object-fit: contain;
 }
 /*
 #projectSpecGallery:hover {
@@ -589,7 +669,7 @@ div.projectSpecAssetOutlet button {
 
 	background-color: var(--projectSpecAssetOutletDivColor)
 
-	height: 128px;
+	height: 64px;
 	width: 100%;
 
 	max-width: 100%
@@ -613,7 +693,7 @@ button.buttonAssetDownload {
 	
 	font-weight: 900;
 
-	height: 128px;
+	height: 64px;
 	width: 100%;
 
 	max-width: 100%
@@ -633,7 +713,7 @@ button.buttonAssetDownload {
 	font-stretch: normal; 
 	line-height: initial;
 
-	border-radius: 32px;
+	border-radius: 12px;
 
 	z-index: 99;
 }
@@ -647,7 +727,7 @@ button.buttonAssetDownloadNoAssets {
 	
 	font-weight: 900;
 
-	height: 128px;
+	height: 64px;
 	width: 100%;
 
 	max-width: 100%
@@ -667,7 +747,7 @@ button.buttonAssetDownloadNoAssets {
 	font-stretch: normal; 
 	line-height: initial;
 
-	border-radius: 32px;
+	border-radius: 12px;
 
 	z-index: 99;
 
@@ -718,7 +798,7 @@ div.navigationBarBottomPad {
 div.aboutMeContainer { 
 	
   /*background-color: #00000067;*/
-  background-color: #181818CC;
+  background-color: #000000CC;
 
   padding-top: var(--projectSpecOutContainerTopBottomPad);
   padding-bottom: var(--projectSpecOutContainerTopBottomPad);
@@ -740,6 +820,8 @@ div.aboutMeContainer:hover {
 	
 
   /*background-color: #181818;*/
+
+  background-color: #000000CD;
   
 }
 
@@ -808,42 +890,70 @@ div.aboutMeBlurbs p {
 div.tagCloudContent {
 	color: white;
 
+	height: 100%;
+	width: 100%;
+
+	vertical-align: middle;
+
+	 margin-left: auto;
+   margin-right: auto;
+   margin-top: auto;
+   margin-bottom: auto;s
 }
 
 
 /* tag cloud */
 
-.tagCloud {
+.tagcloud {
 
+	display: flex;
+	position: relative;
 	font-optical-sizing: auto; 
 	font-family: "Montserrat script=latin rev=1"; 
-	font-weight: 300; 
+	font-weight: 900; 
 
     font-size: 20px;
-    /*
-    height: 300px;
-    width: 300px;
-    */
+    
+    height: 90% !important;
+    width: 40% !important;
+    
+       vertical-align: middle;
+
     color: white;
+
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: auto;
+   margin-bottom: auto;
+
+
+
+
 
   }
 
-  .tagCloud--item {
+  .tagcloud--item {
   	color: white;
   }
 
-  .tagCloud--item:hover {
+  .tagcloud--item:hover {
     color: #36454F;
 
   }
 
   div.tagCloudContainer {
-
+  	display: flex;
     float: left;
 	width: 40%;
 
+	
 	margin-right: auto;
 	margin-left: auto;
+
+	margin-top:2%;
+	margin-bottom: 2%;
+
+	vertical-align: center;
   }
 
 /* Flip Cards for the About Page */
@@ -925,6 +1035,9 @@ div.flip-box-front h2 {
 	height: 100%;
 
 	text-align: center;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
 }
 
 /* Style the back side */
@@ -932,8 +1045,9 @@ div.flip-box-back {
 	display: table;
   background-color: #181818;
   color: white;
+  font-size: 12px;
   transform: rotateY(180deg);
-  line-height: 250%;
+  line-height: 200%;
 
 }
 
@@ -944,9 +1058,14 @@ div.flip-box-back h2 {
 
 	height: 100%;
 
+
 	/*margin-top: 45%;*/
 
 	text-align: center;
+
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 /* Skills and Links */
@@ -955,7 +1074,7 @@ div.skillsAndLinksContainer {
 	
   /*background-color: #00000067;*/
    display: flex;
-  background-color: #181818CC;
+  background-color: #000000CC;
 
   padding-top: var(--projectSpecOutContainerTopBottomPad);
   padding-bottom: var(--projectSpecOutContainerTopBottomPad);
@@ -970,6 +1089,10 @@ div.skillsAndLinksContainer {
    margin-left: 2%;
    margin-right: 2%;
 
+   height: 40vh;
+
+   margin-bottom: 2%;
+
    z-index: 2;
   
 }
@@ -978,6 +1101,8 @@ div.skillsAndLinksContainer:hover {
 	
 
   /*background-color: #181818CC;*/
+
+   background-color: #000000CD;
 
   
 }
@@ -1013,13 +1138,15 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+   color: #FFFFFF;
 }
 
 .rain.back-row {
   display: none;
-  z-index: -2;
+  z-index: -1;
   bottom: 60px;
   opacity: 0.5;
+   color: #FFFFFF;
 }
 
 body.back-row-toggle .rain.back-row {
@@ -1032,6 +1159,7 @@ body.back-row-toggle .rain.back-row {
   width: 15px;
   height: 120px;
   pointer-events: none;
+  color: #FFFFFF;
   animation: drop 0.5s linear infinite;
 }
 
@@ -1053,6 +1181,7 @@ body.back-row-toggle .rain.back-row {
   margin-left: 7px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
   animation: stem 0.5s linear infinite;
+   background-color: #FFFFFF;
 }
 
 @keyframes stem {
@@ -1079,6 +1208,7 @@ body.back-row-toggle .rain.back-row {
   transform: scale(0);
   animation: splat 0.5s linear infinite;
   display: none;
+   color: #FFFFFF;
 }
 
 body.splat-toggle .splat {
@@ -1108,7 +1238,7 @@ body.splat-toggle .splat {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .toggle {
@@ -1157,10 +1287,12 @@ body.splat-toggle .splat {
 
 body.single-toggle .drop {
   display: none;
+   color: #FFFFFF;
 }
 
 body.single-toggle .drop:nth-child(10) {
   display: block;
+   color: #FFFFFF;
 }
 
 /*
@@ -1173,16 +1305,19 @@ body.single-toggle .drop:nth-child(10) {
      position: fixed;
      top: 0;
      left: 0;
-     background-color: whitesmoke;
+     background-color: #181818;
      display: flex;
      justify-content: center;
      align-items: center;
-     z-index: 999;
+     z-index: 998;
      overflow: hidden;
+
+
 }
 
 .loader {
 	width: 300px;
 	height: 300px;
+	z-index: 999;
 }
 
