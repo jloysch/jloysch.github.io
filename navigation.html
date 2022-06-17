@@ -17,6 +17,7 @@
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
+
 	<div class="navigationBar">
 
 	    {% for item in navigation %}
@@ -27,7 +28,7 @@
 
 	        	{% if (crumb.lower()|string() == item.lower()|string()) %}
 
-	        		 <b>{{ item }}</b>
+	        		 <b class="navLinkHighlight">{{ item }}</b>
 	        		
 	        	{% else %}
 

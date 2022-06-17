@@ -45,26 +45,34 @@
 					
 
 					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}"></img>{% endfor %} </div>
+
+					<div class= "divPadA"></div>
+
+
+					<div class="projectSpecAssetOutlet"> 
+
+						<button type="button", class=	{% if hasAssets %} 
+															"buttonAssetDownload"
+														{% else %}
+															"buttonAssetDownloadNoAssets"
+														{% endif %}, 
+
+														href="{{ url_for('static', filename='text.txt') }}" download="test.txt", onClick="">
+														{% if hasAssets %} 
+															DOWNLOAD ASSET(S)
+														{% else %}
+															Download Unavailable
+														{% endif %}</button> 
+
+														
+					</div>
 				</div>
 			</div>
 
 
 
-			<div class= "divPadA"></div>
+			
 
-			<div class="projectSpecAssetOutlet"> 
-
-				<button type="button", class=	{% if hasAssets %} 
-													"buttonAssetDownload"
-												{% else %}
-													"buttonAssetDownloadNoAssets"
-												{% endif %}>{% if hasAssets %} 
-													DOWNLOAD ASSET(S)
-												{% else %}
-													Download Unavailable
-												{% endif %}</button> 
-
-			</div>
 
 			
 	</body>

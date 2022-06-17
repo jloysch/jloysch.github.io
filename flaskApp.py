@@ -369,7 +369,7 @@ def about():
 @app.route("/contact.html")
 def contact():
 	
-	return render_template('about.html', navigation=navigation_sections, crumb="contact", mimetype='text/html', hideNav=False)
+	return render_template('contact.html', navigation=navigation_sections, crumb="contact", mimetype='text/html', hideNav=False)
 
 
 @freezer.register_generator
