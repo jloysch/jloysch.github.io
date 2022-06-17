@@ -1115,7 +1115,7 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
      justify-content: center;
      align-items: center;
      z-index: 998;
-     overflow: hidden;
+     overflow: scroll;
 
 
 }
