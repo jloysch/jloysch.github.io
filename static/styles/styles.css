@@ -84,7 +84,7 @@ html, body {
 
 
 	
-	overflow: scroll;
+	overflow: auto !important;
 	-webkit-overflow-scrolling: touch;
 
 
