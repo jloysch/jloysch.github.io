@@ -898,14 +898,8 @@ div.tagCloudContent {
 
     font-size: 20px;
     
-    /*
     height: 90% !important;
     width: 40% !important;
-    */
-
-    height: 90% !important;
-    width: 400px !important;
-
     
        vertical-align: middle;
 
@@ -916,85 +910,11 @@ div.tagCloudContent {
    margin-top: auto;
    margin-bottom: auto;
 
-  }
 
-@media only screen and (max-width: 1330px) {
 
-	.tagcloud {
 
-	display: flex;
-	position: relative;
-	font-optical-sizing: auto; 
-	font-family: "Montserrat script=latin rev=1"; 
-	font-weight: 900; 
-
-    font-size: 16px !important;
-    
-    /*
-    height: 90% !important;
-    width: 40% !important;
-    */
-
-    height: 250px !important;
-    width: 250px !important;
-
-    
-       vertical-align: middle !important;
-
-    color: white;
-    /*
-   margin-left: auto !important;
-   margin-right: auto !important;
-   margin-top: 48px;
-   margin-bottom: auto !important
-	*/
-
-	/* top right bottom left */
-   margin: 48px 48px 48px 128px !important;
 
   }
-} 
-
-@media only screen and (max-width: 1200px) {
-
-	.tagcloud {
-
-	display: flex;
-	position: relative;
-	font-optical-sizing: auto; 
-	font-family: "Montserrat script=latin rev=1"; 
-	font-weight: 900; 
-
-    font-size: 14px !important;
-    
-    /*
-    height: 90% !important;
-    width: 40% !important;
-    */
-
-    height: 100px !important;
-    width: 100px !important;
-
-    
-       vertical-align: middle !important;
-
-    color: white;
-    /*
-   margin-left: auto !important;
-   margin-right: auto !important;
-   margin-top: 48px;
-   margin-bottom: auto !important
-	*/
-
-	/* top right bottom left */
-   margin: 128px 48px 48px 190px !important;
-
-  }
-} 
-
-  
-
-}
 
   .tagcloud--item {
   	color: white;
@@ -1020,8 +940,6 @@ div.tagCloudContent {
 	vertical-align: center;
   }
 
-
-
 /* Flip Cards for the About Page */
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 
@@ -1030,11 +948,12 @@ div.flip-box-container {
 	float: left;
 	width: 60%;
 
+	margin-right: auto;
+	margin-left: auto;
+
+
 	
 }
-
-
-
 
 div.container:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
 	
@@ -1162,8 +1081,6 @@ div.skillsAndLinksContainer {
   
 }
 
-
-
 div.skillsAndLinksContainer:hover { 
 	
 
@@ -1182,58 +1099,6 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
   
 }
 
-
-@media screen and (max-width: 1200) {
-	/* Skills and Links */
-
-div.skillsAndLinksContainer { 
-	
-  /*background-color: #00000067;*/
-   display: flex-column;
-   flex-direction: column;
-  background-color: #FFFFFF;
-
-  padding-top: var(--projectSpecOutContainerTopBottomPad);
-  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
-  /*opacity: 0.5;*/
-
-   position: relative;
-
-   border-radius: 12px;
-
-   width: 96%;
-
-   margin-left: 2%;
-   margin-right: 2%;
-
-   height: 40vh;
-
-   margin-bottom: 2%;
-
-   z-index: 2;
-  
-}
-
-
-
-div.skillsAndLinksContainer:hover { 
-	
-
-  /*background-color: #181818CC;*/
-
-   background-color: #000000CD;
-
-  
-}
-
-div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-	
-  content: "";
-  display: table;
-  clear: both;
-  
-}
-}
 
 /*
 	|| PRELOADER ANIMATIONS

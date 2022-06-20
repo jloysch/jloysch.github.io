@@ -17,7 +17,6 @@
 	<head>
 		<link rel="preload" href="{{ url_for('static', filename='styles/styles.css') }}" as="style">
 		<link rel="preload" href="{{ url_for('static', filename='scripts/preload-screen.js') }}" as="script">
-		<link rel="preload" href="{{ url_for('static', filename='styles/animated-clock.svg') }}" as="style">
 		<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="script">
     	<link rel="preload" href="{{ url_for('static', filename='scripts/css-rain-effect.js') }}" as="script">
 
@@ -31,9 +30,13 @@
 
 		
 
-
+		<!--
 		<meta http-equiv="Cache-control" content="public">
+
 		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!--
 		
 		
