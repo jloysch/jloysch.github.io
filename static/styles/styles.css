@@ -87,7 +87,7 @@ html, body {
 	overflow: auto !important;
 	-webkit-overflow-scrolling: touch;
 
-
+	overscroll-behavior-x: none;
 
   
 
@@ -163,6 +163,8 @@ div.navigationBar {
 	opacity: 0.9;
 	*/
 
+	
+	
 	background-color: #181818;
 	
 
