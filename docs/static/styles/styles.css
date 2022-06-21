@@ -77,8 +77,13 @@ html, body {
 
 	
 
-	height: 100vh;
-	margin: 0vh;
+	height: 100%;
+	width: 100%;
+	margin-right: 0px;
+	margin-left: 0px;
+
+	overflow-y: scroll !important;
+
 
 	
 
@@ -87,7 +92,7 @@ html, body {
 	overflow: auto !important;
 	-webkit-overflow-scrolling: touch;
 
-
+	overscroll-behavior: contain !important;
 
   
 
@@ -163,6 +168,8 @@ div.navigationBar {
 	opacity: 0.9;
 	*/
 
+
+
 	background-color: #181818;
 	
 
@@ -215,7 +222,6 @@ div.navigationBar a {
 	}
 }
 
-div.navigationBar:hover {  }
 
 div.navigationBar span {
 
@@ -250,7 +256,7 @@ div.navigationBar span {
 	}
 }
 
-div.navigationBar a[href]:hover {
+div.navigationBar a[href]:hover, div.navigationBar a[href]:active {
 	color: var(--hoverColorA);
 }
 
@@ -424,20 +430,20 @@ div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call
 
 
 
-div.projectDisplayModuleHeader:hover/*, div.projectListWireframe:active .projectListWireframe*/{
+div.projectDisplayModuleHeader:hover, div.projectDisplayModuleHeader:active /*, div.projectListWireframe:active .projectListWireframe*/{
 	background-color: #000000 !important;
 
 }
 
-div.projectDisplayModuleHeader a:hover  { /* Titlebar for project list */
+div.projectDisplayModuleHeader a:hover, div.projectDisplayModuleHeader a:active  { /* Titlebar for project list */
 	color: var(--hoverColorA) !important;
 }
 
-div.projectDisplayModuleHeader a2:hover  { /* Titlebar for project list */
+div.projectDisplayModuleHeader a2:hover, div.projectDisplayModuleHeader a2:active { /* Titlebar for project list */
 	color: var(--hoverColorA) !important;
 }
 
-div.projectDisplayModuleGalleryExpanded:hover {
+div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 
@@ -447,19 +453,19 @@ div.projectDisplayModuleGalleryExpanded:hover {
     z-index: 2;
 }
 
-div.projectDisplayModuleGalleryCollapsed:hover {
+div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 
 	height: 256px;
 
-	 position: relative;
+	position: relative;
     z-index: 2;
 }
 
 
 @media screen and (max-width: 780px) {
-	div.projectDisplayModuleGalleryCollapsed:hover {
+	div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 
@@ -469,7 +475,7 @@ div.projectDisplayModuleGalleryCollapsed:hover {
     z-index: 2;
 	}
 
-	div.projectDisplayModuleGalleryExpanded:hover {
+	div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 
@@ -489,6 +495,15 @@ div.projectDisplayModuleGalleryCollapsed:hover {
 	height: 256px;
 }
 
+#projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 256px;
+}
+
 @media screen and (max-width: 780px) {
 
 	#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
@@ -499,9 +514,19 @@ div.projectDisplayModuleGalleryCollapsed:hover {
 
 	height: 128px !important;
 	}
+
+
+	#projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 128px !important;
+	}
 }
 
-#projectMediaPoolContainer:hover {
+#projectMediaPoolContainer:hover, #projectMediaPoolContainer:active {
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 	transition-duration: var(--moduleExpansionTransitionTime);
@@ -908,7 +933,7 @@ button.buttonAssetDownloadNoAssets {
 
 }
 
-button.buttonAssetDownloadNoAssets:hover {
+button.buttonAssetDownloadNoAssets:hover, button.buttonAssetDownloadNoAsset:active {
 	color: #FF0000;
 
 }
@@ -1003,7 +1028,7 @@ div.aboutMeContainer {
 }
 
 
-div.aboutMeContainer:hover { 
+div.aboutMeContainer:hover, div.aboutMeContainer:active { 
 	
 
   /*background-color: #181818;*/
@@ -1233,7 +1258,7 @@ div.tagCloudContent {
   	}
   }
 
-  .tagcloud--item:hover {
+  .tagcloud--item:hover, .tagcloud--item:active {
     color: #36454F;
 
   }
@@ -1367,13 +1392,27 @@ div.flip-box:hover .flip-box-inner {
   /*border: 1px solid #f1f1f1;*/
 }
 
+div.flip-box:active .flip-box-inner {
+  transform: rotateY(180deg);
+  
+  /*border: 1px solid #f1f1f1;*/
+}
+
 @media screen and (max-width: 441px) {
 	div.flip-box:hover .flip-box-inner {
   
   
   /*border: 1px solid #f1f1f1;*/
 	}
+
+	div.flip-box:active .flip-box-inner {
+  
+  
+  /*border: 1px solid #f1f1f1;*/
+	}
 }
+
+
 
 /* Position the front and back side */
 div.flip-box-front, div.flip-box-back {
@@ -1551,6 +1590,16 @@ div.skillsAndLinksContainer:hover {
   
 }
 
+div.skillsAndLinksContainer:active { 
+	
+
+  /*background-color: #181818CC;*/
+
+   background-color: #000000CD;
+
+  
+}
+
 div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
 	
   content: "";
@@ -1630,6 +1679,11 @@ div.contactContainer {
 .contact-flip-box:hover .contact-flip-box-inner {
   transform: rotateX(180deg);
 }
+
+.contact-flip-box:active .contact-flip-box-inner {
+  transform: rotateX(180deg);
+}
+
 
 .contact-flip-box-front, .contact-flip-box-back {
   position: absolute;
