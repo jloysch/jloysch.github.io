@@ -78,9 +78,14 @@ html, body {
 	
 
 	height: 100%;
-	width: 100%;
+	
+	 max-width: 100%;
+
+/*
+	 width: 99.9%;
 	margin-right: 0px;
 	margin-left: 0px;
+	*/
 
 	overflow-y: scroll !important;
 
