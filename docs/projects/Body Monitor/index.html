@@ -31,6 +31,10 @@
 
 	
 	<head>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
 		<link rel="preload" href="/static/styles/styles.css" as="style">
 		<link rel="preload" href="/static/scripts/preload-screen.js" as="script">
 		<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="script">
@@ -46,9 +50,13 @@
 
 		
 
-
+		<!--
 		<meta http-equiv="Cache-control" content="public">
+
 		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!--
 		
 		
@@ -90,6 +98,10 @@
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
 
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="text/javascript">
+
+
+	
 	<div class="navigationBar">
 
 	    
@@ -164,6 +176,23 @@
 
 </html>
 		
+
+		<script> 
+
+		$("document").ready(function () {
+
+			document.getElementById( 'navigationBar' ).addEventListener( 'click', function() {
+		 
+		    ( this.style.transform == 'translateX(-90%) !important') ? this.style.transform = 'translateX(90%) !important' : this.style.transform = 'translateX(-90%) !important';
+		    
+			}, false );
+
+		});
+
+	
+
+	alert("Console has been updated.");
+	</script>
 
 
 	</head>

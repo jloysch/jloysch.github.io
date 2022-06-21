@@ -30,6 +30,10 @@
 
 	
 	<head>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
 		<link rel="preload" href="/static/styles/styles.css" as="style">
 		<link rel="preload" href="/static/scripts/preload-screen.js" as="script">
 		<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="script">
@@ -45,9 +49,13 @@
 
 		
 
-
+		<!--
 		<meta http-equiv="Cache-control" content="public">
+
 		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!--
 		
 		
@@ -89,6 +97,10 @@
 	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
 
 
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="text/javascript">
+
+
+	
 	<div class="navigationBar">
 
 	    
@@ -164,6 +176,23 @@
 </html>
 		
 
+		<script> 
+
+		$("document").ready(function () {
+
+			document.getElementById( 'navigationBar' ).addEventListener( 'click', function() {
+		 
+		    ( this.style.transform == 'translateX(-90%) !important') ? this.style.transform = 'translateX(90%) !important' : this.style.transform = 'translateX(-90%) !important';
+		    
+			}, false );
+
+		});
+
+	
+
+	alert("Console has been updated.");
+	</script>
+
 
 	</head>
 	
@@ -226,7 +255,11 @@
 
 			<div id="projectDisplayModule">
 
-				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Body Monitor"><a class= "projectDisplayModuleTitle", href="/projects/Body Monitor"><b>Body Monitor</b></a><a2 class="projectDisplayModuleDescription", href="">The health companion, what health could be!</a2></div>
+				<!--
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Body Monitor"><a class= "projectDisplayModuleTitle", href="/projects/Body Monitor"><b>Body Monitor</b></a><a class="projectDisplayModuleDescription", href="">The health companion, what health could be!</a></div>
+			-->
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Body Monitor"><a class= "projectDisplayModuleTitle", href="/projects/Body Monitor"><b>Body Monitor</b></a><a class="projectDisplayModuleDescription">The health companion, what health could be!</a></div>
 
 				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
@@ -241,10 +274,15 @@
 			
 				
 					projectMediaPoolContainer
-				
+				, onclick="location.href='/projects/Body Monitor'"><img src="static/projects/Body Monitor/media/gallery/2.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/3.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/1.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/0.png", href="/projects/Body Monitor"></img></div>
 
-				><img src="static/projects/Body Monitor/media/gallery/2.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/3.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/1.png", href="/projects/Body Monitor"></img><img src="static/projects/Body Monitor/media/gallery/0.png", href="/projects/Body Monitor"></img></div>
 
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
+			
 				<div class= "projectDisplayListTweenPadding"></div>
 
 				<!--
@@ -257,7 +295,11 @@
 
 			<div id="projectDisplayModule">
 
-				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Portfolio Page"><a class= "projectDisplayModuleTitle", href="/projects/Portfolio Page"><b>Portfolio Page</b></a><a2 class="projectDisplayModuleDescription", href="">My portfolio page that you see here!</a2></div>
+				<!--
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Portfolio Page"><a class= "projectDisplayModuleTitle", href="/projects/Portfolio Page"><b>Portfolio Page</b></a><a class="projectDisplayModuleDescription", href="">My portfolio page that you see here!</a></div>
+			-->
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Portfolio Page"><a class= "projectDisplayModuleTitle", href="/projects/Portfolio Page"><b>Portfolio Page</b></a><a class="projectDisplayModuleDescription">My portfolio page that you see here!</a></div>
 
 				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
@@ -272,10 +314,15 @@
 			
 				
 					""
-				
+				, onclick="location.href='/projects/Portfolio Page'"></div>
 
-				></div>
 
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
+			
 				<div class= "projectDisplayListTweenPadding"></div>
 
 				<!--
@@ -288,7 +335,11 @@
 
 			<div id="projectDisplayModule">
 
-				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Qwixx"><a class= "projectDisplayModuleTitle", href="/projects/Qwixx"><b>Qwixx</b></a><a2 class="projectDisplayModuleDescription", href="">A new way to think of encryption.</a2></div>
+				<!--
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Qwixx"><a class= "projectDisplayModuleTitle", href="/projects/Qwixx"><b>Qwixx</b></a><a class="projectDisplayModuleDescription", href="">A new way to think of encryption.</a></div>
+			-->
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="/projects/Qwixx"><a class= "projectDisplayModuleTitle", href="/projects/Qwixx"><b>Qwixx</b></a><a class="projectDisplayModuleDescription">A new way to think of encryption.</a></div>
 
 				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
 				<div class= 
@@ -303,10 +354,15 @@
 			
 				
 					""
-				
+				, onclick="location.href='/projects/Qwixx'"></div>
 
-				></div>
 
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
+			
 				<div class= "projectDisplayListTweenPadding"></div>
 
 				<!--

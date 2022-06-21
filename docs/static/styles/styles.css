@@ -71,7 +71,7 @@ html, body {
 	background-image: url("koi5.png");
 	/*background-size: cover;*/
 	
-	text-overflow: ellipsis;
+	
 
 	z-index: 0;
 
@@ -181,8 +181,38 @@ div.navigationBar {
     z-index: 2;
 }
 
+@media screen and (max-width: 780px) {
+	div.navigationBar {
+		display: flex;
+		flex-direction: column;
+		height: 160px;
+		background-color: #181818CC;
+
+		/*transform: translateX(-90%) !important;*/
+		/*
+		transform: rotate(-90deg) translate(-100%, 0);
+		transform-origin: left top;
+		*/
+	}
+}
+
+
+
+
+
 div.navigationBar a {
 	text-decoration: none;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 780px) {
+	div.navigationBar a {
+
+		font-size: 18px;
+
+		
+
+	}
 }
 
 div.navigationBar:hover {  }
@@ -190,7 +220,7 @@ div.navigationBar:hover {  }
 div.navigationBar span {
 
 	display: table-cell;
-
+	width: 100%;
 	line-height: normal;
     text-align: center;
     vertical-align: middle;
@@ -198,7 +228,26 @@ div.navigationBar span {
     font-size: var(--navigationBarFontSize);
 
     text-decoration: none;
-    
+
+   
+
+
+}
+
+@media screen and (max-width: 780px) { /*nav switch modes bp*/
+	div.navigationBar span {
+
+		margin-top: 2px;
+		margin-bottom: 2px;
+		
+		 /*background-color: #c0392b13;*/
+	    border: 1px solid #98afd1;
+	    border-radius: 8px;
+	    width:98%; /* therefore a 2% margin on our slight outline here. */
+   
+	    background-color: #181818;
+
+	}
 }
 
 div.navigationBar a[href]:hover {
@@ -219,23 +268,34 @@ div.projectDisplayModuleHeader {
 
 	display: block;
 	
-	white-space: pre-line;
+	
 	/*background-color: var(--paletteShadeC);*/
 	background-color: #181818;
 
 
 	/*background-color: #181818;*/
-	text-overflow: ellipsis;
+
 	content: "";
 	
 	border-radius: 8px 0px 0px 0px;
 	width: 98%;
+	max-width: 98%;
 	margin-left: 2%;
 	height: 32px;
+	max-height: 32px;
 
  	 position: relative;
     z-index: 2;
+
+    overflow-wrap: break-word;
+    
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+
 }
+
 
 div.projectDisplayModuleGalleryExpanded {
 
@@ -252,10 +312,33 @@ div.projectDisplayModuleGalleryExpanded {
 	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 	border-radius: 0px 0px 0px 8px;
 
+
+
+}
+
+@media screen and (max-width: 780px) {
+	div.projectDisplayModuleGalleryExpanded {
+
+	display: block;
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+		 white-space: nowrap;
+	justify-content: center;
+	
+	margin-left: 2%;
+	width: 96%;
+	height: 128px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+
+
+	}
 }
 
 div.projectDisplayModuleGalleryExpanded img {
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	
@@ -298,14 +381,12 @@ div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the 
 
     z-index: 2;
 
-
-
-
-
 }
 
+
+
 div.projectDisplayModuleGalleryCollapsed img {
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	
@@ -358,7 +439,7 @@ div.projectDisplayModuleHeader a2:hover  { /* Titlebar for project list */
 
 div.projectDisplayModuleGalleryExpanded:hover {
 	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0
+	opacity: 1.0;
 
 	height: 256px;
 
@@ -368,12 +449,35 @@ div.projectDisplayModuleGalleryExpanded:hover {
 
 div.projectDisplayModuleGalleryCollapsed:hover {
 	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0
+	opacity: 1.0;
 
 	height: 256px;
 
 	 position: relative;
     z-index: 2;
+}
+
+
+@media screen and (max-width: 780px) {
+	div.projectDisplayModuleGalleryCollapsed:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+
+	height: 128px !important;
+
+	 position: relative;
+    z-index: 2;
+	}
+
+	div.projectDisplayModuleGalleryExpanded:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+
+	height: 128px !important;
+
+	  position: relative;
+    z-index: 2;
+}
 }
 
 #projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
@@ -383,6 +487,18 @@ div.projectDisplayModuleGalleryCollapsed:hover {
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
+}
+
+@media screen and (max-width: 780px) {
+
+	#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 128px !important;
+	}
 }
 
 #projectMediaPoolContainer:hover {
@@ -402,21 +518,33 @@ a.projectDisplayModuleTitle {
 
   	margin-left: 12px;
 	font-size: 20px;
-	width: 10px;
+	width: 40%;
+	min-width: 40%;
 	max-width: 100%;
+
 
 	 z-index: 3;
 }
 
-a2.projectDisplayModuleDescription {
+a.projectDisplayModuleDescription {
+
+	display: inline-block; /* Makes the anchor tag be able to actually overflow the text properly into ellipsis */
 
 	color: var(--paletteShadeD);
 
 	vertical-align: middle;
 
-	max-width: 100%;
-	width: 100px;
-	margin-left: 12px;
+	
+	width: 55%;
+	margin-left: 2%;
+	max-width: 55%;
+	margin-right: 8%;
+
+   
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
 		
 }
 
@@ -432,7 +560,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 
   margin-left: auto;
   margin-right: auto;
-  margin-top:auto;
+ margin-top: 24px;
   margin-bottom:auto;
 
 
@@ -441,18 +569,24 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 	text-align: center;
 
 		
-  width: 30%;
-  height: 100%;
-
-
-
-	overflow: hidden;
+  width: 320px;
+  height: auto;
 
 
 
 
 
 }
+
+
+@media screen and (max-width: 808px) {
+	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+	 	width: 360px !important;
+	 	height: auto !important;
+
+	}
+}
+
 
 div.projectGalleryShowcaseImage img { 
 /*
@@ -492,6 +626,14 @@ max-height: 100%;
 
 }
 
+@media screen and (max-width: 808px) {
+	div.projectGalleryShowcaseImage img { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+	 	width: 100%;
+	 	height: auto !important;
+
+	}
+}
+
 div.projectWriteup { 
 
   float: left;
@@ -510,14 +652,24 @@ div.projectWriteup h3 {
 
   /*letter-spacing: var(--projectSpecOutTitleSpacing);*/
 
-  font-optical-sizing: auto; 
+  /*font-optical-sizing: auto; */
   font-family: "Montserrat script=latin rev=1"; 
   font-weight: 900; 
  
   font-stretch: normal; 
   line-height: 50%;
 
+  margin-top: 24px;
+  margin-bottom: 0px;
 
+
+}
+
+@media screen and (max-width: 670px) {
+	div.projectWriteup h3 { 
+	  line-height: 100% !important;
+	  text-align: center;
+	}
 }
 
 div.projectWriteup h4 { 
@@ -525,11 +677,24 @@ div.projectWriteup h4 {
   color: var(--paletteShadeD);
 }
 
+@media screen and (max-width: 670px) {
+	div.projectWriteup h4 { 
+	  
+	  text-align: center;
+	}
+}
+
 div.projectWriteup p { 
   font-style: italic;
   color: var(--paletteShadeD);
 }
 
+@media screen and (max-width: 670px) {
+	div.projectWriteup p { 
+	
+	  text-align: center;
+	}
+}
 
 div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/ 
 	
@@ -543,19 +708,25 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
   vertical-align: middle;
 
 
-  height: 80%;
+  height: auto;
   width: 96%;
 
   margin-right: 2%;
   margin-left: 2%;
 
-  padding-bottom: 20%;
-  margin-bottom: 20%;
+  
+
 
   border-radius: 12px;
 
   /*opacity: 0.5;*/
   
+}
+
+@media screen and (max-width: 808px) {
+	div.projectSpecOut {
+		flex-direction: column;
+	}
 }
 
 div.projectSpecOut:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
@@ -599,7 +770,7 @@ div.projectSpecGallery {
 }
 
 div.projectSpecGallery img {
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	 border-radius: 15%;
@@ -633,12 +804,12 @@ div.projectSpecGallery img {
 div.projectSpecAssetOutlet {
 	display: block;
 
-	background-color: var(--projectSpecAssetOutletDivColor)
+	/*background-color: var(--projectSpecAssetOutletDivColor);*/
 
-	height: 128px;
+	height: 64px;
 	width: 100%;
 
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	width: 100%;
@@ -651,12 +822,12 @@ div.projectSpecAssetOutlet button {
 
 	text-align: center;
 
-	background-color: var(--projectSpecAssetOutletDivColor)
+	background-color: var(--projectSpecAssetOutletDivColor);
 
 	height: 64px;
 	width: 100%;
 
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	margin-right: auto;
@@ -672,7 +843,7 @@ button.buttonAssetDownload {
 
 	text-align: center;
 
-	background-color: var(--projectSpecAssetOutletDivColor)
+	background-color: var(--projectSpecAssetOutletDivColor);
 
 	
 	font-weight: 900;
@@ -680,7 +851,7 @@ button.buttonAssetDownload {
 	height: 64px;
 	width: 100%;
 
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	margin-right: auto;
@@ -690,7 +861,7 @@ button.buttonAssetDownload {
 
 	color: var(--paletteShadeD);
 
-	font-optical-sizing: auto; 
+	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 900; 
 
@@ -707,14 +878,14 @@ button.buttonAssetDownloadNoAssets {
 
 	text-align: center;
 
-	background-color: var(--projectSpecAssetOutletDivColor)
+	background-color: var(--projectSpecAssetOutletDivColor);
 	
 	font-weight: 900;
 
 	height: 64px;
 	width: 100%;
 
-	max-width: 100%
+	max-width: 100%;
 	max-height: 100%;
 
 	margin-right: auto;
@@ -724,7 +895,7 @@ button.buttonAssetDownloadNoAssets {
 
 	color: var(--paletteShadeD);
 
-	font-optical-sizing: auto; 
+	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 900; 
 
@@ -744,7 +915,7 @@ button.buttonAssetDownloadNoAssets:hover {
 
 p.projectSpecParagraph {
 
-	font-optical-sizing: auto; 
+	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 300; 
 
@@ -780,7 +951,7 @@ div.navigationBarBottomPad {
 */
 
 div.aboutMeContainer { 
-	
+	display: flex;
   /*background-color: #00000067;*/
   background-color: #000000CC;
 
@@ -799,6 +970,38 @@ div.aboutMeContainer {
     margin-left: 2%;
   
 }
+
+@media screen and (max-width: 921px) {
+	div.aboutMeContainer { 
+		flex-direction: column !important;
+
+		height: 400px;
+	 }
+}
+
+@media screen and (max-width: 466px) {
+	div.aboutMeContainer {
+		height: 450px;
+	}
+}
+
+@media screen and (max-width: 357px) {
+	div.aboutMeContainer {
+		height: 490px;
+	}
+}
+
+@media screen and (max-width: 313px) { /* Put your hands up and follow me!  */
+	div.aboutMeContainer {
+		word-wrap: break-word !important; /* Please don't have this tiny of a screen lol */
+		
+		/* TODO >> ADD IN SUPPORT FOR THESE TINY SCREENS */
+
+		overflow: hidden;
+		height: 520px;
+	}
+}
+
 
 div.aboutMeContainer:hover { 
 	
@@ -840,7 +1043,7 @@ div.aboutMeContainer img {
 
   display: block;
 
-  vertical-align: middle;
+ 
   
 
   margin-left: auto;
@@ -851,14 +1054,48 @@ div.aboutMeContainer img {
 
 }
 
+
 div.aboutMeImage {
 	float: left;
 	width: 20%;
 }
 
+
+@media screen and (max-width: 921px) {
+	div.aboutMeImage{ 
+		float: center !important;
+		width: 100% !important;
+	 }
+}
+
+
 div.aboutMeBlurbs {
 	float: left;
 	width: 80%;
+}
+
+@media screen and (max-width: 921px) {
+	div.aboutMeBlurbs{ 
+
+		width: 100% !important;
+		display: flex !important;
+
+		flex-direction: column !important;
+
+		float: center !important;
+		
+
+		margin-left: auto !important;
+		margin-right: auto !important;
+
+		justify-content: center !important;
+		
+
+		
+
+		 text-align: center;
+
+	 }
 }
 
 div.aboutMeBlurbs h1 {
@@ -871,19 +1108,43 @@ div.aboutMeBlurbs p {
 	padding-right: 30px;
 }
 
+@media screen and (max-width: 921px) {
+	div.aboutMeBlurbs{ 
+		padding-right: 2% !important;
+		padding-left: 2% !important
+
+	 }
+}
 div.tagCloudContent {
 	color: white;
-
+	/*
 	height: 100%;
 	width: 100%;
+	*/
+		width: 100% !important;
+		/*margin-right: 50vw !important;*/
+		
 
 	vertical-align: middle;
 
 	 margin-left: auto;
    margin-right: auto;
    margin-top: auto;
-   margin-bottom: auto;s
+   margin-bottom: auto;
 }
+
+
+@media screen and (max-width: 920px) {
+
+	div.tagCloudContent {
+		width: 100%;
+		justify-content: center;
+		
+	
+	}
+	
+}
+
 
 
 /* tag cloud */
@@ -892,7 +1153,7 @@ div.tagCloudContent {
 
 	display: flex;
 	position: relative;
-	font-optical-sizing: auto; 
+	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 900; 
 
@@ -916,6 +1177,7 @@ div.tagCloudContent {
    margin-top: auto;
    margin-bottom: auto;
 
+
   }
 
 @media only screen and (max-width: 1330px) {
@@ -924,7 +1186,7 @@ div.tagCloudContent {
 
 	display: flex;
 	position: relative;
-	font-optical-sizing: auto; 
+	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 900; 
 
@@ -950,54 +1212,25 @@ div.tagCloudContent {
 	*/
 
 	/* top right bottom left */
-   margin: 48px 48px 48px 128px !important;
-
-  }
-} 
-
-@media only screen and (max-width: 1200px) {
-
-	.tagcloud {
-
-	display: flex;
-	position: relative;
-	font-optical-sizing: auto; 
-	font-family: "Montserrat script=latin rev=1"; 
-	font-weight: 900; 
-
-    font-size: 14px !important;
-    
-    /*
-    height: 90% !important;
-    width: 40% !important;
-    */
-
-    height: 100px !important;
-    width: 100px !important;
-
-    
-       vertical-align: middle !important;
-
-    color: white;
-    /*
+   /*margin: 48px 48px 48px 128px !important;*/
    margin-left: auto !important;
    margin-right: auto !important;
-   margin-top: 48px;
-   margin-bottom: auto !important
-	*/
-
-	/* top right bottom left */
-   margin: 128px 48px 48px 190px !important;
 
   }
 } 
+
 
   
 
-}
 
   .tagcloud--item {
   	color: white;
+  }
+
+  @media screen and (max-width: 446px) {
+  	.tagcloud--item {
+  		padding: -32px -32px -32px -32px !important;
+  	}
   }
 
   .tagcloud--item:hover {
@@ -1014,13 +1247,33 @@ div.tagCloudContent {
 	margin-right: auto;
 	margin-left: auto;
 
-	margin-top:2%;
+	margin-top: 2%;
 	margin-bottom: 2%;
 
 	vertical-align: center;
   }
 
 
+
+@media screen and (max-width: 921px) {
+	div.tagCloudContainer {
+	  	margin-bottom: 50px !important;
+	  	margin-top:100px !important;
+  }
+}
+
+
+@media screen and (max-width: 654px) {
+	div.tagCloudContainer {
+	  	margin-bottom: 50px !important;
+	  	margin-top:100px !important;
+
+	  	width: 100% !important;
+	  	margin-left: auto;
+	  	margin-right: auto;
+
+  }
+}
 
 /* Flip Cards for the About Page */
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -1030,9 +1283,38 @@ div.flip-box-container {
 	float: left;
 	width: 60%;
 
-	
+	justify-content: center;
+
 }
 
+@media screen and (max-width: 1200px) {
+	
+	div.flip-box-container {
+	 display: flex;
+	float: left;
+	width: 50%;
+	}
+
+}
+
+@media screen and (max-width: 921px) {
+	
+	div.flip-box-container {
+	 display: flex;
+	float: left;
+	width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 441px) {
+	div.flip-box-container {
+		flex-direction: column !important;
+		
+
+	}
+
+}
 
 
 
@@ -1046,7 +1328,7 @@ div.container:after { /* Clear floats after the columns [W3C Adaptation] to floa
 
 div.flip-box {
   background-color: transparent;
-  width: 300px;
+  width: 100% !important;
   height: 100%;
   /*border: 1px solid #f1f1f1;*/
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -1059,6 +1341,14 @@ padding-bottom: 10px;
 
 }
 
+@media screen and (max-width: 441px) {
+	div.flip-box {
+  	margin-top: 150px !important;
+  	
+  /*border: 1px solid #f1f1f1;*/
+	}
+}
+
 /* This container is needed to position the front and back side */
 div.flip-box-inner {
   position: relative;
@@ -1067,12 +1357,22 @@ div.flip-box-inner {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 div.flip-box:hover .flip-box-inner {
   transform: rotateY(180deg);
+  
   /*border: 1px solid #f1f1f1;*/
+}
+
+@media screen and (max-width: 441px) {
+	div.flip-box:hover .flip-box-inner {
+  
+  
+  /*border: 1px solid #f1f1f1;*/
+	}
 }
 
 /* Position the front and back side */
@@ -1083,6 +1383,44 @@ div.flip-box-front, div.flip-box-back {
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
+
+
+@media screen and (max-width: 921px) {
+	div.flip-box-front, div.flip-box-back {
+	
+		margin-top: 100px;
+	  height: 300px !important;
+
+	}
+}
+
+@media screen and (max-width: 441px) {
+	div.flip-box-front{
+		margin-bottom: -300px !important;
+		margin-top: -100px;
+		height: 150px !important;
+		width: 92vw ! important;
+		perspective: 500px !important;
+		
+		margin-right: 50px !important;
+	}
+
+	div.flip-box-back {
+
+		margin-bottom: -300px !important;
+		margin-top: -100px;
+		height: 150px !important;
+		width: 92vw ! important;
+		perspective: 500px !important;
+		
+		margin-left: 4% !important;
+		margin-right: 4% !important;
+	}
+}
+
+
+
+
 
 /* Style the front side */
 div.flip-box-front {
@@ -1113,8 +1451,20 @@ div.flip-box-back {
   font-size: 12px;
   transform: rotateY(180deg);
   line-height: 200%;
+  pointer-events: none; /* allow click-through to elements below */
 
 }
+
+@media screen and (max-width: 441px) {
+	
+	div.flip-box-back {
+	 margin-right: -300px !important;
+	 
+	}
+
+}
+
+
 
 div.flip-box-back h2 {
 	 display: table-cell;
@@ -1132,6 +1482,18 @@ div.flip-box-back h2 {
 	padding-left: 5%;
 	padding-right: 5%;
 }
+
+@media screen and (max-width: 1200px) {
+	
+	div.flip-box-back h2 {
+	 font-size: 12px !important;
+
+	}
+
+}
+
+
+
 
 /* Skills and Links */
 
@@ -1154,7 +1516,7 @@ div.skillsAndLinksContainer {
    margin-left: 2%;
    margin-right: 2%;
 
-   height: 40vh;
+   height: 400px;
 
    margin-bottom: 2%;
 
@@ -1162,6 +1524,21 @@ div.skillsAndLinksContainer {
   
 }
 
+@media screen and (max-width: 921px) {
+	div.skillsAndLinksContainer{ 
+		flex-direction: column;
+		
+		height: 800px;
+	 }
+}
+
+@media screen and (max-width: 441px) {
+	div.skillsAndLinksContainer{ 
+		flex-direction: column;
+		
+		height: 950px;
+	 }
+}
 
 
 div.skillsAndLinksContainer:hover { 
@@ -1183,57 +1560,6 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 }
 
 
-@media screen and (max-width: 1200) {
-	/* Skills and Links */
-
-div.skillsAndLinksContainer { 
-	
-  /*background-color: #00000067;*/
-   display: flex-column;
-   flex-direction: column;
-  background-color: #FFFFFF;
-
-  padding-top: var(--projectSpecOutContainerTopBottomPad);
-  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
-  /*opacity: 0.5;*/
-
-   position: relative;
-
-   border-radius: 12px;
-
-   width: 96%;
-
-   margin-left: 2%;
-   margin-right: 2%;
-
-   height: 40vh;
-
-   margin-bottom: 2%;
-
-   z-index: 2;
-  
-}
-
-
-
-div.skillsAndLinksContainer:hover { 
-	
-
-  /*background-color: #181818CC;*/
-
-   background-color: #000000CD;
-
-  
-}
-
-div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-	
-  content: "";
-  display: table;
-  clear: both;
-  
-}
-}
 
 /*
 	|| PRELOADER ANIMATIONS
@@ -1261,3 +1587,90 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 	z-index: 999;
 }
 
+/*
+
+	|| CONTACT ME PAGE
+
+*/
+
+div.contactContainer {
+	display: flex;
+	height: auto;
+	width: 98%;
+	margin-right: 2%;
+	margin-left: 2%;
+	background-color: #181818CC;
+	flex-direction: column;
+
+	  border-radius: 36px 0px 0px 36px;
+}
+
+
+.contact-flip-box {
+  background-color: transparent;
+  width: 95%;
+  height: 120px;
+  /*border: 1px solid #f1f1f1;*/
+
+
+
+}
+
+.contact-flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+
+}
+
+.contact-flip-box:hover .contact-flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.contact-flip-box-front, .contact-flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+    border-radius: 36px 0px 0px 36px;
+}
+
+.contact-flip-box-front {
+  
+
+  background-color: #181818DD;
+  color: black;
+
+}
+
+.contact-flip-box-front h2 {
+	 display: inline-block;
+	color: white;
+	vertical-align: middle;
+	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+
+ 
+
+}
+
+.contact-flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  transform: rotateX(180deg);
+
+}
+
+.contact-flip-box-back h2 {
+vertical-align: middle;
+  display: inline-block;
+  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+  
+}

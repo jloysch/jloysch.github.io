@@ -30,7 +30,7 @@
 
 		<div id="projectDisplayModule">
 
-			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a2 class="projectDisplayModuleDescription", href="{{ hrefs[project] }}">{{descriptors[project]}}</a2></div>
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a class="projectDisplayModuleDescription", href="{{ hrefs[project] }}">{{descriptors[project]}}</a></div>
 			<div class= 
 			{% if hideNav %}
 				"projectDisplayModuleGalleryCollapsed"
@@ -40,7 +40,13 @@
 				{% else %}
 					projectDisplayModuleGalleryEmptyCollapsed
 				{% endif %}
-			{% endif %}>{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+			{% endif %}, onclick="location.href='{{ hrefs[project] }}'">{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
 
 			<div class= "projectDisplayListTweenPadding"></div>
 

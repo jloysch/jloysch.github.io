@@ -22,7 +22,75 @@
 
 		{% block about %}
 		
+		<!--
+
+			Planning to just override styles inline verses making more classes in the styles, already getting bloated. Should modularize it via media query.. idk if the imports work without being finnicky though. Noticeable reduction? Maybe.. I mean like even if I can widdle it down 200kb or something it counts. *shrug*
+		-->
+
+		<div class="contactContainer">
+			<div class="contact-flip-box", onclick="location.href='https://www.linkedin.com/in/jloysch'">
+			  <div class="contact-flip-box-inner">
+			    <div class="contact-flip-box-front", onclick="location.href='https://www.linkedin.com/in/jloysch'">>
+			      <h2>LinkedIn</h2>
+			    </div>
+			    <div class="contact-flip-box-back", style="background-color:#0072b1;">
+			      <h2>/in/jloysch/</h2>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+
+				<div class="divPadA"></div>
+
+		<div class="contactContainer">
+			<div class="contact-flip-box">
+			  <div class="contact-flip-box-inner">
+			    <div class="contact-flip-box-front">
+			      <h2>Phone</h2>
+			    </div>
+			    <div class="contact-flip-box-back", style="background-color:#F5F5F533;vertical-align: middle;">
+			      <h2> (570)-256-1350 (M-F, 5-8 EST)</h2>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+
+		<div class="divPadA"></div>
+
+		<div class="contactContainer">
+			<div class="contact-flip-box">
+			  <div class="contact-flip-box-inner">
+			    <div class="contact-flip-box-front">
+			      <h2>E-mail</h2>
+			    </div>
+			    <div class="contact-flip-box-back", style="background-color:#F5F5F533;vertical-align: middle;">
+			      <h2>joshualoysch (at) gmail (dot) com</h2>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class="divPadA"></div>
+
+		<div class="contactContainer">
+			<div class="contact-flip-box", onclick="location.href='https://github.com/jloysch'">
+			  <div class="contact-flip-box-inner">
+			    <div class="contact-flip-box-front">
+			      <h2>GitHub</h2>
+			    </div>
+			    <div class="contact-flip-box-back", style="background-color:#F5F5F533;vertical-align: middle;">
+			      <h2 onclick="location.href='https://github.com/jloysch">/jloysch</h2>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<div class="divPadA"></div>
+
 		{% endblock %}
+
 	</body>
 
 </html>

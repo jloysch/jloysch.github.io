@@ -71,7 +71,7 @@ html, body {
 	background-image: url("koi5.png");
 	/*background-size: cover;*/
 	
-	text-overflow: ellipsis;
+	
 
 	z-index: 0;
 
@@ -181,8 +181,38 @@ div.navigationBar {
     z-index: 2;
 }
 
+@media screen and (max-width: 780px) {
+	div.navigationBar {
+		display: flex;
+		flex-direction: column;
+		height: 160px;
+		background-color: #181818CC;
+
+		/*transform: translateX(-90%) !important;*/
+		/*
+		transform: rotate(-90deg) translate(-100%, 0);
+		transform-origin: left top;
+		*/
+	}
+}
+
+
+
+
+
 div.navigationBar a {
 	text-decoration: none;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 780px) {
+	div.navigationBar a {
+
+		font-size: 18px;
+
+		
+
+	}
 }
 
 div.navigationBar:hover {  }
@@ -190,7 +220,7 @@ div.navigationBar:hover {  }
 div.navigationBar span {
 
 	display: table-cell;
-
+	width: 100%;
 	line-height: normal;
     text-align: center;
     vertical-align: middle;
@@ -198,7 +228,26 @@ div.navigationBar span {
     font-size: var(--navigationBarFontSize);
 
     text-decoration: none;
-    
+
+   
+
+
+}
+
+@media screen and (max-width: 780px) { /*nav switch modes bp*/
+	div.navigationBar span {
+
+		margin-top: 2px;
+		margin-bottom: 2px;
+		
+		 /*background-color: #c0392b13;*/
+	    border: 1px solid #98afd1;
+	    border-radius: 8px;
+	    width:98%; /* therefore a 2% margin on our slight outline here. */
+   
+	    background-color: #181818;
+
+	}
 }
 
 div.navigationBar a[href]:hover {
@@ -219,23 +268,34 @@ div.projectDisplayModuleHeader {
 
 	display: block;
 	
-	white-space: pre-line;
+	
 	/*background-color: var(--paletteShadeC);*/
 	background-color: #181818;
 
 
 	/*background-color: #181818;*/
-	text-overflow: ellipsis;
+
 	content: "";
 	
 	border-radius: 8px 0px 0px 0px;
 	width: 98%;
+	max-width: 98%;
 	margin-left: 2%;
 	height: 32px;
+	max-height: 32px;
 
  	 position: relative;
     z-index: 2;
+
+    overflow-wrap: break-word;
+    
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+
 }
+
 
 div.projectDisplayModuleGalleryExpanded {
 
@@ -252,6 +312,29 @@ div.projectDisplayModuleGalleryExpanded {
 	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 	border-radius: 0px 0px 0px 8px;
 
+
+
+}
+
+@media screen and (max-width: 780px) {
+	div.projectDisplayModuleGalleryExpanded {
+
+	display: block;
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+		 white-space: nowrap;
+	justify-content: center;
+	
+	margin-left: 2%;
+	width: 96%;
+	height: 128px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+
+
+	}
 }
 
 div.projectDisplayModuleGalleryExpanded img {
@@ -298,11 +381,9 @@ div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the 
 
     z-index: 2;
 
-
-
-
-
 }
+
+
 
 div.projectDisplayModuleGalleryCollapsed img {
 	max-width: 100%;
@@ -376,6 +457,29 @@ div.projectDisplayModuleGalleryCollapsed:hover {
     z-index: 2;
 }
 
+
+@media screen and (max-width: 780px) {
+	div.projectDisplayModuleGalleryCollapsed:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+
+	height: 128px !important;
+
+	 position: relative;
+    z-index: 2;
+	}
+
+	div.projectDisplayModuleGalleryExpanded:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+
+	height: 128px !important;
+
+	  position: relative;
+    z-index: 2;
+}
+}
+
 #projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
 
 	background-color: var(--paletteShadeB) !important;
@@ -383,6 +487,18 @@ div.projectDisplayModuleGalleryCollapsed:hover {
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
+}
+
+@media screen and (max-width: 780px) {
+
+	#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 128px !important;
+	}
 }
 
 #projectMediaPoolContainer:hover {
@@ -402,21 +518,33 @@ a.projectDisplayModuleTitle {
 
   	margin-left: 12px;
 	font-size: 20px;
-	width: 10px;
+	width: 40%;
+	min-width: 40%;
 	max-width: 100%;
+
 
 	 z-index: 3;
 }
 
-a2.projectDisplayModuleDescription {
+a.projectDisplayModuleDescription {
+
+	display: inline-block; /* Makes the anchor tag be able to actually overflow the text properly into ellipsis */
 
 	color: var(--paletteShadeD);
 
 	vertical-align: middle;
 
-	max-width: 100%;
-	width: 100px;
-	margin-left: 12px;
+	
+	width: 55%;
+	margin-left: 2%;
+	max-width: 55%;
+	margin-right: 8%;
+
+   
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
 		
 }
 
@@ -432,7 +560,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 
   margin-left: auto;
   margin-right: auto;
-  margin-top:auto;
+ margin-top: 24px;
   margin-bottom:auto;
 
 
@@ -441,18 +569,24 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 	text-align: center;
 
 		
-  width: 30%;
-  height: 100%;
-
-
-
-	overflow: hidden;
+  width: 320px;
+  height: auto;
 
 
 
 
 
 }
+
+
+@media screen and (max-width: 808px) {
+	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+	 	width: 360px !important;
+	 	height: auto !important;
+
+	}
+}
+
 
 div.projectGalleryShowcaseImage img { 
 /*
@@ -492,6 +626,14 @@ max-height: 100%;
 
 }
 
+@media screen and (max-width: 808px) {
+	div.projectGalleryShowcaseImage img { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+	 	width: 100%;
+	 	height: auto !important;
+
+	}
+}
+
 div.projectWriteup { 
 
   float: left;
@@ -517,7 +659,17 @@ div.projectWriteup h3 {
   font-stretch: normal; 
   line-height: 50%;
 
+  margin-top: 24px;
+  margin-bottom: 0px;
 
+
+}
+
+@media screen and (max-width: 670px) {
+	div.projectWriteup h3 { 
+	  line-height: 100% !important;
+	  text-align: center;
+	}
 }
 
 div.projectWriteup h4 { 
@@ -525,11 +677,24 @@ div.projectWriteup h4 {
   color: var(--paletteShadeD);
 }
 
+@media screen and (max-width: 670px) {
+	div.projectWriteup h4 { 
+	  
+	  text-align: center;
+	}
+}
+
 div.projectWriteup p { 
   font-style: italic;
   color: var(--paletteShadeD);
 }
 
+@media screen and (max-width: 670px) {
+	div.projectWriteup p { 
+	
+	  text-align: center;
+	}
+}
 
 div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/ 
 	
@@ -543,19 +708,25 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
   vertical-align: middle;
 
 
-  height: 80%;
+  height: auto;
   width: 96%;
 
   margin-right: 2%;
   margin-left: 2%;
 
-  padding-bottom: 20%;
-  margin-bottom: 20%;
+  
+
 
   border-radius: 12px;
 
   /*opacity: 0.5;*/
   
+}
+
+@media screen and (max-width: 808px) {
+	div.projectSpecOut {
+		flex-direction: column;
+	}
 }
 
 div.projectSpecOut:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
@@ -633,9 +804,9 @@ div.projectSpecGallery img {
 div.projectSpecAssetOutlet {
 	display: block;
 
-	background-color: var(--projectSpecAssetOutletDivColor);
+	/*background-color: var(--projectSpecAssetOutletDivColor);*/
 
-	height: 128px;
+	height: 64px;
 	width: 100%;
 
 	max-width: 100%;
@@ -780,7 +951,7 @@ div.navigationBarBottomPad {
 */
 
 div.aboutMeContainer { 
-	
+	display: flex;
   /*background-color: #00000067;*/
   background-color: #000000CC;
 
@@ -799,6 +970,38 @@ div.aboutMeContainer {
     margin-left: 2%;
   
 }
+
+@media screen and (max-width: 921px) {
+	div.aboutMeContainer { 
+		flex-direction: column !important;
+
+		height: 400px;
+	 }
+}
+
+@media screen and (max-width: 466px) {
+	div.aboutMeContainer {
+		height: 450px;
+	}
+}
+
+@media screen and (max-width: 357px) {
+	div.aboutMeContainer {
+		height: 490px;
+	}
+}
+
+@media screen and (max-width: 313px) { /* Put your hands up and follow me!  */
+	div.aboutMeContainer {
+		word-wrap: break-word !important; /* Please don't have this tiny of a screen lol */
+		
+		/* TODO >> ADD IN SUPPORT FOR THESE TINY SCREENS */
+
+		overflow: hidden;
+		height: 520px;
+	}
+}
+
 
 div.aboutMeContainer:hover { 
 	
@@ -840,7 +1043,7 @@ div.aboutMeContainer img {
 
   display: block;
 
-  vertical-align: middle;
+ 
   
 
   margin-left: auto;
@@ -851,14 +1054,48 @@ div.aboutMeContainer img {
 
 }
 
+
 div.aboutMeImage {
 	float: left;
 	width: 20%;
 }
 
+
+@media screen and (max-width: 921px) {
+	div.aboutMeImage{ 
+		float: center !important;
+		width: 100% !important;
+	 }
+}
+
+
 div.aboutMeBlurbs {
 	float: left;
 	width: 80%;
+}
+
+@media screen and (max-width: 921px) {
+	div.aboutMeBlurbs{ 
+
+		width: 100% !important;
+		display: flex !important;
+
+		flex-direction: column !important;
+
+		float: center !important;
+		
+
+		margin-left: auto !important;
+		margin-right: auto !important;
+
+		justify-content: center !important;
+		
+
+		
+
+		 text-align: center;
+
+	 }
 }
 
 div.aboutMeBlurbs h1 {
@@ -871,6 +1108,13 @@ div.aboutMeBlurbs p {
 	padding-right: 30px;
 }
 
+@media screen and (max-width: 921px) {
+	div.aboutMeBlurbs{ 
+		padding-right: 2% !important;
+		padding-left: 2% !important
+
+	 }
+}
 div.tagCloudContent {
 	color: white;
 	/*
@@ -1038,6 +1282,8 @@ div.flip-box-container {
 	 display: flex;
 	float: left;
 	width: 60%;
+
+	justify-content: center;
 
 }
 
@@ -1290,7 +1536,7 @@ div.skillsAndLinksContainer {
 	div.skillsAndLinksContainer{ 
 		flex-direction: column;
 		
-		height: 900px;
+		height: 950px;
 	 }
 }
 
@@ -1341,3 +1587,90 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 	z-index: 999;
 }
 
+/*
+
+	|| CONTACT ME PAGE
+
+*/
+
+div.contactContainer {
+	display: flex;
+	height: auto;
+	width: 98%;
+	margin-right: 2%;
+	margin-left: 2%;
+	background-color: #181818CC;
+	flex-direction: column;
+
+	  border-radius: 36px 0px 0px 36px;
+}
+
+
+.contact-flip-box {
+  background-color: transparent;
+  width: 95%;
+  height: 120px;
+  /*border: 1px solid #f1f1f1;*/
+
+
+
+}
+
+.contact-flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+
+}
+
+.contact-flip-box:hover .contact-flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.contact-flip-box-front, .contact-flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+    border-radius: 36px 0px 0px 36px;
+}
+
+.contact-flip-box-front {
+  
+
+  background-color: #181818DD;
+  color: black;
+
+}
+
+.contact-flip-box-front h2 {
+	 display: inline-block;
+	color: white;
+	vertical-align: middle;
+	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+
+ 
+
+}
+
+.contact-flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  transform: rotateX(180deg);
+
+}
+
+.contact-flip-box-back h2 {
+vertical-align: middle;
+  display: inline-block;
+  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+  
+}
