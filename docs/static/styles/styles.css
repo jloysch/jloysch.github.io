@@ -81,15 +81,17 @@ html, body {
 	
 	 max-width: 100%;
 
+	
+	
+
+
 /*
 	 width: 99.9%;
 	margin-right: 0px;
 	margin-left: 0px;
 	*/
 
-	margin-right: -10% !important;
-	margin-left: 0px;
-
+	
 
 
 	overflow-y: scroll !important;
@@ -98,8 +100,6 @@ html, body {
 	
 	overflow-x: hidden !important;
 
-	
-	overflow: auto !important;
 	-webkit-overflow-scrolling: touch;
 
 	overscroll-behavior: contain !important;
@@ -197,7 +197,7 @@ div.navigationBar {
     position: relative;
 
     margin-top: 32px;
-    margin-left: -2%;
+    margin-left: 0%;
     margin-right: 2%;
 
     justify-content: center;
@@ -1201,7 +1201,6 @@ div.aboutMeBlurbs p {
 
 	 }
 }
-
 div.tagCloudContent {
 	color: white;
 	/*
@@ -1709,8 +1708,8 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 }
 
 .loader {
-	width: 100%;
-	height: 300px;
+	width: 30%;
+	height: auto;
 	z-index: 999;
 
 			 max-width: 100%;
