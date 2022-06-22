@@ -1372,7 +1372,7 @@ div.tagCloudContent {
 div.flip-box-container {
 	 display: flex;
 	float: left;
-	width: 60%;
+
 
 	justify-content: center;
 		 max-width: 100%;
@@ -1426,8 +1426,7 @@ div.flip-box {
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
 	
-padding-right: 10px;
-padding-left: 10px;
+
 padding-top: 10px;
 padding-bottom: 10px;
 	 max-width: 100%;
@@ -1507,7 +1506,7 @@ div.flip-box-front, div.flip-box-back {
 		margin-bottom: -300px !important;
 		margin-top: -100px;
 		height: 150px !important;
-		width: 92% ! important;
+		
 		perspective: 500px !important;
 		
 		margin-right: 50px !important;
@@ -1518,11 +1517,14 @@ div.flip-box-front, div.flip-box-back {
 		margin-bottom: -300px !important;
 		margin-top: -100px;
 		height: 150px !important;
-		width: 92% ! important;
-		perspective: 500px !important;
 		
-		margin-left: 4% !important;
-		margin-right: 4% !important;
+		perspective: 500px !important;
+
+		
+
+		
+		
+
 	}
 }
 
@@ -1568,8 +1570,7 @@ div.flip-box-back {
 @media screen and (max-width: 441px) {
 	
 	div.flip-box-back {
-	 margin-right: -300px !important;
-	 
+	 margin-right: 0px;
 	}
 
 }
@@ -1588,7 +1589,7 @@ div.flip-box-back h2 {
 
 	text-align: center;
 
-	width: 90%;
+	width: 80%;
 	padding-left: 5%;
 	padding-right: 5%;
 }
@@ -1796,7 +1797,7 @@ div.contactContainer {
 	 display: inline-block;
 	color: white;
 	vertical-align: middle;
-	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+	  line-height: .75em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
 	  	 max-width: 100%;
 
@@ -1810,6 +1811,7 @@ div.contactContainer {
   text-align: center;
   vertical-align: middle;
   transform: rotateX(180deg);
+  font-size: .75em;
 
   	 max-width: 100%;
 
