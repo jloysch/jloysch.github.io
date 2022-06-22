@@ -78,15 +78,25 @@ html, body {
 	
 
 	height: 100%;
-	width: 100%;
+	
+	 max-width: 100%;
+
+/*
+	 width: 99.9%;
 	margin-right: 0px;
 	margin-left: 0px;
+	*/
+
+	margin-right: -10% !important;
+	margin-left: 0px;
+
+
 
 	overflow-y: scroll !important;
 
 
 	
-
+	overflow-x: hidden !important;
 
 	
 	overflow: auto !important;
@@ -98,6 +108,10 @@ html, body {
 
 }
 
+
+body {
+  position: relative !important;
+}
 
 
 /*
@@ -160,6 +174,8 @@ html, body {
 
 div.navigationBar {
 
+
+
 	display: table;
 	table-layout: fixed; /* For cells of equal size */
 
@@ -176,6 +192,7 @@ div.navigationBar {
     border-radius: var(--navigationBarBorderRadius);
 	height: var(--navigationBarHeight);
     width: 80%;
+   	max-width: 100%;
 
     position: relative;
 
@@ -210,12 +227,13 @@ div.navigationBar {
 div.navigationBar a {
 	text-decoration: none;
 	font-size: 20px;
+	max-width: 100%;
 }
 
 @media screen and (max-width: 780px) {
 	div.navigationBar a {
 
-		font-size: 18px;
+		font-size: 1em;
 
 		
 
@@ -234,7 +252,7 @@ div.navigationBar span {
     font-size: var(--navigationBarFontSize);
 
     text-decoration: none;
-
+    	 max-width: 100%;
    
 
 
@@ -253,16 +271,22 @@ div.navigationBar span {
    
 	    background-color: #181818;
 
+
 	}
 }
 
 div.navigationBar a[href]:hover, div.navigationBar a[href]:active {
 	color: var(--hoverColorA);
+		 max-width: 100%;
 }
 
-a[href] { color: var(--paletteShadeD); } /* TODO: Consider changing this (intended for navbar) to it's own seperate tag */
+a[href] { 
+	color: var(--paletteShadeD); 
+	max-width: 100%;
+	} /* TODO: Consider changing this (intended for navbar) to it's own seperate tag */
 
 b.navLinkHighlight {
+	 max-width: 100%;
 	color: var(--hoverColorA);
 }
 
@@ -319,7 +343,7 @@ div.projectDisplayModuleGalleryExpanded {
 	border-radius: 0px 0px 0px 8px;
 
 
-
+		 max-width: 100%;
 }
 
 @media screen and (max-width: 780px) {
@@ -339,6 +363,7 @@ div.projectDisplayModuleGalleryExpanded {
 	border-radius: 0px 0px 0px 8px;
 
 
+		 max-width: 100%;
 
 	}
 }
@@ -357,6 +382,8 @@ div.projectDisplayModuleGalleryExpanded img {
 
 	   justify-content: space-around;
 	    align-items: flex-start;
+
+
 }
 
 /* Clear floats after image containers */
@@ -364,6 +391,8 @@ div.projectDisplayModuleGalleryExpanded::after {
   content: "";
   clear: both;
   display: table;
+
+  	 max-width: 100%;
 
 }
 
@@ -386,6 +415,8 @@ div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the 
 	 position: relative;
 
     z-index: 2;
+
+    	 max-width: 100%;
 
 }
 
@@ -425,6 +456,8 @@ div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call
 
 	 position: relative;
     z-index: 2;
+
+    	 max-width: 100%;
 }
 
 
@@ -432,6 +465,7 @@ div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call
 
 div.projectDisplayModuleHeader:hover, div.projectDisplayModuleHeader:active /*, div.projectListWireframe:active .projectListWireframe*/{
 	background-color: #000000 !important;
+
 
 }
 
@@ -451,6 +485,7 @@ div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryEx
 
 	  position: relative;
     z-index: 2;
+    	 max-width: 100%;
 }
 
 div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
@@ -597,6 +632,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
   width: 320px;
   height: auto;
 
+max-width: 100%;
 
 
 
@@ -608,6 +644,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
 	 	width: 360px !important;
 	 	height: auto !important;
+	 	max-width: 100%;
 
 	}
 }
@@ -654,6 +691,7 @@ max-height: 100%;
 @media screen and (max-width: 808px) {
 	div.projectGalleryShowcaseImage img { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
 	 	width: 100%;
+	 	 max-width: 100%;
 	 	height: auto !important;
 
 	}
@@ -668,6 +706,8 @@ div.projectWriteup {
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
+
+  max-width: 100%;
 }
 
 div.projectWriteup h3 { 
@@ -687,6 +727,8 @@ div.projectWriteup h3 {
   margin-top: 24px;
   margin-bottom: 0px;
 
+  	 max-width: 100%;
+
 
 }
 
@@ -700,6 +742,7 @@ div.projectWriteup h3 {
 div.projectWriteup h4 { 
   font-style: normal;
   color: var(--paletteShadeD);
+  	 max-width: 100%;
 }
 
 @media screen and (max-width: 670px) {
@@ -710,6 +753,7 @@ div.projectWriteup h4 {
 }
 
 div.projectWriteup p { 
+		 max-width: 100%;
   font-style: italic;
   color: var(--paletteShadeD);
 }
@@ -745,6 +789,8 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
   border-radius: 12px;
 
   /*opacity: 0.5;*/
+
+  	 max-width: 100%;
   
 }
 
@@ -792,6 +838,7 @@ div.projectSpecGallery {
 	width: 96%;
 	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 	border-radius: var(--projectSpecOutGalleryBorderSize);
+		 max-width: 100%;
 }
 
 div.projectSpecGallery img {
@@ -947,6 +994,8 @@ p.projectSpecParagraph {
 	font-stretch: normal; 
 	line-height: initial;
 
+		 max-width: 100%;
+
 }
 
 /*
@@ -956,6 +1005,7 @@ p.projectSpecParagraph {
 div.projectDisplayListTweenPadding {
 
 	width: 100%;
+		 max-width: 100%;
 	height: 32px;
 
 }
@@ -963,11 +1013,13 @@ div.projectDisplayListTweenPadding {
 div.divPadA {
 
 	width: 100%;
+		 max-width: 100%;
 	height: 50px;
 }
 
 div.navigationBarBottomPad {
 	width: 100%;
+		 max-width: 100%;
 	height: 50px;
 }
 
@@ -993,6 +1045,8 @@ div.aboutMeContainer {
 
     margin-right: 2%;
     margin-left: 2%;
+
+    	 max-width: 100%;
   
 }
 
@@ -1042,6 +1096,8 @@ div.aboutMeContainer:after { /* Clear floats after the columns [W3C Adaptation] 
   content: "";
   display: table;
   clear: both;
+
+  	 max-width: 100%;
   
 }
 
@@ -1083,6 +1139,7 @@ div.aboutMeContainer img {
 div.aboutMeImage {
 	float: left;
 	width: 20%;
+		 max-width: 100%;
 }
 
 
@@ -1090,6 +1147,7 @@ div.aboutMeImage {
 	div.aboutMeImage{ 
 		float: center !important;
 		width: 100% !important;
+
 	 }
 }
 
@@ -1097,6 +1155,7 @@ div.aboutMeImage {
 div.aboutMeBlurbs {
 	float: left;
 	width: 80%;
+		 max-width: 100%;
 }
 
 @media screen and (max-width: 921px) {
@@ -1125,12 +1184,14 @@ div.aboutMeBlurbs {
 
 div.aboutMeBlurbs h1 {
 	color: var(--paletteShadeD);
+		 max-width: 100%;
 }
 
 div.aboutMeBlurbs p {
 	color: var(--paletteShadeD);
 
 	padding-right: 30px;
+		 max-width: 100%;
 }
 
 @media screen and (max-width: 921px) {
@@ -1140,6 +1201,7 @@ div.aboutMeBlurbs p {
 
 	 }
 }
+
 div.tagCloudContent {
 	color: white;
 	/*
@@ -1156,6 +1218,8 @@ div.tagCloudContent {
    margin-right: auto;
    margin-top: auto;
    margin-bottom: auto;
+
+   	 max-width: 100%;
 }
 
 
@@ -1201,6 +1265,8 @@ div.tagCloudContent {
    margin-right: auto;
    margin-top: auto;
    margin-bottom: auto;
+
+   	 max-width: 100%;
 
 
   }
@@ -1276,6 +1342,7 @@ div.tagCloudContent {
 	margin-bottom: 2%;
 
 	vertical-align: center;
+		 max-width: 100%;
   }
 
 
@@ -1309,6 +1376,7 @@ div.flip-box-container {
 	width: 60%;
 
 	justify-content: center;
+		 max-width: 100%;
 
 }
 
@@ -1363,6 +1431,7 @@ padding-right: 10px;
 padding-left: 10px;
 padding-top: 10px;
 padding-bottom: 10px;
+	 max-width: 100%;
 
 }
 
@@ -1382,6 +1451,7 @@ div.flip-box-inner {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  	 max-width: 100%;
 
 }
 
@@ -1438,7 +1508,7 @@ div.flip-box-front, div.flip-box-back {
 		margin-bottom: -300px !important;
 		margin-top: -100px;
 		height: 150px !important;
-		width: 92vw ! important;
+		width: 92% ! important;
 		perspective: 500px !important;
 		
 		margin-right: 50px !important;
@@ -1449,7 +1519,7 @@ div.flip-box-front, div.flip-box-back {
 		margin-bottom: -300px !important;
 		margin-top: -100px;
 		height: 150px !important;
-		width: 92vw ! important;
+		width: 92% ! important;
 		perspective: 500px !important;
 		
 		margin-left: 4% !important;
@@ -1466,13 +1536,14 @@ div.flip-box-front {
 	display: table; /*enables vertical align properties to be viewed */
   background-color: #181818;
   color: white;
+  	 max-width: 100%;
 }
 
 div.flip-box-front h2 {
 
 	 display: table-cell;
   vertical-align: middle;
-
+  	 max-width: 100%;
 	
 	height: 100%;
 
@@ -1491,6 +1562,7 @@ div.flip-box-back {
   transform: rotateY(180deg);
   line-height: 200%;
   pointer-events: none; /* allow click-through to elements below */
+  	 max-width: 100%;
 
 }
 
@@ -1509,7 +1581,7 @@ div.flip-box-back h2 {
 	 display: table-cell;
   vertical-align: middle;
 
-
+  	 max-width: 100%;
 	height: 100%;
 
 
@@ -1560,6 +1632,8 @@ div.skillsAndLinksContainer {
    margin-bottom: 2%;
 
    z-index: 2;
+
+   	 max-width: 100%;
   
 }
 
@@ -1605,6 +1679,8 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
   content: "";
   display: table;
   clear: both;
+
+  	 max-width: 100%;
   
 }
 
@@ -1628,12 +1704,16 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
      overflow: scroll;
 
 
+     	 max-width: 100%;
+
 }
 
 .loader {
-	width: 300px;
+	width: 100%;
 	height: 300px;
 	z-index: 999;
+
+			 max-width: 100%;
 }
 
 /*
@@ -1652,6 +1732,8 @@ div.contactContainer {
 	flex-direction: column;
 
 	  border-radius: 36px 0px 0px 36px;
+
+	  	 max-width: 100%;s
 }
 
 
@@ -1660,6 +1742,8 @@ div.contactContainer {
   width: 95%;
   height: 120px;
   /*border: 1px solid #f1f1f1;*/
+
+  	 max-width: 100%;
 
 
 
@@ -1672,6 +1756,8 @@ div.contactContainer {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+
+  	 max-width: 100%;
 
 
 }
@@ -1693,6 +1779,8 @@ div.contactContainer {
   backface-visibility: hidden;
 
     border-radius: 36px 0px 0px 36px;
+
+    	 max-width: 100%;
 }
 
 .contact-flip-box-front {
@@ -1701,6 +1789,8 @@ div.contactContainer {
   background-color: #181818DD;
   color: black;
 
+  	 max-width: 100%;
+
 }
 
 .contact-flip-box-front h2 {
@@ -1708,6 +1798,8 @@ div.contactContainer {
 	color: white;
 	vertical-align: middle;
 	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+
+	  	 max-width: 100%;
 
  
 
@@ -1720,11 +1812,15 @@ div.contactContainer {
   vertical-align: middle;
   transform: rotateX(180deg);
 
+  	 max-width: 100%;
+
 }
 
 .contact-flip-box-back h2 {
 vertical-align: middle;
   display: inline-block;
   line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+
+  	 max-width: 100%;
   
 }
