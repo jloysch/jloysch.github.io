@@ -1372,7 +1372,7 @@ div.tagCloudContent {
 div.flip-box-container {
 	 display: flex;
 	float: left;
-
+	width: 60%;
 
 	justify-content: center;
 		 max-width: 100%;
@@ -1426,7 +1426,8 @@ div.flip-box {
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
 	
-
+padding-right: 10px;
+padding-left: 10px;
 padding-top: 10px;
 padding-bottom: 10px;
 	 max-width: 100%;
@@ -1436,9 +1437,10 @@ padding-bottom: 10px;
 @media screen and (max-width: 441px) {
 	div.flip-box {
   	margin-top: 150px !important;
-  	
-  /*border: 1px solid #f1f1f1;*/
-	}
+  	padding-right: 0;
+  	padding-left: 0;
+  	/*border: 1px solid #f1f1f1;*/
+ }
 }
 
 /* This container is needed to position the front and back side */
@@ -1506,26 +1508,12 @@ div.flip-box-front, div.flip-box-back {
 		margin-bottom: -300px !important;
 		margin-top: -100px;
 		height: 150px !important;
-		
+		width: 100%;
 		perspective: 500px !important;
-		
 		margin-right: 50px !important;
 	}
 
-	div.flip-box-back {
-
-		margin-bottom: -300px !important;
-		margin-top: -100px;
-		height: 150px !important;
-		
-		perspective: 500px !important;
-
-		
-
-		
-		
-
-	}
+	div.flip-box-back {margin-bottom: -300px !important;margin-top: -100px;height: 150px !important;width: 100%;perspective: 500px !important;margin-left: 0;}
 }
 
 
@@ -1540,19 +1528,7 @@ div.flip-box-front {
   	 max-width: 100%;
 }
 
-div.flip-box-front h2 {
-
-	 display: table-cell;
-  vertical-align: middle;
-  	 max-width: 100%;
-	
-	height: 100%;
-
-	text-align: center;
-	width: 96%;
-	margin-left: 2%;
-	margin-right: 2%;
-}
+div.flip-box-front h2 {display: table-cell;vertical-align: middle;max-width: 100%;height: 100%;text-align: center;width: 100%;margin-left: 0;margin-right: 0;}
 
 /* Style the back side */
 div.flip-box-back {
@@ -1570,7 +1546,8 @@ div.flip-box-back {
 @media screen and (max-width: 441px) {
 	
 	div.flip-box-back {
-	 margin-right: 0px;
+	 margin-right: -300px !important;
+	 
 	}
 
 }
@@ -1797,7 +1774,7 @@ div.contactContainer {
 	 display: inline-block;
 	color: white;
 	vertical-align: middle;
-	  line-height: .75em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
 	  	 max-width: 100%;
 
@@ -1811,7 +1788,6 @@ div.contactContainer {
   text-align: center;
   vertical-align: middle;
   transform: rotateX(180deg);
-  font-size: .75em;
 
   	 max-width: 100%;
 
