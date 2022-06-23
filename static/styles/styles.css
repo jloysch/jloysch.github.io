@@ -1686,7 +1686,7 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 }
 
 .loader {
-	width: 30%;
+	width: 12.5%;
 	height: auto;
 	z-index: 999;
 
