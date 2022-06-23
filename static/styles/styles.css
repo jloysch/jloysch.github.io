@@ -1696,8 +1696,8 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 */
 
 .loader-wrapper {
-     width: 100%;
-     height: 100%;
+     width: 100vw;
+     height: 100vh;
      position: fixed;
      top: 0;
      left: 0;
@@ -1705,8 +1705,8 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
      display: flex;
      justify-content: center;
      align-items: center;
-     z-index: 998;
-     overflow: scroll;
+     z-index: 999;
+     overflow: hidden;
 
 
      	 max-width: 100%;
@@ -1716,7 +1716,7 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 .loader {
 	width: 12.5%;
 	height: auto;
-	z-index: 999;
+	z-index: 1000;
 
 			 max-width: 100%;
 }
