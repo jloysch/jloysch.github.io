@@ -348,6 +348,8 @@ def getProjectSpec(subpath):
 		crumb="projects"
 		mimetype="text/html"
 
+		gallery=gallery[::-1]  #reverse it since the gallery was backwards before.
+
 		#session['projectSpec'] = [navigation_sections, crumb, mimetype, showcase, projectManifest['title'], projectManifest['description'], projectManifest['technologies'], gallery, projectManifest['platform'], (len(projectManifest['assets']) > 0)]
 		
 		#return set(page.url for page in self.getProjectSpec(subpath))
