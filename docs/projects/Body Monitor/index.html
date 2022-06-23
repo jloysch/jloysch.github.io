@@ -230,7 +230,7 @@
 			<div class="projectSpecOut">
 				<div class="projectGalleryShowcaseImage"><img src=
 																  	"/static/projects/Body Monitor/media/showcase/showcase.png"
-																  ></img></div>
+																   id="imgShowcase"></img></div>
 				<div class="projectWriteup">
 
 					<h3>Body Monitor</h3>
@@ -243,7 +243,7 @@
 					
 					
 
-					<div class="projectSpecGallery"> <img src="/static/projects/Body Monitor/media/gallery/0.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/1.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/3.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/2.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/7.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/5.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/4.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/8.jpg"></img> </div>
+					<div class="projectSpecGallery"> <img src="/static/projects/Body Monitor/media/gallery/0.jpg", id="/static/projects/Body Monitor/media/gallery/0.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/1.jpg", id="/static/projects/Body Monitor/media/gallery/1.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/3.jpg", id="/static/projects/Body Monitor/media/gallery/3.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/2.jpg", id="/static/projects/Body Monitor/media/gallery/2.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/7.jpg", id="/static/projects/Body Monitor/media/gallery/7.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/5.jpg", id="/static/projects/Body Monitor/media/gallery/5.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/4.jpg", id="/static/projects/Body Monitor/media/gallery/4.jpg"></img><img src="/static/projects/Body Monitor/media/gallery/8.jpg", id="/static/projects/Body Monitor/media/gallery/8.jpg"></img> </div>
 
 					<div class= "divPadA"></div>
 
@@ -264,12 +264,18 @@
 				</div>
 			</div>
 
+			<script>
 
+				function showcaseIt() {
 
-			
+				    if (document.getElementById("imgShowcase").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+				    } else {
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
+				    }
+				}
 
-
-			
+			</script>	
 	</body>
 
 	

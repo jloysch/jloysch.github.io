@@ -29,7 +29,7 @@
 																  	"{{showcaseImage}}"
 																  {% else %}
 																  	"{{ url_for('static',filename='projectShowcasePlaceholder.jpeg') }}"
-																  {% endif %}></img></div>
+																  {% endif %} id="imgShowcase"></img></div>
 				<div class="projectWriteup">
 
 					<h3>{{projectTitle}}</h3>
@@ -44,7 +44,7 @@
 					{% endif %}
 					
 
-					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}"></img>{% endfor %} </div>
+					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}", id="{{image}}"></img>{% endfor %} </div>
 
 					<div class= "divPadA"></div>
 
@@ -69,12 +69,18 @@
 				</div>
 			</div>
 
+			<script>
 
+				function showcaseIt() {
 
-			
+				    if (document.getElementById("imgShowcase").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+				    } else {
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
+				    }
+				}
 
-
-			
+			</script>	
 	</body>
 
 	{% endblock %}

@@ -166,7 +166,7 @@
 			<div class="projectSpecOut">
 				<div class="projectGalleryShowcaseImage"><img src=
 																  	"/static/projectShowcasePlaceholder.jpeg"
-																  ></img></div>
+																   id="imgShowcase"></img></div>
 				<div class="projectWriteup">
 
 					<h3></h3>
@@ -200,12 +200,18 @@
 				</div>
 			</div>
 
+			<script>
 
+				function showcaseIt() {
 
-			
+				    if (document.getElementById("imgShowcase").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+				    } else {
+				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
+				    }
+				}
 
-
-			
+			</script>	
 	</body>
 
 	
