@@ -249,7 +249,7 @@ div.navigationBar a {
 @media screen and (max-width: 780px) {
 	div.navigationBar a {
 
-		font-size: 1em;
+		font-size: .8em;
 
 		
 
@@ -1802,7 +1802,7 @@ div.contactContainer {
 	 display: inline-block;
 	color: white;
 	vertical-align: middle;
-	  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+	  line-height: 3.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
 	  	 max-width: 100%;
 
@@ -1824,8 +1824,10 @@ div.contactContainer {
 .contact-flip-box-back h2 {
 vertical-align: middle;
   display: inline-block;
-  line-height: 80px; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+  line-height:7.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
   	 max-width: 100%;
+
+  	 font-size: .8em;
   
 }
