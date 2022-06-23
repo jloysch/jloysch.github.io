@@ -843,11 +843,19 @@ div.projectSpecGallery {
 
 }
 
+@media screen and (max-width: 808px) {
+	div.projectSpecGallery {
+		flex-direction: column;
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
 div.projectSpecGallery img {
 	max-width: 100%;
 	max-height: 100%;
 
-	 border-radius: 15%;
+	 
 
 	display: flex;
 	  height: 100%;
@@ -866,8 +874,10 @@ div.projectSpecGallery img {
 	  object-fit: contain;
 }
 
+
+
 div.projectSpecGallery img:hover, div.projectSpecGallery img:active {
-	transform: scale(3);
+	transform: scale(2);
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
