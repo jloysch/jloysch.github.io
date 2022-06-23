@@ -817,6 +817,7 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
 @media screen and (max-width: 808px) {
 	div.projectSpecOut {
 		flex-direction: column;
+		justify-content: start;
 	}
 }
 
