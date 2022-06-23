@@ -642,8 +642,11 @@ max-width: 100%;
 
 @media screen and (max-width: 808px) {
 	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
-	 	width: 360px !important;
+	 	width: 100% !important;
 	 	height: auto !important;
+	 	margin-top: 1% !important;
+	 	margin-bottom: 1% !important;
+	 	
 	 	max-width: 100%;
 
 	}
@@ -847,7 +850,7 @@ div.projectSpecGallery {
 	div.projectSpecGallery {
 		flex-direction: column;
 		width: 100% !important;
-		height: auto !important;
+		height: 100% !important;
 	}
 }
 
@@ -876,9 +879,9 @@ div.projectSpecGallery img {
 
 
 
-div.projectSpecGallery img:hover, div.projectSpecGallery img:active ~ div.projectGalleryShowcaseImage img{
-	transform: scale(2);
-     /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+div.projectSpecGallery img:hover, div.projectSpecGallery img:active {
+	transform: scale(1.1);
+    
 }
 
 

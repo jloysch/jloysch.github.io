@@ -44,7 +44,7 @@
 					{% endif %}
 					
 
-					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}", id="{{image}}"></img>{% endfor %} </div>
+					<div class="projectSpecGallery"> {% for image in gallery %}<img src="{{image}}", id="{{image}}", onclick="showcase{{funcNames[image]}}()", onmouseover="showcase{{funcNames[image]}}()"><script> function showcase{{funcNames[image]}}() { document.getElementById("imgShowcase").src = "{{image}}"; } </script>	</img>{% endfor %} </div>
 
 					<div class= "divPadA"></div>
 
@@ -69,18 +69,8 @@
 				</div>
 			</div>
 
-			<script>
 
-				function showcaseIt() {
 
-				    if (document.getElementById("imgShowcase").src == "http://www.userinterfaceicons.com/80x80/minimize.png"){
-				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
-				    } else {
-				        document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
-				    }
-				}
-
-			</script>	
 	</body>
 
 	{% endblock %}
