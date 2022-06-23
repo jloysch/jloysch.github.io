@@ -1,6 +1,3 @@
-/*
-	Using DFC Convention (Display > Format > Constraint) (my convention)
-*/
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -206,7 +203,9 @@ div.navigationBar {
 	background-color: #181818;
 	
 
-    border-radius: var(--navigationBarBorderRadius);
+    border-top-right-radius: var(--navigationBarBorderRadius);
+    border-bottom-right-radius: var(--navigationBarBorderRadius);
+    
 	height: var(--navigationBarHeight);
     width: 80%;
    	max-width: 100%;
