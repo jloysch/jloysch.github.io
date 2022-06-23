@@ -1701,6 +1701,8 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
      position: fixed;
      top: 0;
      left: 0;
+      bottom: 0;
+  	right: 0;
      background-color: #181818;
      display: flex;
      justify-content: center;
