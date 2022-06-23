@@ -660,8 +660,8 @@ max-width: 100%;
 	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
 	 	width: 100% !important;
 	 	height: auto !important;
-	 	margin-top: 1% !important;
-	 	margin-bottom: 1% !important;
+	 	margin-top: 12px !important; /*hard-coding because sometime's even a margin of 1% gets nuts on mobile */
+	 	margin-bottom: 12px !important;
 	 	
 	 	max-width: 100%;
 
