@@ -648,6 +648,7 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 		
   width: 20%;
   height: auto;
+  max-height: 100%;
 
 max-width: 100%;
 
