@@ -179,6 +179,7 @@ div.navigationBar {
 
 div.navigationBar a {
 	text-decoration: none;
+
 	font-size: 20px; 
 	max-width: 100%;
 }
@@ -187,25 +188,26 @@ div.navigationBar a {
 	div.navigationBar a { font-size: .8em; }
 }
 
-
 div.navigationBar span {
 
 	display: table-cell;
 	line-height: normal;
+
     text-align: center;
+	text-decoration: none;
+
     vertical-align: middle;
 
 	width: 100%;
 	max-width: 100%;
 	
     font-size: var(--navigationBarFontSize);
-
-    text-decoration: none;
-
 }
 
 @media screen and (max-width: 780px) { /*nav switch modes bp*/
 	div.navigationBar span {
+
+		width: 98%; /* therefore a 2% margin on our slight outline here. */
 
 		margin-top: 2px;
 		margin-bottom: 2px;
@@ -213,8 +215,7 @@ div.navigationBar span {
 		/*background-color: #c0392b13;*/
 	    border: 1px solid #98afd1;
 	    border-radius: 8px;
-	    width:98%; /* therefore a 2% margin on our slight outline here. */
-   
+	    
 	    background-color: #181818;
 	}
 }
@@ -225,8 +226,8 @@ div.navigationBar a[href]:hover, div.navigationBar a[href]:active { /* Change co
 }
 
 a[href] { 
-	color: var(--paletteShadeD); 
 	max-width: 100%;
+	color: var(--paletteShadeD); 
 } /* TODO: Consider changing this (intended for navbar) to it's own seperate tag */
 
 b.navLinkHighlight { /* Change color on hover */
@@ -263,7 +264,6 @@ div.projectDisplayModuleHeader {
 	/*background-color: #181818;*/
 
 }
-
 
 div.projectDisplayModuleGalleryExpanded {
 
@@ -337,7 +337,6 @@ div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the 
 
 	z-index: 2;
 	
-
 	display: block;
 
 	background-color: var(--paletteShadeB);
@@ -352,25 +351,19 @@ div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the 
 
 	position: relative;
 
-
-
     max-width: 100%;
 
 }
-
-
 
 div.projectDisplayModuleGalleryCollapsed img {
 	max-width: 100%;
 	max-height: 100%;
 
-
 	overflow: hidden;
 	object-fit: contain;
 
-
-	height:100%;
-	width:auto;
+	height: 100%;
+	width: auto;
 
 	justify-content: space-around;
 	align-items: flex-start;
@@ -379,32 +372,29 @@ div.projectDisplayModuleGalleryCollapsed img {
 
 div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
 
-	display: flex;
+	z-index: 2;
 
-	background-color: var(--paletteShadeB);
-	opacity: 0.9;
+	display: flex;
+	position: relative;
+
 	content: "";
 	justify-content: center;
 	white-space: pre-line;
 
-	margin-left: 2%;
+	max-width: 100%;
 	width: 96%;
 	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	
+	margin-left: 2%;
+
 	border-radius: 0px 0px 0px 8px;
-
-	position: relative;
-	z-index: 2;
-
-		max-width: 100%;
 }
-
-
-
 
 div.projectDisplayModuleHeader:hover, div.projectDisplayModuleHeader:active /*, div.projectListWireframe:active .projectListWireframe*/{
 	background-color: #000000 !important;
-
-
 }
 
 div.projectDisplayModuleHeader a:hover, div.projectDisplayModuleHeader a:active  { /* Titlebar for project list */
@@ -416,134 +406,145 @@ div.projectDisplayModuleHeader a2:hover, div.projectDisplayModuleHeader a2:activ
 }
 
 div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
+
+	z-index: 2;
+
+	position: relative;
+
 	background-color: var(--paletteShadeB) !important;
 	opacity: 1.0;
 
 	height: 256px;
-
-	  position: relative;
-    z-index: 2;
-    	 max-width: 100%;
+	max-width: 100%;
 }
 
 div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
 
-	height: 256px;
+	z-index: 2;
 
 	position: relative;
-    z-index: 2;
+  
+	height: 256px;
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
 }
 
 
 @media screen and (max-width: 780px) {
 	div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
 
-	height: 128px !important;
+		z-index: 2;
+		position: relative;
+		
+		height: 128px !important;
 
-	 position: relative;
-    z-index: 2;
+		background-color: var(--paletteShadeB) !important;
+		opacity: 1.0;	
 	}
 
 	div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
 
-	height: 128px !important;
+		z-index: 2;
+		position: relative;
+		
+		height: 128px !important;
 
-	  position: relative;
-    z-index: 2;
-}
+		background-color: var(--paletteShadeB) !important;
+		opacity: 1.0;	
+	}
 }
 
 #projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
 
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;	
 }
 
 #projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
 
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
 }
 
 @media screen and (max-width: 780px) {
 
 	#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
 
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
-	transition-duration: var(--moduleExpansionTransitionTime);
+		transition-duration: var(--moduleExpansionTransitionTime);
 
-	height: 128px !important;
+		height: 128px !important;
+
+		background-color: var(--paletteShadeB) !important;
+		opacity: 1.0;
 	}
 
 
 	#projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
 
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
-	transition-duration: var(--moduleExpansionTransitionTime);
+		transition-duration: var(--moduleExpansionTransitionTime);
 
-	height: 128px !important;
+		height: 128px !important;
+
+		background-color: var(--paletteShadeB) !important;
+		opacity: 1.0;
 	}
 }
 
 #projectMediaPoolContainer:hover, #projectMediaPoolContainer:active {
-	background-color: var(--paletteShadeB) !important;
-	opacity: 1.0;
+	
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
 }
 
 a.projectDisplayModuleTitle {
 
-	color: var(--paletteShadeD);
-	
-  	line-height: normal;
-  	vertical-align: middle;
+	z-index: 3;
 
-  	margin-left: 12px;
-	font-size: 20px;
+	line-height: normal;
+	vertical-align: middle;
+
 	width: 40%;
 	min-width: 40%;
 	max-width: 100%;
 
+	margin-left: 12px;
 
-	 z-index: 3;
+	color: var(--paletteShadeD);
+
+	font-size: 20px;
 }
 
 a.projectDisplayModuleDescription {
 
 	display: inline-block; /* Makes the anchor tag be able to actually overflow the text properly into ellipsis */
 
-	color: var(--paletteShadeD);
+	white-space: nowrap;
 
-	vertical-align: middle;
-
-	
-	width: 55%;
-	margin-left: 2%;
-	max-width: 55%;
-	margin-right: 8%;
-
-   
-    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 
-		
+	vertical-align: middle;
+	
+	width: 55%;
+	max-width: 55%;
+
+	margin-left: 2%;
+	margin-right: 8%;
+
+	color: var(--paletteShadeD); 	
 }
 
 /*
@@ -551,85 +552,66 @@ a.projectDisplayModuleDescription {
 */
 
 div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
- 	display: flex;
-  vertical-align: middle;
+	display: flex;
+	vertical-align: middle;
 
-  justify-content: center;
+	justify-content: center;
 
-  margin-left: auto;
-  margin-right: auto;
- margin-top: 24px;
-  margin-bottom:24px;
-
-
-
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 24px;
+	margin-bottom:24px;
 
 	text-align: center;
 
-		
-  width: 20%;
-  height: auto;
-  max-height: 100%;
+	width: 20%;
+	height: auto;
+	max-height: 100%;
 
-max-width: 100%;
-
-
-
-
+	max-width: 100%;
 }
 
-
 @media screen and (max-width: 808px) {
-	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+	div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10 */
 	 	width: 100% !important;
 	 	height: auto !important;
-	 	margin-top: 12px !important; /*hard-coding because sometime's even a margin of 1% gets nuts on mobile */
+
+	 	margin-top: 12px !important; /* hard-coding because sometime's even a margin of 1% gets nuts on mobile */
 	 	margin-bottom: 12px !important;
 	 	
 	 	max-width: 100%;
 
-	 	  align-items: center; /*vertically centers flex items*/
-
+	 	align-items: center; /* vertically centers flex items */
 	}
 }
 
-
 div.projectGalleryShowcaseImage img { 
-/*
-display:block;
- 
 
-  border-radius: var(--projectGalleryShowcaseImageBorderRadius);
+	/*
+	display:block;
+	border-radius: var(--projectGalleryShowcaseImageBorderRadius);
 
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	*/
 
-max-height: 100%;
-max-width: 100%;
-  width: 100%;
-  height: 100%;
-  
+	display: flex;
+	height: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
 
-*/
+	vertical-align: middle;
 
+	justify-content: center;
 
-
-display: flex;
-  height: 100%;
-box-sizing: border-box;
-max-width: 100%;
-max-height: 100%;
-width: 100%;
-
-vertical-align: middle;
-
-  justify-content: center;
-
-max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  object-fit: contain;
-
-
-
+	max-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	object-fit: contain;
 }
 
 @media screen and (max-width: 808px) {
@@ -642,7 +624,6 @@ max-height: 100%;
 }
 
 div.projectWriteup { 
-
   float: left;
   width: 60%;
   vertical-align: middle;
@@ -656,24 +637,22 @@ div.projectWriteup {
 
 div.projectWriteup h3 { 
 
-  color: var(--paletteShadeD);
-  font-size: var(--projectSpecOutTitleFontSize);
+	color: var(--paletteShadeD);
+	font-size: var(--projectSpecOutTitleFontSize);
 
-  /*letter-spacing: var(--projectSpecOutTitleSpacing);*/
+	/*letter-spacing: var(--projectSpecOutTitleSpacing);*/
 
-  /*font-optical-sizing: auto; */
-  font-family: "Montserrat script=latin rev=1"; 
-  font-weight: 900; 
- 
-  font-stretch: normal; 
-  line-height: 50%;
+	/*font-optical-sizing: auto; */
+	font-family: "Montserrat script=latin rev=1"; 
+	font-weight: 900; 
 
-  margin-top: 24px;
-  margin-bottom: 0px;
+	font-stretch: normal; 
+	line-height: 50%;
 
-  	 max-width: 100%;
+	margin-top: 24px;
+	margin-bottom: 0px;
 
-
+	max-width: 100%;
 }
 
 @media screen and (max-width: 670px) {
@@ -684,58 +663,51 @@ div.projectWriteup h3 {
 }
 
 div.projectWriteup h4 { 
-  font-style: normal;
-  color: var(--paletteShadeD);
-  	 max-width: 100%;
+	font-style: normal;
+
+	max-width: 100%;
+
+	color: var(--paletteShadeD);
 }
 
 @media screen and (max-width: 670px) {
 	div.projectWriteup h4 { 
-	  
-	  text-align: center;
+		text-align: center;
 	}
 }
 
 div.projectWriteup p { 
-		 max-width: 100%;
-  font-style: italic;
-  color: var(--paletteShadeD);
+	max-width: 100%;
+
+	font-style: italic;
+	color: var(--paletteShadeD);
 }
 
 @media screen and (max-width: 670px) {
-	div.projectWriteup p { 
-	
+	div.projectWriteup p {
 	  text-align: center;
 	}
 }
 
 div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/ 
-	
 	display:flex;
-  background-color: #000000CC;
 
-  padding-top: var(--projectSpecOutContainerTopBottomPad);
-  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
+	justify-content: space-between;
+	vertical-align: middle;
 
-  justify-content: space-between;
-  vertical-align: middle;
+	height: auto;
+	width: 96%;
+	max-width: 100%;
 
+	padding-top: var(--projectSpecOutContainerTopBottomPad);
+	padding-bottom: var(--projectSpecOutContainerTopBottomPad);
 
-  height: auto;
-  width: 96%;
+	margin-right: 2%;
+	margin-left: 2%;
 
-  margin-right: 2%;
-  margin-left: 2%;
-
-  
-
-
-  border-radius: 12px;
-
-  /*opacity: 0.5;*/
-
-  	 max-width: 100%;
-  
+	border-radius: 12px;
+	background-color: #000000CC;
+	/*opacity: 0.5;*/
 }
 
 @media screen and (max-width: 808px) {
@@ -746,47 +718,41 @@ div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/
 }
 
 div.projectSpecOut:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-display: table;
-  content: "";
-  
-    vertical-align: middle;
-  justify-content: space-between;
+	display: table;
 
-  clear: both;
+	content: "";
 
+	vertical-align: middle;
+	justify-content: space-between;
 
-  
+	clear: both;
 }
 
 div.projectSpecOut img { /* Clear floats after the columns [W3C Adaptation]*/ 
-
   max-width: 100%;
   max-height: 100%;
 
   justify-content: center;
   vertical-align: middle;
-
-
 }
 
 
 div.projectSpecGallery {
-	
 	display: flex;
 
-	background-color: #181818;
-
 	content: "";
+
 	white-space: pre-line;
 	justify-content: center;
+	
+	width: 96%;
+	max-width: 100%;
+	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 
 	margin-left: 2%;
-	width: 96%;
-	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
 	border-radius: var(--projectSpecOutGalleryBorderSize);
-	max-width: 100%;
 
-
+	background-color: #181818;
 }
 
 @media screen and (max-width: 808px) {
@@ -798,58 +764,46 @@ div.projectSpecGallery {
 }
 
 div.projectSpecGallery img {
-	max-width: 100%;
-	max-height: 100%;
-
-	 
-
 	display: flex;
-	  height: 100%;
+
 	box-sizing: border-box;
-	max-width: 100%;
-	max-height: 100%;
-	width: 100%;
+	overflow: hidden;
+	object-fit: contain;
 
 	vertical-align: middle;
+	justify-content: center;
 
-	  justify-content: center;
+	width: 100%;
+	max-width: 100%;
 
-	max-height: 100%;
-	  max-width: 100%;
-	  overflow: hidden;
-	  object-fit: contain;
+	height: 100%;
+	max-height: 100%;	
 }
-
-
 
 div.projectSpecGallery img:hover, div.projectSpecGallery img:active {
 	transform: scale(1.1);
-    
 }
 
-
 div.projectSpecAssetOutlet {
+	z-index: 98;
+
 	display: block;
 
 	/*background-color: var(--projectSpecAssetOutletDivColor);*/
 
 	height: 64px;
-	width: 100%;
-
-	max-width: 100%;
 	max-height: 100%;
 
 	width: 100%;
-
-	z-index: 98;
+	max-width: 100%;
 }
 
 div.projectSpecAssetOutlet button {
+	z-index: 99;
+
 	display: block;
 
 	text-align: center;
-
-	background-color: var(--projectSpecAssetOutletDivColor);
 
 	height: 64px;
 	width: 100%;
@@ -861,77 +815,64 @@ div.projectSpecAssetOutlet button {
 	margin-left: auto;
 
 	background-color: #181818;
-
-	z-index: 99;
 }
 
 button.buttonAssetDownload {
+	z-index: 99;
+
 	display: block;
 
 	text-align: center;
 
 	background-color: var(--projectSpecAssetOutletDivColor);
 
-	
-	font-weight: 900;
-
 	height: 64px;
-	width: 100%;
-
-	max-width: 100%;
 	max-height: 100%;
 
+	width: 100%;
+	max-width: 100%;
+	
 	margin-right: auto;
 	margin-left: auto;
 
-	font-size: var(--assetDownloadFontSize);
-
-	color: var(--paletteShadeD);
-
 	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
+	font-size: var(--assetDownloadFontSize);
 	font-weight: 900; 
-
 	font-stretch: normal; 
 	line-height: initial;
 
 	border-radius: 12px;
 
-	z-index: 99;
+	color: var(--paletteShadeD);
 }
 
 button.buttonAssetDownloadNoAssets {
+	z-index: 99;
+
 	display: block;
 
 	text-align: center;
 
-	background-color: var(--projectSpecAssetOutletDivColor);
-	
-	font-weight: 900;
+	width: 100%;
+	max-width: 100%;
 
 	height: 64px;
-	width: 100%;
-
-	max-width: 100%;
 	max-height: 100%;
 
 	margin-right: auto;
 	margin-left: auto;
 
-	font-size: var(--assetDownloadFontSize);
-
-	color: var(--paletteShadeD);
-
 	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
+	font-size: var(--assetDownloadFontSize);
 	font-weight: 900; 
-
 	font-stretch: normal; 
 	line-height: initial;
-
 	border-radius: 12px;
 
-	z-index: 99;
+	color: var(--paletteShadeD);
+	background-color: var(--projectSpecAssetOutletDivColor);
 
 }
 
@@ -941,68 +882,62 @@ button.buttonAssetDownloadNoAssets:hover, button.buttonAssetDownloadNoAsset:acti
 }
 
 p.projectSpecParagraph {
-
 	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
 	font-weight: 300; 
-
 	font-stretch: normal; 
 	line-height: initial;
 
-		 max-width: 100%;
-
+	max-width: 100%;
 }
 
-/*
- 	|| Various Padding ||
-*/
+/* || Various Padding || */
 
 div.projectDisplayListTweenPadding {
-
 	width: 100%;
-		 max-width: 100%;
-	height: 32px;
+	max-width: 100%;
 
+	height: 32px;
 }
 
 div.divPadA {
-
 	width: 100%;
-		 max-width: 100%;
+	max-width: 100%;
+
 	height: 50px;
 }
 
 div.navigationBarBottomPad {
 	width: 100%;
-		 max-width: 100%;
+	max-width: 100%;
+
 	height: 50px;
 }
 
-/*
-	|| ABOUT PAGE for website ||
-*/
+/* || ABOUT PAGE for website || */
 
 div.aboutMeContainer { 
+	z-index: 2;
+
+	position: relative;
+
 	display: flex;
-  /*background-color: #00000067;*/
-  background-color: #000000CC;
+	
+	padding-top: var(--projectSpecOutContainerTopBottomPad);
+	padding-bottom: var(--projectSpecOutContainerTopBottomPad);
 
-  padding-top: var(--projectSpecOutContainerTopBottomPad);
-  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
-  /*opacity: 0.5;*/
+	/*opacity: 0.5;*/
 
+	margin-right: 2%;
+	margin-left: 2%;
 
-   position: relative;
-    z-index: 2;
+	width: 96%;
+	max-width: 100%;
 
-    border-radius: 12px;
-    width: 96%;
-
-    margin-right: 2%;
-    margin-left: 2%;
-
-    	 max-width: 100%;
+	border-radius: 12px;
   
+	/*background-color: #00000067;*/
+	background-color: #000000CC;
 }
 
 @media screen and (max-width: 921px) {
@@ -1038,268 +973,197 @@ div.aboutMeContainer {
 
 
 div.aboutMeContainer:hover, div.aboutMeContainer:active { 
-	
-
   /*background-color: #181818;*/
-
   background-color: #000000CD;
-  
 }
 
 div.aboutMeContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-	
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
 
-  	 max-width: 100%;
-  
+	display: table;
+
+	clear: both;
+
+	max-width: 100%;
 }
 
 div.aboutMeContainer img { 
-	/*
-	height: 168.75px;
-	width: 135px;
-	*/
 
-	/*
-	width: 316.75px;
-	height: 392.25px;
-	*/
+	display: block;
 
 	width: 158.375px;
+	max-width: 100%;
+
 	height: 196.125px;
-
-
+	max-height: 100%;
 	
+	margin-left: auto;
+	margin-right: auto;
 
-  max-height: 100%;
-  max-width: 100%;
-
-
-  display: block;
-
- 
-  
-
-  margin-left: auto;
-  margin-right: auto;
-
-  border-radius: 0%;	/* Creates a square image, approach 100 to round / oval */
-
-
+	border-radius: 0%;	/* Creates a square image, approach 100 to round / oval */
 }
 
 
 div.aboutMeImage {
 	float: left;
+
 	width: 20%;
-		 max-width: 100%;
+	max-width: 100%;
 }
 
 
 @media screen and (max-width: 921px) {
 	div.aboutMeImage{ 
 		float: center !important;
-		width: 100% !important;
 
+		width: 100% !important;
 	 }
 }
 
 
 div.aboutMeBlurbs {
 	float: left;
+
 	width: 80%;
-		 max-width: 100%;
+	max-width: 100%;
 }
 
 @media screen and (max-width: 921px) {
 	div.aboutMeBlurbs{ 
-
-		width: 100% !important;
 		display: flex !important;
-
 		flex-direction: column !important;
 
 		float: center !important;
+		justify-content: center !important;
+		text-align: center;
 		
+		width: 100% !important;
 
 		margin-left: auto !important;
 		margin-right: auto !important;
-
-		justify-content: center !important;
-		
-
-		
-
-		 text-align: center;
-
 	 }
 }
 
 div.aboutMeBlurbs h1 {
+	max-width: 100%;
+
 	color: var(--paletteShadeD);
-		 max-width: 100%;
 }
 
 div.aboutMeBlurbs p {
-	color: var(--paletteShadeD);
+	max-width: 100%;
 
 	padding-right: 30px;
-		 max-width: 100%;
+
+	color: var(--paletteShadeD);
 }
 
 @media screen and (max-width: 921px) {
 	div.aboutMeBlurbs{ 
 		padding-right: 2% !important;
 		padding-left: 2% !important
-
-	 }
+	}
 }
 div.tagCloudContent {
-	color: white;
-	/*
-	height: 100%;
-	width: 100%;
-	*/
-		width: 100% !important;
-		/*margin-right: 50vw !important;*/
-		
-
+	width: 100% !important;
+	max-width: 100%;
+	
 	vertical-align: middle;
 
-	 margin-left: auto;
-   margin-right: auto;
-   margin-top: auto;
-   margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin-right: 50vw !important;*/
+	margin-top: auto;
+	margin-bottom: auto;
 
-   	 max-width: 100%;
+	color: white;
 }
 
+/* >> TAGCLOUD JS STYLING << */
 
 @media screen and (max-width: 920px) {
-
 	div.tagCloudContent {
 		width: 100%;
 		justify-content: center;
-		
-	
 	}
-	
 }
 
-
-
-/* tag cloud */
-
 .tagcloud {
-
 	display: flex;
 	position: relative;
+
+	vertical-align: middle;
+
+	height: 90% !important;
+
+	width: 400px !important;
+	max-width: 100%;
+
 	/*font-optical-sizing: auto; */
 	font-family: "Montserrat script=latin rev=1"; 
+	font-size: 20px;
 	font-weight: 900; 
 
-    font-size: 20px;
-    
-    /*
-    height: 90% !important;
-    width: 40% !important;
-    */
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 
-    height: 90% !important;
-    width: 400px !important;
-
-    
-       vertical-align: middle;
-
-    color: white;
-
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: auto;
-   margin-bottom: auto;
-
-   	 max-width: 100%;
-
-
+	color: white;
   }
 
 @media only screen and (max-width: 1330px) {
 
 	.tagcloud {
+		display: flex;
+		position: relative;
 
-	display: flex;
-	position: relative;
-	/*font-optical-sizing: auto; */
-	font-family: "Montserrat script=latin rev=1"; 
-	font-weight: 900; 
+		vertical-align: middle !important;
 
-    font-size: 16px !important;
-    
-    /*
-    height: 90% !important;
-    width: 40% !important;
-    */
+		height: 250px !important;
 
-    height: 250px !important;
-    width: 250px !important;
+		width: 250px !important;
 
-    
-       vertical-align: middle !important;
+		font-family: "Montserrat script=latin rev=1"; 
+		font-weight: 900; 
+		font-size: 16px !important;
 
-    color: white;
-    /*
-   margin-left: auto !important;
-   margin-right: auto !important;
-   margin-top: 48px;
-   margin-bottom: auto !important
-	*/
+		margin-left: auto !important;
+		margin-right: auto !important;
 
-	/* top right bottom left */
-   /*margin: 48px 48px 48px 128px !important;*/
-   margin-left: auto !important;
-   margin-right: auto !important;
-
-  }
+		color: white;
+	}
 } 
 
+.tagcloud--item { /* color of each tagCloud tag */
+	color: white;
+}
 
-  
+@media screen and (max-width: 446px) {
+	.tagcloud--item {
+		padding: -32px -32px -32px -32px !important;
+	}
+}
 
+.tagcloud--item:hover, .tagcloud--item:active {
+	color: #36454F;
+}
 
-  .tagcloud--item {
-  	color: white;
-  }
+div.tagCloudContainer {
+	display: flex;
 
-  @media screen and (max-width: 446px) {
-  	.tagcloud--item {
-  		padding: -32px -32px -32px -32px !important;
-  	}
-  }
-
-  .tagcloud--item:hover, .tagcloud--item:active {
-    color: #36454F;
-
-  }
-
-  div.tagCloudContainer {
-  	display: flex;
-    float: left;
-	width: 40%;
-
-	
-	margin-right: auto;
-	margin-left: auto;
-
-	margin-top: 2%;
-	margin-bottom: 2%;
+	float: left;
 
 	vertical-align: center;
-		 max-width: 100%;
-  }
 
+	width: 40%;
+	max-width: 100%;
 
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;	
+}
 
 @media screen and (max-width: 921px) {
 	div.tagCloudContainer {
@@ -1308,16 +1172,14 @@ div.tagCloudContent {
   }
 }
 
-
 @media screen and (max-width: 654px) {
 	div.tagCloudContainer {
+		width: 100% !important;
+
 	  	margin-bottom: 50px !important;
 	  	margin-top:100px !important;
-
-	  	width: 100% !important;
 	  	margin-left: auto;
 	  	margin-right: auto;
-
   }
 }
 
@@ -1325,254 +1187,268 @@ div.tagCloudContent {
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 
 div.flip-box-container {
-	 display: flex;
+	display: flex;
+	
 	float: left;
-	width: 60%;
 
 	justify-content: center;
-		 max-width: 100%;
 
+	width: 60%;
+	max-width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-	
 	div.flip-box-container {
-	 display: flex;
-	float: left;
-	width: 50%;
-	}
+		display: flex;
 
+		float: left;
+
+		width: 50%;
+	}
 }
 
 @media screen and (max-width: 921px) {
-	
 	div.flip-box-container {
-	 display: flex;
-	float: left;
-	width: 100%;
-	}
+		display: flex;
 
+		float: left;
+
+		width: 100%;
+	}
 }
 
-@media screen and (max-width: 441px) {
+@media screen and (max-width: 441px) { /* Swapping to mobile */
 	div.flip-box-container {
 		flex-direction: column !important;
-		
-
 	}
-
 }
 
-
-
 div.container:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-	
   content: "";
+
   display: table;
+
   clear: both;
-  
 }
 
 div.flip-box {
-  background-color: transparent;
-  width: 100% !important;
-  height: 100%;
-  /*border: 1px solid #f1f1f1;*/
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+	background-color: transparent;
 
-	
-padding-right: 10px;
-padding-left: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
-	 max-width: 100%;
+	height: 100%;
 
+	width: 100% !important;
+	max-width: 100%;
+
+	/*border: 1px solid #f1f1f1;*/
+	perspective: 1000px; /* Change this to remove/alter 3D effect */
+
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 @media screen and (max-width: 441px) {
 	div.flip-box {
-  	margin-top: 150px !important;
-  	padding-right: 0;
-  	padding-left: 0;
-  	/*border: 1px solid #f1f1f1;*/
- }
+		margin-top: 150px !important;
+
+		padding-right: 0;
+		padding-left: 0;
+		/*border: 1px solid #f1f1f1;*/
+	}
 }
 
 /* This container is needed to position the front and back side */
 div.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  	 max-width: 100%;
+	position: relative;
 
+	transform-style: preserve-3d;
+	transition: transform 0.8s;
+
+	width: 100%;
+	max-width: 100%;
+
+	height: 100%;
+
+	text-align: center;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 div.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-  
-  /*border: 1px solid #f1f1f1;*/
+	transform: rotateY(180deg);
+	/*border: 1px solid #f1f1f1;*/
 }
 
 div.flip-box:active .flip-box-inner {
-  transform: rotateY(180deg);
-  
-  /*border: 1px solid #f1f1f1;*/
+	transform: rotateY(180deg);
+	/*border: 1px solid #f1f1f1;*/
 }
 
+/* Flip box bordering >>>>
 @media screen and (max-width: 441px) {
 	div.flip-box:hover .flip-box-inner {
-  
-  
-  /*border: 1px solid #f1f1f1;*/
-	}
+		border: 1px solid #f1f1f1;
+		}
 
 	div.flip-box:active .flip-box-inner {
-  
-  
-  /*border: 1px solid #f1f1f1;*/
+
+
+	border: 1px solid #f1f1f1;
 	}
 }
-
-
+*/
 
 /* Position the front and back side */
 div.flip-box-front, div.flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
 
+	position: absolute;
+
+	width: 100%;
+
+	height: 100%;
+}
 
 @media screen and (max-width: 921px) {
 	div.flip-box-front, div.flip-box-back {
-	
-		margin-top: 100px;
-	  height: 300px !important;
+		height: 300px !important;
 
+		margin-top: 100px;
 	}
 }
 
 @media screen and (max-width: 441px) {
 	div.flip-box-front{
-		margin-bottom: -300px !important;
-		margin-top: -100px;
+		perspective: 500px !important;
+
 		height: 150px !important;
 		width: 100%;
-		perspective: 500px !important;
+	
+		margin-bottom: -300px !important;
+		margin-top: -100px;
 		margin-right: 50px !important;
 	}
 
-	div.flip-box-back {margin-bottom: -300px !important;margin-top: -100px;height: 150px !important;width: 100%;perspective: 500px !important;margin-left: 0;}
+	div.flip-box-back {
+		perspective: 500px !important;
+
+		height: 150px !important;
+		width: 100%;
+
+		margin-bottom: -300px !important;
+		margin-top: -100px;
+		margin-left: 0;
+	}
 }
-
-
-
-
 
 /* Style the front side */
 div.flip-box-front {
 	display: table; /*enables vertical align properties to be viewed */
-  background-color: #181818;
-  color: white;
-  	 max-width: 100%;
+
+	max-width: 100%;
+
+	background-color: #181818;
+	color: white;
 }
 
-div.flip-box-front h2 {display: table-cell;vertical-align: middle;max-width: 100%;height: 100%;text-align: center;width: 100%;margin-left: 0;margin-right: 0;}
+div.flip-box-front h2 {
+	display: table-cell;
 
-/* Style the back side */
-div.flip-box-back {
-	display: table;
-  background-color: #181818;
-  color: white;
-  font-size: 12px;
-  transform: rotateY(180deg);
-  line-height: 200%;
-  pointer-events: none; /* allow click-through to elements below */
-  	 max-width: 100%;
+	vertical-align: middle;
 
-}
-
-@media screen and (max-width: 441px) {
-	
-	div.flip-box-back {
-	 margin-right: -300px !important;
-	 
-	}
-
-}
-
-
-
-div.flip-box-back h2 {
-	 display: table-cell;
-  vertical-align: middle;
-
-  	 max-width: 100%;
 	height: 100%;
-
-
-	/*margin-top: 45%;*/
+	max-width: 100%;
+	width: 100%;
 
 	text-align: center;
 
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Style the back side */
+div.flip-box-back {
+	pointer-events: none; /* allow click-through to elements below */
+
+	display: table;
+
+	transform: rotateY(180deg);
+
+	max-width: 100%;
+
+	font-size: 12px;
+	line-height: 200%;
+	
+	background-color: #181818;
+	color: white;
+	
+}
+
+@media screen and (max-width: 441px) {
+	div.flip-box-back {
+		margin-right: -300px !important;
+	}	
+}
+
+div.flip-box-back h2 {
+	display: table-cell;
+
+	vertical-align: middle;
+	text-align: center;
+
+	height: 100%;
+
 	width: 80%;
+	max-width: 100%;
+
+	/*margin-top: 45%;*/
+
 	padding-left: 5%;
 	padding-right: 5%;
 }
 
 @media screen and (max-width: 1200px) {
-	
 	div.flip-box-back h2 {
-	 font-size: 12px !important;
-
+		font-size: 12px !important;
 	}
 
 }
-
-
-
 
 /* Skills and Links */
 
 div.skillsAndLinksContainer { 
 	
-  /*background-color: #00000067;*/
-   display: flex;
-  background-color: #000000CC;
+	z-index: 2;
+	
+	display: flex;
 
-  padding-top: var(--projectSpecOutContainerTopBottomPad);
-  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
-  /*opacity: 0.5;*/
+	/*opacity: 0.5;*/
 
-   position: relative;
+	position: relative;
 
-   border-radius: 12px;
+	height: 400px;
+	
+	width: 96%;
+	max-width: 100%;
 
-   width: 96%;
 
-   margin-left: 2%;
-   margin-right: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
 
-   height: 400px;
+	padding-top: var(--projectSpecOutContainerTopBottomPad);
+	padding-bottom: var(--projectSpecOutContainerTopBottomPad);
 
-   margin-bottom: 2%;
+	border-radius: 12px;
 
-   z-index: 2;
-
-   	 max-width: 100%;
-  
+	background-color: #000000CC;
 }
 
 @media screen and (max-width: 921px) {
 	div.skillsAndLinksContainer{ 
 		flex-direction: column;
-		
+
 		height: 800px;
 	 }
 }
@@ -1585,178 +1461,163 @@ div.skillsAndLinksContainer {
 	 }
 }
 
-
 div.skillsAndLinksContainer:hover { 
-	
-
-  /*background-color: #181818CC;*/
-
-   background-color: #000000CD;
-
-  
+	/*background-color: #181818CC;*/
+	background-color: #000000CD;
 }
 
 div.skillsAndLinksContainer:active { 
-	
-
-  /*background-color: #181818CC;*/
-
-   background-color: #000000CD;
-
-  
+	/*background-color: #181818CC;*/
+	background-color: #000000CD;
 }
 
 div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
-	
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
 
-  	 max-width: 100%;
-  
+	display: table;
+
+	clear: both;
+
+	max-width: 100%;
 }
 
-
-
-/*
-	|| PRELOADER ANIMATIONS
-*/
+/* || PRELOADER ANIMATIONS */
 
 .loader-wrapper {
-     width: 100vw;
-     height: 100vh;
-     position: fixed;
-     top: 0;
-     left: 0;
-      bottom: 0;
-  	right: 0;
-     background-color: #181818;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     z-index: 999;
-     overflow: hidden;
+	z-index: 999;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-     	 max-width: 100%;
+	position: fixed;
+	overflow: hidden;
 
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	width: 100vw;
+	max-width: 100%;
+
+	height: 100vh;
+
+	background-color: #181818;
 }
 
 .loader {
-	width: 12.5%;
-	height: auto;
 	z-index: 1000;
 
-			 max-width: 100%;
+	height: auto;
+
+	width: 12.5%;
+	max-width: 100%;
 }
 
-/*
-
-	|| CONTACT ME PAGE
-
-*/
+/* || CONTACT ME PAGE */
 
 div.contactContainer {
 	display: flex;
-	height: auto;
-	width: 98%;
-	margin-right: 2%;
-	margin-left: 2%;
-	background-color: #181818CC;
 	flex-direction: column;
 
-	  border-radius: 36px 0px 0px 36px;
+	height: auto;
 
-	  	 max-width: 100%;s
+	width: 98%;
+	max-width: 100%;
+
+	margin-right: 2%;
+	margin-left: 2%;
+
+	border-radius: 36px 0px 0px 36px;
+
+	background-color: #181818CC;
 }
 
-
 .contact-flip-box {
-  background-color: transparent;
-  width: 95%;
-  height: 120px;
-  /*border: 1px solid #f1f1f1;*/
+	height: 120px;
 
-  	 max-width: 100%;
+	width: 95%;
+	max-width: 100%;
 
+	/*border: 1px solid #f1f1f1;*/
 
-
+	background-color: transparent;
 }
 
 .contact-flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+	position: relative;
 
-  	 max-width: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.8s;
 
+	height: 100%;
 
+	width: 100%;
+	max-width: 100%;
+
+	text-align: center;
 }
 
 .contact-flip-box:hover .contact-flip-box-inner {
-  transform: rotateX(180deg);
+  	transform: rotateX(180deg);
 }
 
 .contact-flip-box:active .contact-flip-box-inner {
-  transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
-
 .contact-flip-box-front, .contact-flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 
-    border-radius: 36px 0px 0px 36px;
+	position: absolute;
 
-    	 max-width: 100%;
+	height: 100%;
+
+	width: 100%;
+	max-width: 100%;
+
+	border-radius: 36px 0px 0px 36px;
 }
 
 .contact-flip-box-front {
-  
+	background-color: #181818DD;
+	color: black;
 
-  background-color: #181818DD;
-  color: black;
-
-  	 max-width: 100%;
-
+	max-width: 100%;
 }
 
 .contact-flip-box-front h2 {
-	 display: inline-block;
-	color: white;
+	display: inline-block;
+	
 	vertical-align: middle;
-	  line-height: 3.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
-	  	 max-width: 100%;
+	max-width: 100%;
 
- 
+	line-height: 3.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 
+	color: white;
 }
 
 .contact-flip-box-back {
-  background-color: dodgerblue;
-  color: white;
-  text-align: center;
-  vertical-align: middle;
-  transform: rotateX(180deg);
+	vertical-align: middle;
+	transform: rotateX(180deg);
 
-  	 max-width: 100%;
+	max-width: 100%;
 
+	text-align: center;
+
+	background-color: dodgerblue;
+	color: white;
 }
-
 .contact-flip-box-back h2 {
-vertical-align: middle;
-  display: inline-block;
-  line-height:7.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+	display: inline-block;
 
-  	 max-width: 100%;
+	vertical-align: middle;
 
-  	 font-size: .8em;
-  
+	max-width: 100%;
+
+	font-size: .8em;
+	line-height: 7.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 }
