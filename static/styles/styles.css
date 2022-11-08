@@ -395,7 +395,6 @@ div.projectDisplayModuleHeader a2:hover, div.projectDisplayModuleHeader a2:activ
 }
 
 div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
-
 	z-index: 2;
 
 	position: relative;
@@ -408,7 +407,6 @@ div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryEx
 }
 
 div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
-
 	z-index: 2;
 
 	position: relative;
@@ -422,7 +420,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 
 @media screen and (max-width: 780px) {
 	div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryCollapsed:active {
-
 		z-index: 2;
 		position: relative;
 		
@@ -433,7 +430,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 	}
 
 	div.projectDisplayModuleGalleryExpanded:hover, div.projectDisplayModuleGalleryExpanded:active {
-
 		z-index: 2;
 		position: relative;
 		
@@ -445,7 +441,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 }
 
 #projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
-
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
@@ -455,7 +450,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 }
 
 #projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
-
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
@@ -465,9 +459,7 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 }
 
 @media screen and (max-width: 780px) {
-
 	#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
-
 		transition-duration: var(--moduleExpansionTransitionTime);
 
 		height: 128px !important;
@@ -478,7 +470,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 
 
 	#projectDisplayModuleHeader:active ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
-
 		transition-duration: var(--moduleExpansionTransitionTime);
 
 		height: 128px !important;
@@ -489,7 +480,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 }
 
 #projectMediaPoolContainer:hover, #projectMediaPoolContainer:active {
-	
 	transition-duration: var(--moduleExpansionTransitionTime);
 
 	height: 256px;
@@ -499,7 +489,6 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 }
 
 a.projectDisplayModuleTitle {
-
 	z-index: 3;
 
 	line-height: normal;
@@ -517,7 +506,6 @@ a.projectDisplayModuleTitle {
 }
 
 a.projectDisplayModuleDescription {
-
 	display: inline-block; /* Makes the anchor tag be able to actually overflow the text properly into ellipsis */
 
 	white-space: nowrap;
@@ -573,7 +561,6 @@ div.projectGalleryShowcaseImage { /* Avoided using flex because want to support 
 }
 
 div.projectGalleryShowcaseImage img { 
-
 	/*
 	display:block;
 	border-radius: var(--projectGalleryShowcaseImageBorderRadius);
