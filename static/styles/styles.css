@@ -4,7 +4,6 @@
 }
 
 :root {
-
 	/*	|| Colors */
 
 	--paletteShadeA: #000000; /* Arrange them dark to light, left to right */ /*Background*/ /* Graphite Gray Color Pallette' https://www.color-hex.com/color-palette/1013236 */
@@ -46,7 +45,6 @@
 /* || Basis */
 
 html, body {
-
 	z-index: 0;
 
 	-webkit-overflow-scrolling: touch;
@@ -72,54 +70,55 @@ body {
 
 /*
 .gradientMask {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat-x;
-  background-repeat: repeat;
-  animation: gradientMask-animation-alt 1s infinite;
-  animation: gradientMask-animation-helper 1s infinite;
-  opacity: 1.0;
-  visibility: visible;
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	right: -50%;
+	bottom: -50%;
+	width: 200%;
+	height: 200vh;
+	background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat-x;
+	background-repeat: repeat;
+	animation: gradientMask-animation-alt 1s infinite;
+	animation: gradientMask-animation-helper 1s infinite;
+	opacity: 1.0;
+	visibility: visible;
 }
 
 @keyframes gradientMask-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
+	0% { transform: translate(0,0) }
+	10% { transform: translate(-5%,-5%) }
+	20% { transform: translate(-10%,5%) }
+	30% { transform: translate(5%,-10%) }
+	40% { transform: translate(-5%,15%) }
+	50% { transform: translate(-10%,5%) }
+	60% { transform: translate(15%,0) }
+	70% { transform: translate(0,10%) }
+	80% { transform: translate(-15%,0) }
+	90% { transform: translate(10%,5%) }
+	100% { transform: translate(5%,0) }
 }
 
 @keyframes gradientMask-animation-alt {
-    0% { transform: translate(0,0) }
-    
-    99% { transform: translate(0,100%) }
+	0% { transform: translate(0,0) }
 
-     100% { transform: translate(0,0) }
+	99% { transform: translate(0,100%) }
+
+	100% { transform: translate(0,0) }
 }
 
 @keyframes gradientMask-animation-helper {
 	animation-delay: 1s;
 
-    0% { transform: translate(0,0) }
-    
-    99% { transform: translate(0,100%) }
+	0% { transform: translate(0,0) }
 
-     100% { transform: translate(0,0) }
+	99% { transform: translate(0,100%) }
+
+	100% { transform: translate(0,0) }
 }
 
 */
+
 /*
 div.gradientMask {
   position: fixed;
@@ -140,7 +139,6 @@ div.gradientMask {
 /* || Navigation Bar */
 
 div.navigationBar {
-
 	z-index: 2;
 
 	display: table;
@@ -189,7 +187,6 @@ div.navigationBar a {
 }
 
 div.navigationBar span {
-
 	display: table-cell;
 	line-height: normal;
 
@@ -206,7 +203,6 @@ div.navigationBar span {
 
 @media screen and (max-width: 780px) { /*nav switch modes bp*/
 	div.navigationBar span {
-
 		width: 98%; /* therefore a 2% margin on our slight outline here. */
 
 		margin-top: 2px;
@@ -238,7 +234,6 @@ b.navLinkHighlight { /* Change color on hover */
 /* || Project Display Module(s) */
 
 div.projectDisplayModuleHeader {
-
 	z-index: 2;
 
 	display: block;
@@ -266,7 +261,6 @@ div.projectDisplayModuleHeader {
 }
 
 div.projectDisplayModuleGalleryExpanded {
-
 	display: block;
 
 	content: "";
@@ -287,7 +281,6 @@ div.projectDisplayModuleGalleryExpanded {
 
 @media screen and (max-width: 780px) {
 	div.projectDisplayModuleGalleryExpanded {
-
 		display: block;
 
 		content: "";
@@ -309,7 +302,6 @@ div.projectDisplayModuleGalleryExpanded {
 }
 
 div.projectDisplayModuleGalleryExpanded img {
-
 	justify-content: space-around;
 	align-items: flex-start;
 	object-fit: contain;
@@ -324,17 +316,14 @@ div.projectDisplayModuleGalleryExpanded img {
 
 /* Clear floats after image containers */
 div.projectDisplayModuleGalleryExpanded::after {
-	
 	display: table;
 	content: "";
 	clear: both;
 
 	max-width: 100%;
-
 }
 
 div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
-
 	z-index: 2;
 	
 	display: block;
@@ -547,9 +536,7 @@ a.projectDisplayModuleDescription {
 	color: var(--paletteShadeD); 	
 }
 
-/*
-	|| Project Spec-out Page
-*/
+/* || Project Spec-out Page */
 
 div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
 	display: flex;
@@ -1184,6 +1171,7 @@ div.tagCloudContainer {
 }
 
 /* Flip Cards for the About Page */
+
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 
 div.flip-box-container {
