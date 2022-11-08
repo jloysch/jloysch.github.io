@@ -57,7 +57,7 @@ html, body {
 
 	overscroll-behavior: contain !important;
 
-	background-image: url("koi5.png");
+	background-image: url("patt5.png");
 	/*background-size: cover;*/	
 }
 
@@ -1486,7 +1486,7 @@ div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adapt
 
 	height: auto;
 
-	width: 12.5%;
+	width: 6.25%;
 	max-width: 100%;
 }
 
