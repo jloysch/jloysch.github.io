@@ -1,0 +1,1128 @@
+/*
+	Using DFC Convention (Display > Format > Constraint) (my convention)
+*/
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Fix for font weights not working correctly */
+}
+
+:root {
+
+	/*
+		|| Colors
+	*/
+
+	--paletteShadeA: #000000; /* Arrange them dark to light, left to right */ /*Background*/ /* Graphite Gray Color Pallette' https://www.color-hex.com/color-palette/1013236 */
+	--paletteShadeB: #000000CC; /*navbar*/
+	--paletteShadeC: #3A3A3C; /*wireframes*/
+	--paletteShadeD: #FFFFFF; /*text*/
+	--paletteShadeE: #EBEBF5; /*texthighlights*/
+
+	/*--hoverColorA: #F7F3E3;*/
+	--hoverColorA: #F6F7F8;
+
+
+
+	/*
+		|| Navigation Bar 
+	*/
+
+	--navigationBarBorderRadius: 12px;
+	--navigationBarHeight: 64px;
+	--navigationBarWidth: 100%;
+	--navigationBarFontSize: 24px;
+
+	/*
+		|| Project Modules
+	*/
+
+	--h1fontSize: 16px;
+	--h2fontSize: 14px;
+	--moduleExpansionTransitionTime: 0.4s;
+
+	/*
+		|| Project Spec-out
+	*/
+
+	--projectSpecOutTitleFontSize: 64px;
+
+	--projectGalleryShowcaseImageBorderRadius: 8px;
+	--projectSpecOutContainerTopBottomPad: 32px;
+	--projectSpecOutTitleSpacing: 1px;
+
+	--projectSpecAssetOutletDivColor: #000000;
+
+	--projectSpecOutGalleryBorderSize: 12px;
+	--assetDownloadFontSize: 24px;
+
+}
+
+.view {
+  transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+/*
+	|| Basis
+*/
+
+html, body {
+
+	background-image: url("koi5.png");
+	/*background-size: cover;*/
+	
+	text-overflow: ellipsis;
+
+	z-index: 0;
+
+	
+
+	height: 100vh;
+	margin: 0vh;
+
+	
+
+
+	
+	overflow: auto !important;
+	-webkit-overflow-scrolling: touch;
+
+
+
+  
+
+}
+
+
+
+/*
+
+.gradientMask {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat-x;
+  background-repeat: repeat;
+  animation: gradientMask-animation-alt 1s infinite;
+  animation: gradientMask-animation-helper 1s infinite;
+  opacity: 1.0;
+  visibility: visible;
+}
+
+@keyframes gradientMask-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+@keyframes gradientMask-animation-alt {
+    0% { transform: translate(0,0) }
+    
+    99% { transform: translate(0,100%) }
+
+     100% { transform: translate(0,0) }
+}
+
+@keyframes gradientMask-animation-helper {
+	animation-delay: 1s;
+
+    0% { transform: translate(0,0) }
+    
+    99% { transform: translate(0,100%) }
+
+     100% { transform: translate(0,0) }
+}
+
+*/
+
+
+
+/*
+	|| Navigation Bar
+*/
+
+div.navigationBar {
+
+	display: table;
+	table-layout: fixed; /* For cells of equal size */
+
+	/*
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	*/
+
+	background-color: #181818;
+	
+
+    border-radius: var(--navigationBarBorderRadius);
+	height: var(--navigationBarHeight);
+    width: 80%;
+
+    position: relative;
+
+    margin-top: 32px;
+    margin-left: -2%;
+    margin-right: 2%;
+
+    justify-content: center;
+ 
+    z-index: 2;
+}
+
+div.navigationBar a {
+	text-decoration: none;
+}
+
+div.navigationBar:hover {  }
+
+div.navigationBar span {
+
+	display: table-cell;
+
+	line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+  
+    font-size: var(--navigationBarFontSize);
+
+    text-decoration: none;
+    
+}
+
+div.navigationBar a[href]:hover {
+	color: var(--hoverColorA);
+}
+
+a[href] { color: var(--paletteShadeD); } /* TODO: Consider changing this (intended for navbar) to it's own seperate tag */
+
+b.navLinkHighlight {
+	color: var(--hoverColorA);
+}
+
+/*
+	|| Project Display Module(s)
+*/
+
+div.projectDisplayModuleHeader {
+
+	display: block;
+	
+	white-space: pre-line;
+	/*background-color: var(--paletteShadeC);*/
+	background-color: #181818;
+
+
+	/*background-color: #181818;*/
+	text-overflow: ellipsis;
+	content: "";
+	
+	border-radius: 8px 0px 0px 0px;
+	width: 98%;
+	margin-left: 2%;
+	height: 32px;
+
+ 	 position: relative;
+    z-index: 2;
+}
+
+div.projectDisplayModuleGalleryExpanded {
+
+	display: block;
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+		 white-space: nowrap;
+	justify-content: center;
+	
+	margin-left: 2%;
+	width: 96%;
+	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+}
+
+div.projectDisplayModuleGalleryExpanded img {
+	max-width: 100%
+	max-height: 100%;
+
+	
+	  overflow: hidden;
+	  object-fit: contain;
+
+
+	  height:100%;
+	  width:auto;
+
+	   justify-content: space-around;
+	    align-items: flex-start;
+}
+
+/* Clear floats after image containers */
+div.projectDisplayModuleGalleryExpanded::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+div.projectDisplayModuleGalleryCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
+
+	
+
+	display: block;
+
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+		 white-space: nowrap;
+	justify-content: center;
+	margin-left: 2%;
+	width: 96%;
+	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+	 position: relative;
+
+    z-index: 2;
+
+
+
+
+
+}
+
+div.projectDisplayModuleGalleryCollapsed img {
+	max-width: 100%
+	max-height: 100%;
+
+	
+	  overflow: hidden;
+	  object-fit: contain;
+
+
+	  height:100%;
+	  width:auto;
+
+	   justify-content: space-around;
+	    align-items: flex-start;
+}
+
+
+div.projectDisplayModuleGalleryEmptyCollapsed { /* Alt is what I'm going to call the wireframe for the media pool on the front page (html with no headers, static compromise) */
+
+	display: flex;
+	
+	background-color: var(--paletteShadeB);
+	opacity: 0.9;
+	content: "";
+	justify-content: center;
+	white-space: pre-line;
+
+	margin-left: 2%;
+	width: 96%;
+	height: 14px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: 0px 0px 0px 8px;
+
+	 position: relative;
+    z-index: 2;
+}
+
+
+
+
+div.projectDisplayModuleHeader:hover/*, div.projectListWireframe:active .projectListWireframe*/{
+	background-color: #000000 !important;
+
+}
+
+div.projectDisplayModuleHeader a:hover  { /* Titlebar for project list */
+	color: var(--hoverColorA) !important;
+}
+
+div.projectDisplayModuleHeader a2:hover  { /* Titlebar for project list */
+	color: var(--hoverColorA) !important;
+}
+
+div.projectDisplayModuleGalleryExpanded:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0
+
+	height: 256px;
+
+	  position: relative;
+    z-index: 2;
+}
+
+div.projectDisplayModuleGalleryCollapsed:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0
+
+	height: 256px;
+
+	 position: relative;
+    z-index: 2;
+}
+
+#projectDisplayModuleHeader:hover ~ #projectMediaPoolContainer { /* The two siblings within the container will fire eachother, 'projectMediaPoolContainer' is the div holding the images for the modular / list project displays */
+
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 256px;
+}
+
+#projectMediaPoolContainer:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 256px;
+}
+
+a.projectDisplayModuleTitle {
+
+	color: var(--paletteShadeD);
+	
+  	line-height: normal;
+  	vertical-align: middle;
+
+  	margin-left: 12px;
+	font-size: 20px;
+	width: 10px;
+	max-width: 100%;
+
+	 z-index: 3;
+}
+
+a2.projectDisplayModuleDescription {
+
+	color: var(--paletteShadeD);
+
+	vertical-align: middle;
+
+	max-width: 100%;
+	width: 100px;
+	margin-left: 12px;
+		
+}
+
+/*
+	|| Project Spec-out Page
+*/
+
+div.projectGalleryShowcaseImage { /* Avoided using flex because want to support as much as I can, keeping in mind 'legacy' users on < IE 10*/
+ 	display: flex;
+  vertical-align: middle;
+
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:auto;
+  margin-bottom:auto;
+
+
+
+
+	text-align: center;
+
+		
+  width: 30%;
+  height: 100%;
+
+
+
+	overflow: hidden;
+
+
+
+
+
+}
+
+div.projectGalleryShowcaseImage img { 
+/*
+display:block;
+ 
+
+  border-radius: var(--projectGalleryShowcaseImageBorderRadius);
+
+
+max-height: 100%;
+max-width: 100%;
+  width: 100%;
+  height: 100%;
+  
+
+*/
+
+ border-radius: 15%;
+
+display: flex;
+  height: 100%;
+box-sizing: border-box;
+max-width: 100%;
+max-height: 100%;
+width: 100%;
+
+vertical-align: middle;
+
+  justify-content: center;
+
+max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: contain;
+
+
+
+}
+
+div.projectWriteup { 
+
+  float: left;
+  width: 60%;
+  vertical-align: middle;
+
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.projectWriteup h3 { 
+
+  color: var(--paletteShadeD);
+  font-size: var(--projectSpecOutTitleFontSize);
+
+  /*letter-spacing: var(--projectSpecOutTitleSpacing);*/
+
+  font-optical-sizing: auto; 
+  font-family: "Montserrat script=latin rev=1"; 
+  font-weight: 900; 
+ 
+  font-stretch: normal; 
+  line-height: 50%;
+
+
+}
+
+div.projectWriteup h4 { 
+  font-style: normal;
+  color: var(--paletteShadeD);
+}
+
+div.projectWriteup p { 
+  font-style: italic;
+  color: var(--paletteShadeD);
+}
+
+
+div.projectSpecOut { /* Clear floats after the columns [W3C Adaptation]*/ 
+	
+	display:flex;
+  background-color: #000000CC;
+
+  padding-top: var(--projectSpecOutContainerTopBottomPad);
+  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
+
+  justify-content: space-between;
+  vertical-align: middle;
+
+
+  height: 80%;
+  width: 96%;
+
+  margin-right: 2%;
+  margin-left: 2%;
+
+  padding-bottom: 20%;
+  margin-bottom: 20%;
+
+  border-radius: 12px;
+
+  /*opacity: 0.5;*/
+  
+}
+
+div.projectSpecOut:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
+display: table;
+  content: "";
+  
+    vertical-align: middle;
+  justify-content: space-between;
+
+  clear: both;
+
+
+  
+}
+
+div.projectSpecOut img { /* Clear floats after the columns [W3C Adaptation]*/ 
+
+  max-width: 100%;
+  max-height: 100%;
+
+  justify-content: center;
+  vertical-align: middle;
+
+
+}
+
+
+div.projectSpecGallery {
+	display: flex;
+
+	background-color: #181818;
+	
+	content: "";
+	white-space: pre-line;
+	justify-content: center;
+	
+	margin-left: 2%;
+	width: 96%;
+	height: 256px; /*12px to create cool effect, 256 to keep ideal expansion */
+	border-radius: var(--projectSpecOutGalleryBorderSize);
+}
+
+div.projectSpecGallery img {
+	max-width: 100%
+	max-height: 100%;
+
+	 border-radius: 15%;
+
+	display: flex;
+	  height: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+
+	vertical-align: middle;
+
+	  justify-content: center;
+
+	max-height: 100%;
+	  max-width: 100%;
+	  overflow: hidden;
+	  object-fit: contain;
+}
+/*
+#projectSpecGallery:hover {
+	background-color: var(--paletteShadeB) !important;
+	opacity: 1.0;
+	transition-duration: var(--moduleExpansionTransitionTime);
+
+	height: 256px;
+}
+*/
+
+div.projectSpecAssetOutlet {
+	display: block;
+
+	background-color: var(--projectSpecAssetOutletDivColor)
+
+	height: 128px;
+	width: 100%;
+
+	max-width: 100%
+	max-height: 100%;
+
+	width: 100%;
+
+	z-index: 98;
+}
+
+div.projectSpecAssetOutlet button {
+	display: block;
+
+	text-align: center;
+
+	background-color: var(--projectSpecAssetOutletDivColor)
+
+	height: 64px;
+	width: 100%;
+
+	max-width: 100%
+	max-height: 100%;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	background-color: #181818;
+
+	z-index: 99;
+}
+
+button.buttonAssetDownload {
+	display: block;
+
+	text-align: center;
+
+	background-color: var(--projectSpecAssetOutletDivColor)
+
+	
+	font-weight: 900;
+
+	height: 64px;
+	width: 100%;
+
+	max-width: 100%
+	max-height: 100%;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	font-size: var(--assetDownloadFontSize);
+
+	color: var(--paletteShadeD);
+
+	font-optical-sizing: auto; 
+	font-family: "Montserrat script=latin rev=1"; 
+	font-weight: 900; 
+
+	font-stretch: normal; 
+	line-height: initial;
+
+	border-radius: 12px;
+
+	z-index: 99;
+}
+
+button.buttonAssetDownloadNoAssets {
+	display: block;
+
+	text-align: center;
+
+	background-color: var(--projectSpecAssetOutletDivColor)
+	
+	font-weight: 900;
+
+	height: 64px;
+	width: 100%;
+
+	max-width: 100%
+	max-height: 100%;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	font-size: var(--assetDownloadFontSize);
+
+	color: var(--paletteShadeD);
+
+	font-optical-sizing: auto; 
+	font-family: "Montserrat script=latin rev=1"; 
+	font-weight: 900; 
+
+	font-stretch: normal; 
+	line-height: initial;
+
+	border-radius: 12px;
+
+	z-index: 99;
+
+}
+
+button.buttonAssetDownloadNoAssets:hover {
+	color: #FF0000;
+
+}
+
+p.projectSpecParagraph {
+
+	font-optical-sizing: auto; 
+	font-family: "Montserrat script=latin rev=1"; 
+	font-weight: 300; 
+
+	font-stretch: normal; 
+	line-height: initial;
+
+}
+
+/*
+ 	|| Various Padding ||
+*/
+
+div.projectDisplayListTweenPadding {
+
+	width: 100%;
+	height: 32px;
+
+}
+
+div.divPadA {
+
+	width: 100%;
+	height: 50px;
+}
+
+div.navigationBarBottomPad {
+	width: 100%;
+	height: 50px;
+}
+
+/*
+	|| ABOUT PAGE for website ||
+*/
+
+div.aboutMeContainer { 
+	
+  /*background-color: #00000067;*/
+  background-color: #000000CC;
+
+  padding-top: var(--projectSpecOutContainerTopBottomPad);
+  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
+  /*opacity: 0.5;*/
+
+
+   position: relative;
+    z-index: 2;
+
+    border-radius: 12px;
+    width: 96%;
+
+    margin-right: 2%;
+    margin-left: 2%;
+  
+}
+
+div.aboutMeContainer:hover { 
+	
+
+  /*background-color: #181818;*/
+
+  background-color: #000000CD;
+  
+}
+
+div.aboutMeContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
+	
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+div.aboutMeContainer img { 
+	/*
+	height: 168.75px;
+	width: 135px;
+	*/
+
+	/*
+	width: 316.75px;
+	height: 392.25px;
+	*/
+
+	width: 158.375px;
+	height: 196.125px;
+
+
+	
+
+  max-height: 100%;
+  max-width: 100%;
+
+
+  display: block;
+
+  vertical-align: middle;
+  
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 50%;	/* Creates a rounded image */
+
+
+}
+
+div.aboutMeImage {
+	float: left;
+	width: 20%;
+}
+
+div.aboutMeBlurbs {
+	float: left;
+	width: 80%;
+}
+
+div.aboutMeBlurbs h1 {
+	color: var(--paletteShadeD);
+}
+
+div.aboutMeBlurbs p {
+	color: var(--paletteShadeD);
+
+	padding-right: 30px;
+}
+
+div.tagCloudContent {
+	color: white;
+
+	height: 100%;
+	width: 100%;
+
+	vertical-align: middle;
+
+	 margin-left: auto;
+   margin-right: auto;
+   margin-top: auto;
+   margin-bottom: auto;s
+}
+
+
+/* tag cloud */
+
+.tagcloud {
+
+	display: flex;
+	position: relative;
+	font-optical-sizing: auto; 
+	font-family: "Montserrat script=latin rev=1"; 
+	font-weight: 900; 
+
+    font-size: 20px;
+    
+    height: 90% !important;
+    width: 40% !important;
+    
+       vertical-align: middle;
+
+    color: white;
+
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: auto;
+   margin-bottom: auto;
+
+
+
+
+
+  }
+
+  .tagcloud--item {
+  	color: white;
+  }
+
+  .tagcloud--item:hover {
+    color: #36454F;
+
+  }
+
+  div.tagCloudContainer {
+  	display: flex;
+    float: left;
+	width: 40%;
+
+	
+	margin-right: auto;
+	margin-left: auto;
+
+	margin-top:2%;
+	margin-bottom: 2%;
+
+	vertical-align: center;
+  }
+
+/* Flip Cards for the About Page */
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+div.flip-box-container {
+	 display: flex;
+	float: left;
+	width: 60%;
+
+	margin-right: auto;
+	margin-left: auto;
+
+
+	
+}
+
+div.container:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
+	
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+div.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 100%;
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+	
+padding-right: 10px;
+padding-left: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+
+}
+
+/* This container is needed to position the front and back side */
+div.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+div.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+  /*border: 1px solid #f1f1f1;*/
+}
+
+/* Position the front and back side */
+div.flip-box-front, div.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side */
+div.flip-box-front {
+	display: table; /*enables vertical align properties to be viewed */
+  background-color: #181818;
+  color: white;
+}
+
+div.flip-box-front h2 {
+
+	 display: table-cell;
+  vertical-align: middle;
+
+	
+	height: 100%;
+
+	text-align: center;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+/* Style the back side */
+div.flip-box-back {
+	display: table;
+  background-color: #181818;
+  color: white;
+  font-size: 12px;
+  transform: rotateY(180deg);
+  line-height: 200%;
+
+}
+
+div.flip-box-back h2 {
+	 display: table-cell;
+  vertical-align: middle;
+
+
+	height: 100%;
+
+
+	/*margin-top: 45%;*/
+
+	text-align: center;
+
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+/* Skills and Links */
+
+div.skillsAndLinksContainer { 
+	
+  /*background-color: #00000067;*/
+   display: flex;
+  background-color: #000000CC;
+
+  padding-top: var(--projectSpecOutContainerTopBottomPad);
+  padding-bottom: var(--projectSpecOutContainerTopBottomPad);
+  /*opacity: 0.5;*/
+
+   position: relative;
+
+   border-radius: 12px;
+
+   width: 96%;
+
+   margin-left: 2%;
+   margin-right: 2%;
+
+   height: 40vh;
+
+   margin-bottom: 2%;
+
+   z-index: 2;
+  
+}
+
+div.skillsAndLinksContainer:hover { 
+	
+
+  /*background-color: #181818CC;*/
+
+   background-color: #000000CD;
+
+  
+}
+
+div.skillsAndLinksContainer:after { /* Clear floats after the columns [W3C Adaptation] to float two divs side-by-side*/ 
+	
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+
+/*
+	|| PRELOADER ANIMATIONS
+*/
+
+.loader-wrapper {
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background-color: #181818;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 998;
+     overflow: scroll;
+
+
+}
+
+.loader {
+	width: 300px;
+	height: 300px;
+	z-index: 999;
+}
+

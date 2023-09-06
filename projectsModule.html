@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'projectsModule.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The modular, headless version of 'projects.html' to be included for the single-page view on 'index.html'
+
+-->
+
+	<head>
+
+	</head>
+
+	{% block projectList %}
+
+	<body>
+
+		{% for project in availableProjects %}
+
+			<div id="projectDisplayModule">
+
+				<!--
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="{{ hrefs[project] }}"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a class="projectDisplayModuleDescription", href="{{projectLink}}">{{ descriptors[project] }}</a></div>
+			-->
+
+				<div class= "projectDisplayModuleHeader", id="projectDisplayModuleHeader", href="{{ hrefs[project] }}"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a class="projectDisplayModuleDescription">{{ descriptors[project] }}</a></div>
+
+				<!-- With this, projects that I have listed which have no gallery are to stay collapsed permanently --->
+				<div class= 
+				{% if hideNav %}
+					{% if mediaPool[project]|length > 0 %}
+						"projectDisplayModuleGalleryCollapsed"
+					{% else %}
+						"projectDisplayModuleGalleryEmptyCollapsed"
+					{% endif %}
+				{% else %}
+					"projectDisplayModuleGalleryExpanded"
+				{% endif %},
+
+				id= 
+
+			
+				{% if mediaPool[project]|length > 0 %}
+					projectMediaPoolContainer
+				{% else %}
+					""
+				{% endif %}, onclick="location.href='{{ hrefs[project] }}'">{% for image in mediaPool[project] %}<img src="{{image}}", href="{{ hrefs[project] }}"></img>{% endfor %}</div>
+
+
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
+			
+				<div class= "projectDisplayListTweenPadding"></div>
+
+				<!--
+					The page here is dependent on 'hideNav', logically this is equivalent to being on the first page aka 'index.html' so we display the 'modularized' version of the project gallery.
+				-->
+
+			</div>
+
+		{% endfor %}
+
+	</body>
+
+	{% endblock %}
+
+</html>

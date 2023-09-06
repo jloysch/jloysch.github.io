@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'projects.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant for the actual static route /projects, this will generate project modules dependent upon static/projects/ and display them in a list.
+
+-->
+	
+	<head>
+
+		{% if not hideNav %}
+			{% extends "base.html" %}
+		{% endif %}
+
+	</head>
+
+	<div class= "divPadA"></div>
+
+	{% block content %}
+
+	<body ontouchstart="">
+
+		{% for project in availableProjects %}
+
+		<div id="projectDisplayModule">
+
+			<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="{{ hrefs[project] }}"><b>{{project}}</b></a><a class="projectDisplayModuleDescription", href="{{ hrefs[project] }}">{{descriptors[project]}}</a></div>
+			<div class= 
+			{% if hideNav %}
+				"projectDisplayModuleGalleryCollapsed"
+			{% else %}
+				{% if mediaPool[project]|length > 0 %}
+					"projectDisplayModuleGalleryExpanded"
+				{% else %}
+					projectDisplayModuleGalleryEmptyCollapsed
+				{% endif %}
+			{% endif %}, onclick="location.href='{{ hrefs[project] }}'">{% for image in mediaPool[project] %}<img src="{{image}}"></img>{% endfor %}</div>
+
+			<!--
+
+			TODO: later on I want to make the div's unclickable unless theyre expanded
+
+			-->
+
+			<div class= "projectDisplayListTweenPadding"></div>
+
+		</div>
+
+		{% endfor %}
+
+	</body>
+
+	{% endblock %}
+
+</html>
