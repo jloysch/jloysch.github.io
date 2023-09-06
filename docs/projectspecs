@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'projectspecs.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	This page is meant to display all the relevant media and descriptions related to each project!
+
+-->
+	
+	<head>
+
+		<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
+
+	<head>
+
+		<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="script">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+		<link rel="preload" href="/static/styles/styles.css" as="style">
+		<link rel="preload" href="/static/scripts/preload-screen.js" as="script">
+		
+    	<link rel="preload" href="/static/scripts/css-rain-effect.js" as="script">
+
+		
+
+		
+
+
+		<link rel="preload"
+		href="/static/scripts/css-rain-effect.js" as="script">
+
+		
+
+		<!--
+		<meta http-equiv="Cache-control" content="public">
+
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+
+		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+
+		
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="text/javascript">
+
+
+	
+	<div class="navigationBar">
+
+	    
+
+	</div>
+
+</head>
+
+</html>
+		
+
+		
+
+
+	</head>
+	
+	<body ontouchstart="">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/static/scripts/css-rain-effect.js"></script>
+
+
+		<div class="loader-wrapper">
+			<div class="loader"> 
+
+				<object type="image/svg+xml" data="/static/styles/animated-clock.svg"></object>
+				<script src="/static/scripts/preload-screen.js"></script>
+			</div>
+
+		</div>
+
+
+		 
+		<div class="navigationBarBottomPad"></div>
+
+		
+
+	<body ontouchstart="">
+
+			<div class="projectSpecOut">
+				<div class="projectGalleryShowcaseImage"><img src=
+																  	"/static/projectShowcasePlaceholder.jpeg"
+																   id="imgShowcase"></img></div>
+				<div class="projectWriteup">
+
+					<h3></h3>
+					<p class="projectSpecParagraph"></p>
+					<p><b>Platform:</b></p><p class="projectSpecParagraph"></p>
+					
+					<p><b>Technologies:</b></p><p class="projectSpecParagraph"></p>
+					
+						<p><b>Gallery (empty):</b></p>
+					
+					
+
+					<div class="projectSpecGallery">  </div>
+
+					<div class= "divPadA"></div>
+
+
+					<div class="projectSpecAssetOutlet"> 
+
+						<button type="button", class=	
+															"buttonAssetDownloadNoAssets"
+														, 
+
+														href="/static/text.txt" download="test.txt", onClick="">
+														
+															Download Unavailable
+														</button> 
+
+														
+					</div>
+				</div>
+			</div>
+
+
+
+	</body>
+
+	
+			
+	</body>
+	
+		
+</html>

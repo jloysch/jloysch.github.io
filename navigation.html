@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="text/javascript">
+
+
+	
+	<div class="navigationBar">
+
+	    {% for item in navigation %}
+
+	        <span id=link> 
+
+	        	<a href="{{ url_for(item.lower()|string()) }}", id="navlink"> 
+
+	        	{% if (crumb.lower()|string() == item.lower()|string()) %}
+
+	        		 <b class="navLinkHighlight">{{ item }}</b>
+	        		
+	        	{% else %}
+
+	        		{{ item }}
+
+	        	{% endif %}
+
+	        </a>
+
+	    	</span>
+
+	    {% endfor %}
+
+	</div>
+
+</head>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'about.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	My personal info / etc to share.
+
+-->
+
+	<head>
+
+
+		<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'base.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	The base template for the website, parent to all html.
+
+-->
+
+	<head>
+
+		<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="script">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+		<link rel="preload" href="/static/styles/styles.css" as="style">
+		<link rel="preload" href="/static/scripts/preload-screen.js" as="script">
+		
+    	<link rel="preload" href="/static/scripts/css-rain-effect.js" as="script">
+
+		
+
+		
+
+
+		<link rel="preload"
+		href="/static/scripts/css-rain-effect.js" as="script">
+
+		
+
+		<!--
+		<meta http-equiv="Cache-control" content="public">
+
+		<meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- Fix for media type queries not registering on chrome 22.0 view-as -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--
+		
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+		-->
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100;0,300;1,800;1,900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+
+		<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+
+		
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+	'navigation.html' 
+
+	Copyright 2022, Joshua Loysch, All rights reserved.
+
+	Navigation bar to be included across the site via 'base.html'
+
+-->
+
+<head>
+
+	<link rel= "stylesheet" type= "text/css" href= "/static/styles/styles.css">
+
+
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" as="text/javascript">
+
+
+	
+	<div class="navigationBar">
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/index.html", id="navlink"> 
+
+	        	
+
+	        		Home
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/projects.html", id="navlink"> 
+
+	        	
+
+	        		Projects
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/about.html", id="navlink"> 
+
+	        	
+
+	        		 <b class="navLinkHighlight">About</b>
+	        		
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	        <span id=link> 
+
+	        	<a href="/contact.html", id="navlink"> 
+
+	        	
+
+	        		Contact
+
+	        	
+
+	        </a>
+
+	    	</span>
+
+	    
+
+	</div>
+
+</head>
+
+</html>
+		
+
+		
+
+
+	</head>
+	
+	<body ontouchstart="">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/static/scripts/css-rain-effect.js"></script>
+
+
+		<div class="loader-wrapper">
+			<div class="loader"> 
+
+				<object type="image/svg+xml" data="/static/styles/animated-clock.svg"></object>
+				<script src="/static/scripts/preload-screen.js"></script>
+			</div>
+
+		</div>
+
+
+		 
+		<div class="navigationBarBottomPad"></div>
+
+		
+	<body ontouchstart="">
+
+		
+		<div class="aboutMeContainer"> 
+
+			<div class="aboutMeImage">
+			<img src="/static/images/jloysch.jpg"></img>
+			</div>
+			<div class="aboutMeBlurbs">
+			<h1>Hey, I'm Joshua!</h1>
+			<p>I am a <i><b>Full Stack Developer</b></i> bringing visions to life with the utmost emphasis on user experience. I enjoy creating solutions that make an impact. I am currently attending the University of Rochester to finish my Bachelors in Computer Science.</p>
+			</div>
+
+   
+		</div>
+
+
+		<div class="divPadA"></div>
+
+		<div class="skillsAndLinksContainer"> 
+
+
+	   		
+
+			<div class="tagCloudContainer">
+
+				<div class="tagCloudContent"></div>
+
+				<script src="/static/scripts/TagCloud.min.js"> </script>
+
+				<script>
+
+									const myTags = ['Adobe XD',
+					    'JavaScript', 'CSS', 'HTML',
+					    'C', 'C++', 'Python', 'Java', 'git',
+					    'django', 'Jinja2', 'Flask', 'XCode',
+					   	'MySQL', 'jQuery', 'Android Studio', 'Swift', 'XML'
+					];
+
+					var tagCloud = TagCloud('.tagCloudContent', myTags,{
+
+					  // radius in px
+					  radius: 250,
+
+					  // animation speed
+					  // slow, normal, fast
+					  maxSpeed: 'fast',
+					  initSpeed: 'fast',
+
+					  // 0 = top
+					  // 90 = left
+					  // 135 = right-bottom
+					  direction: 135,
+					  
+					  // interact with cursor move on mouse out
+					  keep: true
+					  
+					});
+
+					//To change the color of text randomly
+					//var colors = ['#34A853', '#FBBC05', '#4285F4', '#7FBC00', 'FFBA01', '01A6F0'];
+					//var random_color = colors[Math.floor(Math.random() * colors.length)];
+					//document.querySelector('.tagCloudContent').style.color = random_color;
+
+			</script>
+
+		</div>
+
+		<div class="flip-box-container">
+
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+					  <h2>My Creed</h2>
+					</div>
+					<div class="flip-box-back">
+					  <h2>There is great beauty in simplicity for refinement itself is an art. Delivering a great UX through a polished back-end and clean, intuitive UI is akin to making the user feel at home. This is the standard I strive for.</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+					  <h2>My Objective</h2>
+					</div>
+					<div class="flip-box-back">
+					  <h2>To obtain a position as a software developer in an organization where technical skills and creative thinking are useful.</h2>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="flip-box" onclick="resume.php'">
+				<div class="flip-box-inner" onclick="resume.php">
+					<div class="flip-box-front"  onclick="resume.php">
+					  <h2>My Resume</h2>
+					</div>
+					<div class="flip-box-back", style="background-color:#3377cc;color:white;">
+					  <h2>Click Me!</h2>
+		
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+
+	
+
+	</div>
+
+	</body>
+
+		
+			
+	</body>
+	
+		
+</html>
