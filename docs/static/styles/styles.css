@@ -1543,16 +1543,12 @@ div.contactContainer {
 
 .contact-flip-box:active .contact-flip-box-inner {
 	transform: rotateX(180deg);
-
-	color: red;
 }
 
-.contact-flip-box-front, .contact-flip-box-back { /* when we transform */
+.contact-flip-box-front, .contact-flip-box-back {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 
-	visibility: hidden;
-	
 	position: absolute;
 
 	height: 100%;
@@ -1567,13 +1563,10 @@ div.contactContainer {
 	background-color: #181818DD;
 	color: black;
 
-	visibility: hidden;
 	max-width: 100%;
 }
 
 .contact-flip-box-front h2 {
-	
-	visibility: hidden;
 	display: inline-block;
 	
 	vertical-align: middle;
@@ -1595,10 +1588,6 @@ div.contactContainer {
 
 	background-color: dodgerblue;
 	color: white;
-
-	
-	visibility: hidden;
-	
 }
 .contact-flip-box-back h2 {
 	display: inline-block;
