@@ -1,0 +1,6 @@
+python3 -m venv venv
+". venv/bin/activate /" or "source venv/bin/activate" (if access denied)
+
+export FLASK_APP='flaskApp.py'
+export FLASK_ENV='development'
+flask run
