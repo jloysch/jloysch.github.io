@@ -117,10 +117,17 @@
 				</div>
 			</div>
 
+			
+		<script>
+			function pullResume() {
+				location.href="{{ url_for('static', filename='resume.pdf') }}"
+			}
 
-			<div class="flip-box" onclick="location.href='{{ url_for('static', filename='resume.pdf') }}'">
-				<div class="flip-box-inner" onclick="location.href='{{ url_for('static', filename='resume.pdf') }}'">
-					<div class="flip-box-front"  onclick="location.href='{{ url_for('static', filename='resume.pdf') }}'">
+		</script>
+
+			<div class="flip-box" onclick="pullResume()">
+				<div class="flip-box-inner" onclick="pullResume()">
+					<div class="flip-box-front" onclick="pullResume()">
 					  <h2>My Resume</h2>
 					</div>
 					<div class="flip-box-back", style="background-color:#3377cc;color:white;">
