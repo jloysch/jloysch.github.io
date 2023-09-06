@@ -53,11 +53,11 @@ html, body {
 	max-width: 100%;
 
 	overflow-x: hidden !important;
-	overflow-y: scroll !important;
+	/*overflow-y: scroll !important;*/
 
 	overscroll-behavior: contain !important;
 
-	background-image: url("patt5.png");
+	background-image: url("koi.png"); /*das background image for the site */
 	/*background-size: cover;*/	
 }
 
