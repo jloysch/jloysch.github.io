@@ -4,16 +4,15 @@
 
 <!--
 
-	'about.html' 
+	'blog.html' 
 
 	Copyright 2022, Joshua Loysch, All rights reserved.
 
-	My personal info / etc to share.
-
+	BLOG!
 -->
 
-	<head>
 
+	<head>	
 
 		<!DOCTYPE html>
 
@@ -150,8 +149,8 @@
 
 	        	
 
-	        		 <b class="navLinkHighlight">About</b>
-	        		
+	        		About
+
 	        	
 
 	        </a>
@@ -166,8 +165,8 @@
 
 	        	
 
-	        		Blog
-
+	        		 <b class="navLinkHighlight">Blog</b>
+	        		
 	        	
 
 	        </a>
@@ -226,131 +225,8 @@
 		<div class="navigationBarBottomPad"></div>
 
 		
-	<body ontouchstart="">
-
-		
-		<div class="aboutMeContainer"> 
-
-			<div class="aboutMeImage">
-			<img src="/static/images/jloysch.jpg"></img>
-			</div>
-			<div class="aboutMeBlurbs">
-			<h1>Nice to Meet You!</h1>
-			<p>My name is Joshua Loysch, nice to meet you! I hope the web experience was pleasant. I am a <i><b>Full Stack Developer</b></i> bringing visions to life with the utmost emphasis on user experience. I enjoy creating solutions that make an impact. I am currently attending the University of Rochester to finish my Bachelors in Computer Science.</p>
-			</div>
-
-   
-		</div>
-
-
-		<div class="divPadA"></div>
-
-		<div class="skillsAndLinksContainer"> 
-
-
-	   		
-
-			<div class="tagCloudContainer">
-
-				<div class="tagCloudContent"></div>
-
-				<script src="/static/scripts/TagCloud.min.js"> </script>
-
-				<script>
-
-									const myTags = ['Adobe XD',
-					    'JavaScript', 'CSS', 'HTML',
-					    'C', 'C++', 'Python', 'Java', 'git',
-					    'django', 'Jinja2', 'Flask', 'XCode',
-					   	'MySQL', 'jQuery', 'Android Studio', 'Swift', 'XML'
-					];
-
-					var tagCloud = TagCloud('.tagCloudContent', myTags,{
-
-					  // radius in px
-					  radius: 250,
-
-					  // animation speed
-					  // slow, normal, fast
-					  maxSpeed: 'fast',
-					  initSpeed: 'fast',
-
-					  // 0 = top
-					  // 90 = left
-					  // 135 = right-bottom
-					  direction: 135,
-					  
-					  // interact with cursor move on mouse out
-					  keep: true
-					  
-					});
-
-					//To change the color of text randomly
-					//var colors = ['#34A853', '#FBBC05', '#4285F4', '#7FBC00', 'FFBA01', '01A6F0'];
-					//var random_color = colors[Math.floor(Math.random() * colors.length)];
-					//document.querySelector('.tagCloudContent').style.color = random_color;
-
-			</script>
-
-		</div>
-
-		<div class="flip-box-container">
-
-			<div class="flip-box">
-				<div class="flip-box-inner">
-					<div class="flip-box-front">
-					  <h2>My Creed (Flip) ⥂ </h2>
-					</div>
-					<div class="flip-box-back">
-					  <h2>There is great beauty in simplicity for refinement itself is an art. Delivering a great UX through a polished back-end and clean, intuitive UI is akin to making the user feel at home. This is the standard I strive for.</h2>
-					</div>
-				</div>
-			</div>
-
-			<div class="flip-box">
-				<div class="flip-box-inner">
-					<div class="flip-box-front">
-					  <h2>My Objective ⥂ </h2>
-					</div>
-					<div class="flip-box-back">
-					  <h2>To obtain a position as a software developer in an organization where technical skills and creative thinking are useful.</h2>
-					</div>
-				</div>
-			</div>
-
+				
 			
-		<script>
-			function pullResume() {
-				location.href="/static/resume.pdf"
-			}
-
-		</script>
-
-			<div class="flip-box" onclick="pullResume()">
-				<div class="flip-box-inner" onclick="pullResume()">
-					<div class="flip-box-front" onclick="pullResume()">
-					  <h2>My Resume ⥂ </h2>
-					</div>
-					<div class="flip-box-back", style="background-color:#3377cc;color:white;">
-					  <h2>Click Me!</h2>
-		
-					</div>
-				</div>
-			</div>
-
-
-
-		</div>
-
-
-
-	
-
-	</div>
-
-	</body>
-
-		
 			
 	</body>
 	

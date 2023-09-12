@@ -16,7 +16,7 @@ import sys
 from flask_frozen import Freezer
 
 template_directory = os.getcwd()
-navigation_sections = ['Home', 'Projects', 'About', 'Contact']
+navigation_sections = ['Home', 'Projects', 'About', 'Blog', 'Contact']
 
 noProjectDescriptionDefaultMessage = "No description available"
 
@@ -49,6 +49,11 @@ def home():
 	projectsHTML=generateProjectShowcaseModule()
 
 	return render_template('index.html', navigation=navigation_sections, crumb="home", mimetype='text/html', testHTML=projectsHTML)
+
+@app.route("/blog")
+@app.route("/blog.html")
+def blog():
+	return render_template('blog.html', navigation=navigation_sections, crumb="blog", mimetype='text/html');
 
 def loadProjectManifest(pfolder):
 	
