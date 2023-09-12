@@ -168,7 +168,7 @@
 															"buttonAssetDownloadNoAssets"
 														, 
 
-														href="/static/text.txt" download="test.txt", onClick="">
+														href="/static/text.txt", download="/static/text.txt", onclick="location.href=''"'" >
 														
 															Download Unavailable
 														</button> 

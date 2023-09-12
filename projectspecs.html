@@ -57,7 +57,7 @@
 															"buttonAssetDownloadNoAssets"
 														{% endif %}, 
 
-														href="{{ url_for('static', filename='text.txt') }}" download="test.txt", onClick="">
+														href="{{ url_for('static', filename='text.txt') }}", download="{{ url_for('static', filename='text.txt') }}", onclick="location.href='{{assets}}'"'" >
 														{% if hasAssets %} 
 															DOWNLOAD ASSET(S)
 														{% else %}

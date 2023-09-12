@@ -1,0 +1,13 @@
+{"title": "SPAN ENCRYPTION", 
+
+"description": "An encryption alogorithm made 100% by me. Theoretical complexity of 2e129 + 3.194e38!", 
+
+"technologies":"Java 8", 
+
+"platform":"Universal",
+
+"shortDescription" : "My first encryption algorithm!",
+
+"assets": "https://github.com/jloysch/span",
+
+"link" : "https://github.com/jloysch/span"}

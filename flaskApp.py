@@ -40,6 +40,7 @@ freezer = Freezer(app)
 
 pageHideHeaders = False
 
+
 @app.route("/")
 @app.route("/index")
 @app.route("/index.html")
@@ -243,8 +244,12 @@ def generateProjectShowcaseModule():
 def projectspecs():
 	return render_template('projectspecs.html')
 
-@app.route("/projects/<subpath>", methods=['GET', 'POST'])
+@app.route("/projects/<subpath>/", methods=['GET', 'POST'])
 @app.route("/projects/<subpath>/")
+
+#http://localhost:5000/projects/SPAN%20ENCRYPTION/download.html
+
+
 
 #@freezer.register_generator
 def getProjectSpec(subpath):
@@ -372,7 +377,7 @@ def getProjectSpec(subpath):
 
 
 
-		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames)
+		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'])
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
