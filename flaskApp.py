@@ -32,7 +32,7 @@ blogFilesFolder = "media/" #relative
 blogFolder = "static/blog/" #relative
 blogGalleryFolder = "media/gallery/" #relative
 blogManifestPath = "blog.manifest" #relative should change to filename
-blogGalleryShowcaseFolder = "media/showcacse/"
+blogGalleryShowcaseFolder = "media/showcase/"
 blogDescriptionFile = "blog.oneliner"
 
 buildFolder = "docs"
@@ -620,9 +620,20 @@ def getBlogSpec(subpath):
 
 		funcCount = 0;
 
+		# Grab our article data
+		file = open(blogFolder + subpath + '/' 'article.contents',mode='r')
 		
+		# read all lines at once
+		rawarticlecontents = file.read()
+		
+		# close the file
+		file.close()
 
-		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = (len(blogManifest['assets']) > 0), funcNames = funcNames, assets=blogManifest['assets'])
+		rawlines = []
+		for line in rawarticlecontents.splitlines():
+			rawlines.append(line)
+
+		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = (len(blogManifest['assets']) > 0), funcNames = funcNames, assets=blogManifest['assets'], rawText = rawlines)
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="blog", mimetype='text/html', hideNav=False, requestedBlog=subpath)
 
@@ -646,7 +657,7 @@ def getProjectSpec():
 		if (not projectName.startswith('.') and not projectName.startswith('_')):
 			print("Yielding (manually) '" + projectName + "' with main ", file=sys.stdout)
 			yield {'subpath': projectName}
-			
+
 @freezer.register_generator
 def getBlogSpec():
 	for blogName in os.listdir(blogFolder):

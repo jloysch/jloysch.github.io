@@ -13,7 +13,20 @@
 	{% block content %}
 
 	<body ontouchstart="">
-        </body>
+       
+        <div class = "blogContainer">
+            <div class ="articleText">
+                <h1 class = "articleHead"> {{blogTitle}}</h1>
+            
+                {% for line in rawText %}
+
+                    <p> {{line}} </p>
+
+                {% endfor %}
+        </div>
+    </div>
+
+    </body>
 
         {% endblock %}
         

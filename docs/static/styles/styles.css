@@ -1666,3 +1666,50 @@ div.contactContainer {
 
 /*|| BLOG - Just Cus' I'm Cool Like That, Hopin to make this Planet Digable*/
 
+div.articleText {
+	width: 100%;
+	height: 100%;
+}
+
+.articleText p {
+	font-size: 1em;
+	color: white;
+	margin-left: 1em;
+
+}
+
+h1.articleHead {
+	font-size: 2em;
+	
+	font-weight: 300;
+	color: white !important;
+
+	justify-content: center !important;
+	display: grid;
+
+	margin-bottom: 1em;
+}
+
+div.blogContainer { 
+	z-index: 2;
+
+	position: relative;
+
+	display: flex;
+	
+	padding-top: var(--projectSpecOutContainerTopBottomPad);
+	padding-bottom: var(--projectSpecOutContainerTopBottomPad);
+
+	/*opacity: 0.5;*/
+
+	margin-right: 2%;
+	margin-left: 2%;
+
+	width: 96%;
+	max-width: 100%;
+
+	border-radius: 12px;
+  
+	/*background-color: #00000067;*/
+	background-color: #000000CC;
+}
