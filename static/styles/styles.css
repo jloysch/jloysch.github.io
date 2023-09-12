@@ -180,12 +180,18 @@ div.navigationBar {
 div.navigationBar a {
 	text-decoration: none;
 
-	font-size: 18px; 
+	font-size: .8em; 
+
+	
 	max-width: 100%;
 }
 
 @media screen and (max-width: 780px) {
 	div.navigationBar a { font-size: .8em; }
+}
+
+@media screen and (max-width: 507px) {
+	div.navigationBar a { font-size: .7em; }
 }
 
 div.navigationBar span {
@@ -203,7 +209,7 @@ div.navigationBar span {
     font-size: var(--navigationBarFontSize);
 }
 
-@media screen and (max-width: 780px) { /*nav switch modes bp*/
+@media screen and (max-width: 780px) { /*nav switch modes bp*/ /* stacked nav bar */
 	div.navigationBar span {
 		width: 98%; /* therefore a 2% margin on our slight outline here. */
 
@@ -211,7 +217,7 @@ div.navigationBar span {
 		margin-bottom: 2px;
 		
 		/*background-color: #c0392b13;*/
-	    border: 1px solid #98afd1;
+	    border: 1px solid #FFFFFF;
 	    border-radius: 8px;
 	    
 	    background-color: #181818;
@@ -504,7 +510,7 @@ a.projectDisplayModuleTitle {
 
 	color: var(--paletteShadeD);
 
-	font-size: 18px;
+	font-size: 1.1em;
 
 	font-weight: 300; /* (drools) */
 
@@ -523,10 +529,10 @@ a.projectDisplayModuleDescription {
 	width: 55%;
 	max-width: 55%;
 
-	margin-left: 2%;
+	margin-left: 1em;
 	margin-right: 8%;
 
-	font-size: 16px;
+	font-size: .9em;
 
 	
 
@@ -1606,7 +1612,7 @@ div.contactContainer {
 	max-width: 100%;
 
 	
-
+	font-size: 1em;
 
 	color: white;
 }
