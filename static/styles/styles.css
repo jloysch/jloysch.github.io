@@ -29,7 +29,7 @@
 
 	/* || Project Spec-out */
 
-	--projectSpecOutTitleFontSize: 64px;
+	--projectSpecOutTitleFontSize: 48px;
 	--projectGalleryShowcaseImageBorderRadius: 1px;
 	--projectSpecOutContainerTopBottomPad: 32px;
 	--projectSpecOutTitleSpacing: 1px;
@@ -627,6 +627,10 @@ div.projectWriteup h3 {
 	margin-bottom: 0px;
 
 	max-width: 100%;
+
+	display: grid; /* make title bound to container */
+
+	justify-content: right;
 }
 
 @media screen and (max-width: 670px) {
