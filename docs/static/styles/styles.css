@@ -140,6 +140,11 @@ div.gradientMask {
 
 /* || Navigation Bar */
 
+@media screen and (max-width: 808px) {
+	div.navigationBar {
+		height: 12em !important;
+	}
+}
 div.navigationBar {
 	z-index: 2;
 
@@ -160,6 +165,7 @@ div.navigationBar {
     border-bottom-right-radius: var(--navigationBarBorderRadius);
 
 	background-color: #181818; 
+	
 }
 
 @media screen and (max-width: 780px) {
@@ -213,7 +219,7 @@ div.navigationBar span {
 	div.navigationBar span {
 		width: 98%; /* therefore a 2% margin on our slight outline here. */
 
-		margin-top: 2px;
+		margin-top: .1em;
 		margin-bottom: 2px;
 		
 		/*background-color: #c0392b13;*/
