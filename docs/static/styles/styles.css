@@ -633,12 +633,14 @@ div.projectWriteup h3 {
 	justify-content: right;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 670px) { /*fixup for mobile */
 	div.projectWriteup h3 { 
 	  line-height: 100% !important;
 	  text-align: center;
+	  justify-content: center;
 	}
 }
+
 
 div.projectWriteup h4 { 
 	font-style: normal;
