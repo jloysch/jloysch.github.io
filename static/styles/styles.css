@@ -609,6 +609,26 @@ div.projectWriteup {
   max-width: 100%;
 }
 
+@media screen and (max-width: 670px) { /*fixup for mobile */
+	div.projectWriteup h3 { 
+	 
+	  
+	  justify-content: center !important; 
+	  
+	  
+	}
+}
+
+@media screen and (max-width: 507px) { /*fixup for mobile */
+	div.projectWriteup h3 { 
+	 
+	  
+	 	font-size: var(--projectSpecOutTitleFontSize)-6 !important; 
+	  
+	  
+	}
+}
+
 div.projectWriteup h3 { 
 
 	color: var(--paletteShadeD);
@@ -621,6 +641,7 @@ div.projectWriteup h3 {
 	font-weight: 900; 
 
 	font-stretch: normal; 
+
 	line-height: 100%;
 
 	margin-top: 24px;
@@ -630,16 +651,10 @@ div.projectWriteup h3 {
 
 	display: grid; /* make title bound to container */
 
-	justify-content: right;
+	justify-content: center;
 }
 
-@media screen and (max-width: 670px) { /*fixup for mobile */
-	div.projectWriteup h3 { 
-	  line-height: 100% !important;
-	  text-align: center;
-	  justify-content: center;
-	}
-}
+
 
 
 div.projectWriteup h4 { 
