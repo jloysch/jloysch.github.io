@@ -59,7 +59,7 @@ html, body {
 
 	overscroll-behavior: contain !important;
 
-	background-image: url("koi.png"); /*das background image for the site */
+	background-image: url("birdfeathers1.png"); /*das background image for the site */
 	/*background-size: cover;*/	
 }
 
@@ -1276,6 +1276,8 @@ div.flip-box-inner {
 	height: 100%;
 
 	text-align: center;
+
+	font-size: 12px;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -1603,7 +1605,8 @@ div.contactContainer {
 
 	max-width: 100%;
 
-	line-height: 3.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
+	
+
 
 	color: white;
 }
