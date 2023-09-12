@@ -17,9 +17,42 @@
 		{% extends "base.html" %}
 	</head>
 
+	{% block content %}
+	
 	<body ontouchstart="">
-			{% block content %}
-				{{ testHTML|safe }}
+
+			
+				
+			{% for blog in blogs %}
+
+
+			<div id="projectDisplayModule">
+
+				<div class= "projectDisplayModuleHeader"><a class= "projectDisplayModuleTitle", href="{{ hrefs[blog] }}"><b>{{blog}}</b></a><a class="projectDisplayModuleDescription", href="{{ hrefs[blog] }}">{{descriptors[blog]}}</a></div>
+				<div class= 
+				{% if hideNav %}
+					"projectDisplayModuleGalleryCollapsed"
+				{% else %}
+					{% if mediaPool[blog]|length > 0 %}
+						"blogDisplayModuleGalleryExpanded"
+					{% else %}
+						blogDisplayModuleGalleryEmptyCollapsed
+					{% endif %}
+				{% endif %}, onclick="location.href='{{ hrefs[blog] }}'">{% for image in mediaPool[blog] %}<img src="{{image}}"></img>{% endfor %}</div>
+	
+				<!--
+	
+				TODO: later on I want to make the div's unclickable unless theyre expanded
+	
+				-->
+	
+				<div class= "projectDisplayListTweenPadding"></div>
+	
+			</div>
+	
+			{% endfor %}
+
+			
 			{% endblock %}
 	</body>
 

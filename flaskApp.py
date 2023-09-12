@@ -27,6 +27,14 @@ projectFolder = "static/projects/"
 
 projectDescriptionFile = "project.oneliner"
 
+
+blogFilesFolder = "media/" #relative
+blogFolder = "static/blog/" #relative
+blogGalleryFolder = "media/gallery/" #relative
+blogManifestPath = "blog.manifest" #relative should change to filename
+blogGalleryShowcaseFolder = "media/showcacse/"
+blogDescriptionFile = "blog.oneliner"
+
 buildFolder = "docs"
 
 app = Flask(__name__, template_folder=template_directory)
@@ -50,11 +58,87 @@ def home():
 
 	return render_template('index.html', navigation=navigation_sections, crumb="home", mimetype='text/html', testHTML=projectsHTML)
 
+
 @app.route("/blog")
 @app.route("/blog.html")
 def blog():
-	return render_template('blog.html', navigation=navigation_sections, crumb="blog", mimetype='text/html');
 
+	allBlogs = []
+
+	allDescriptors = {}
+
+	mediaPool = {}
+
+	hrefs = {}
+
+
+	try:
+
+		for blogName in os.listdir(blogFolder): 
+
+			if  (not blogName.startswith('.') and not blogName.startswith('_')): #Don't put hidden folders.
+
+				allBlogs.append(blogName)
+
+				hrefs[blogName] = '/blog/' + blogName
+				'''
+				try:
+
+					with open(projectFolder + projectName + '/' + projectDescriptionFile) as f:
+						
+						if not f:
+							continue;
+						
+						for line in f:
+							#print(line, file=sys.stdout)
+							#(k, v) = line.split("=")
+							allDescriptors[projectName] = line
+
+						#print(f, file=sys.stdout)
+
+				except OSError as e:
+					allDescriptors[projectName] = noProjectDescriptionDefaultMessage
+				'''
+
+				
+				loadedMfst = loadBlogManifest(blogName)
+
+				if not loadedMfst[1]:
+					allDescriptors[blogName] = loadBlogManifest(blogName)[0]['shortDescription']
+				else:
+					allDescriptors[blogName] = "" #TODO CHANGE THIS BLOG SHOULDNT HAVE DESC
+					pass
+
+				try: #need seperate phases here otherwise I'd wrap into one try / except
+					if len(os.listdir(blogFolder + blogName + '/' + blogGalleryFolder)) > 0: 
+
+						mediaPoolForThisBlog = []
+
+						for imageName in os.listdir(blogFolder + blogName + '/' + blogGalleryFolder):
+							if (not imageName.startswith('.') and not imageName.startswith('_')):
+								mediaPoolForThisBlog.append(blogFolder + blogName + '/' + blogGalleryFolder + imageName)
+								#print(imageName + " added to pool for " + projectName)
+
+						#for x in mediaPoolForThisProject:
+							#print(x, file=sys.stdout)	
+						#mediaPool[projectName] = os.listdir('static/publicProjects/' + projectName + '/' + 'media/')
+
+						mediaPool[blogName] = mediaPoolForThisBlog
+
+					else:
+						mediaPool[blogName] = ""
+						#print("No media files to showcase for '" + projectName + "'")
+
+				except OSError as e:
+					mediaPool[blogName] = ""
+					#print(e, file=sys.stdout)
+			else:
+				continue
+	except:
+		pass
+
+	return render_template('blog.html', navigation=navigation_sections, crumb="blog", mimetype='text/html', blogs=sorted(allBlogs), descriptors=allDescriptors, mediaPool=mediaPool, hideNav=False, hrefs=hrefs)
+	
 def loadProjectManifest(pfolder):
 	
 	projectManifest = {}
@@ -72,6 +156,24 @@ def loadProjectManifest(pfolder):
 	#print(projectManifest, file=sys.stdout, flush=True)
 
 	return [projectManifest, dictEmpty]
+
+def loadBlogManifest(bfolder):
+	
+	blogManifest = {}
+	dictEmpty = True
+
+	try:
+		blogManifest = (json.load(open(blogFolder + bfolder + '/' + blogManifestPath)))
+		#print(projectManifest, file=sys.stderr)
+		dictEmpty = False
+	except OSError as e:
+		print(e, file=sys.stderr)
+		#print("COULDNT OPEN PROJECT MANIFEST!!!!!!", file=sys.stderr)
+		pass
+
+	#print(projectManifest, file=sys.stdout, flush=True)
+
+	return [blogManifest, dictEmpty]
 
 @app.route("/projects.html")
 def projects():
@@ -152,6 +254,7 @@ def projects():
 
 	return render_template('projects.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', availableProjects=sorted(allProjects), descriptors=allDescriptors, mediaPool=mediaPool, hideNav=False, hrefs=hrefs)
 	
+
 
 def getProjectMediaDescriptions():
 
@@ -387,7 +490,145 @@ def getProjectSpec(subpath):
 		return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
     
+#SPOT FOR BLOG
 
+@app.route("/blog/<subpath>/", methods=['GET', 'POST'])
+@app.route("/blog/<subpath>/")
+
+#http://localhost:5000/projects/SPAN%20ENCRYPTION/download.html
+
+def getBlogSpec(subpath):
+	# show the subpath after /path/
+
+	#try:
+		#print("Attempting to open '" + projectFolder + subpath + "'", file=sys.stdout)
+
+		#with open(projectFolder + subpath + "/") as f:
+			
+			#print("Attempting to open" + projectFolder + subpath, file=sys.stdout)
+
+			#if not f:
+				#print("No such directory when opened", file=sys.stdout)
+			
+			#return render_template('projects.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
+
+	#except OSError as e:
+
+		#print( e, file=sys.stdout)
+
+	#print("Sending 404..", file=sys.stdout)
+
+	#return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
+
+	if (os.path.exists(blogFolder + subpath + "/")):
+
+		showcase=None
+		blogTitle=None
+		blogDescription=None
+		languagesUsed=None
+		blogManifest = {}
+		galleryDictEmpty = True
+		gallery=[]
+
+		try: 
+			if len(os.listdir(blogFolder + subpath + '/' + blogGalleryShowcaseFolder)) > 0: 
+
+				for imageName in os.listdir(blogFolder + subpath + '/' + blogGalleryShowcaseFolder): #Should only be one there anyway
+					if (not imageName.startswith('.') and not imageName.startswith('_')):
+						showcase = ('/' + blogFolder + subpath + '/' + blogGalleryShowcaseFolder + imageName) #Had weird broken image glitch on spec-out, doing this fixes that problem.
+			else:
+				pass
+
+		except OSError as e:
+			print(e, file=sys.stdout)
+			pass
+
+		#testDict = {"one":1, "two":2}
+
+		
+		#json.dump(testDict, open(projectFolder + subpath + '/' + projectManifestPath,'w'))
+
+		
+
+		try:
+			blogManifest = (json.load(open(blogFolder + subpath + '/' + blogManifestPath)))
+			print("===MANIFEST DATA LOADED===")
+			#print(loaded, file=sys.stdout)
+			galleryDictEmpty = False
+		except OSError as e:
+			print(e, file=sys.stdout)
+			blogManifest = {}
+			print("===MANIFEST DATA COULDN'T LOAD===")
+			pass
+
+
+		try: #need seperate phases here otherwise I'd wrap into one try / except
+			if len(os.listdir(blogFolder + subpath + '/' + blogGalleryShowcaseFolder)) > 0: 
+
+				mediaPoolForThisBlog = []
+
+				for imageName in os.listdir(blogFolder + subpath + '/' + blogGalleryShowcaseFolder):
+					if (not imageName.startswith('.') and not imageName.startswith('_')):
+						gallery.append('/' + blogFolder + subpath + '/' + blogGalleryShowcaseFolder + imageName)
+						#print(imageName + " added to pool for " + projectName)
+
+				#for x in mediaPoolForThisProject:
+					#print(x, file=sys.stdout)	
+				#mediaPool[projectName] = os.listdir('static/publicProjects/' + projectName + '/' + 'media/')
+
+				
+
+			else:
+				gallery = None
+				#print("No media files to showcase for '" + projectName + "'")
+
+		except OSError as e:
+			gallery = None
+			#print(e, file=sys.stdout)
+
+		if galleryDictEmpty:
+			print("===BLOG MANIFEST IS NOT LOADED, FILLING VALUES")
+			blogManifest['title'] = "No title available"
+			blogManifest['description'] = "No description available"
+			blogManifest['technologies'] = "No technologies available"
+			blogManifest['platform'] = "No platforms available"
+
+
+		
+		crumb="blog"
+		mimetype="text/html"
+
+		if not gallery is None:
+			gallery=gallery[::-1]  #reverse it since the gallery was backwards before.
+
+			for pic in gallery:
+
+				funcNames[pic] = 'func' + str(funcCount)
+				funcCount+=1
+
+		#session['projectSpec'] = [navigation_sections, crumb, mimetype, showcase, projectManifest['title'], projectManifest['description'], projectManifest['technologies'], gallery, projectManifest['platform'], (len(projectManifest['assets']) > 0)]
+		
+		#return set(page.url for page in self.getProjectSpec(subpath))
+
+		#return redirect(url_for('projectspecs', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0) ))
+
+		#return redirect(url_for('projectspecs'))
+
+		funcNames = {}
+		tmp=[]
+
+
+		funcCount = 0;
+
+		
+
+		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = (len(blogManifest['assets']) > 0), funcNames = funcNames, assets=blogManifest['assets'])
+	else:
+		return render_template('404.html', navigation=navigation_sections, crumb="blog", mimetype='text/html', hideNav=False, requestedBlog=subpath)
+
+    
+
+#END SPOT FOR BLOG
 @app.route("/about.html")
 def about():
 	
@@ -405,6 +646,13 @@ def getProjectSpec():
 		if (not projectName.startswith('.') and not projectName.startswith('_')):
 			print("Yielding (manually) '" + projectName + "' with main ", file=sys.stdout)
 			yield {'subpath': projectName}
+			
+@freezer.register_generator
+def getBlogSpec():
+	for blogName in os.listdir(blogFolder):
+		if (not blogName.startswith('.') and not blogName.startswith('_')):
+			print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
+			yield {'subpath': blogName}
 
 freezer.freeze()
 
@@ -414,7 +662,13 @@ if __name__ == '__main__':
 		for projectName in os.listdir(projectFolder):
 			if (not projectName.startswith('.') and not projectName.startswith('_')):
 				print("Yielding (manually) '" + projectName + "' with main ", file=sys.stdout)
-				yield {'subpath': projectname}
+				yield {'subpath': projectName}
+
+	def getBlogSpec(subpath):
+		for blogName in os.listdir(blogFolder):
+			if (not blogName.startswith('.') and not blogName.startswith('_')):
+				print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
+				yield {'subpath': blogName}
 
 	freezer.freeze()
 	#app.run(host='0.0.0.0', port=5000, debug=True, threaded=False)

@@ -1652,6 +1652,7 @@ div.contactContainer {
 	background-color: dodgerblue;
 	color: white;
 }
+
 .contact-flip-box-back h2 {
 	display: inline-block;
 
@@ -1662,3 +1663,6 @@ div.contactContainer {
 	font-size: .8em;
 	line-height: 7.2em; /* Trick to manually center the h2 tag.. man idk why it was so hard smh */
 }
+
+/*|| BLOG - Just Cus' I'm Cool Like That, Hopin to make this Planet Digable*/
+
