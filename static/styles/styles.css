@@ -496,6 +496,13 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 	opacity: 1.0;
 }
 
+@media screen and (max-width: 607px) {
+	a.projectDisplayModuleTitle {
+		font-weight: 100;
+		font-size: 0.8em !important;
+	}
+}
+
 a.projectDisplayModuleTitle {
 	z-index: 3;
 
@@ -510,11 +517,16 @@ a.projectDisplayModuleTitle {
 
 	color: var(--paletteShadeD);
 
-	font-size: 1.1em;
+	font-size: 1.0em;
 
 	font-weight: 300; /* (drools) */
 
+	text-transform:uppercase;
+	
+	
 }
+
+
 
 a.projectDisplayModuleDescription {
 	display: inline-block; /* Makes the anchor tag be able to actually overflow the text properly into ellipsis */
@@ -532,11 +544,13 @@ a.projectDisplayModuleDescription {
 	margin-left: 1em;
 	margin-right: 8%;
 
-	font-size: .9em;
-
+	font-size: .8em;
 	
+	/*text-transform:capitalize;*/ /*leave to user (me >:3)*/
 
 	color: var(--paletteShadeD); 	
+
+	text-decoration:none; /*hide underline for when we link */
 }
 
 /* || Project Spec-out Page */
@@ -1058,6 +1072,8 @@ div.aboutMeBlurbs h1 {
 	max-width: 100%;
 
 	color: var(--paletteShadeD);
+
+	font-size:2em;
 }
 
 div.aboutMeBlurbs p {
@@ -1376,6 +1392,8 @@ div.flip-box-front h2 {
 
 	text-align: center;
 
+	
+
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -1612,7 +1630,7 @@ div.contactContainer {
 	max-width: 100%;
 
 	
-	font-size: 1em;
+	font-size: .89em;
 
 	color: white;
 }
