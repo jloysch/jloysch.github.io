@@ -669,7 +669,7 @@ def getBlogSpec(subpath):
 		#hasAssets = ((len(blogManifest['assets']) > 0)
 
 
-		link = "/blog/" + subpath + "DOCS/" + "index.html"
+		link = "/blog/" + subpath + "/DOCS/" + "index.html"
 
 		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = hasAssets, funcNames = funcNames, assets=blogManifest['assets'], rawText = rawlines, include=include, link=link)
 	else:
