@@ -1,0 +1,85 @@
+var specials = '"!"#$%&\()*+,-./:;<=>?@[\\]^_`{|}~
+
+RUN 1 > 	NDBDFHJL.PRTVXZ./tvxz
+
+
+TO ADD
+
+'"!"#$%&\()*+,-./:;<=>?@[\\]^_`{|}~
+
+! - OK
+@ - ok
+# - ok
+$ - ok
+% - ok
+^ - ok
+& - ok
+* - ok
+( - ok
+) - ok
+- - ok
+_ - ok
+= - ok
++ - ok
+~ - ok
+`
+.. - not ok
+[ - ok
+] - ok
+
+
+___
+
+RUN AFTER >
+
+GOT >
+abcdefghijklmnopqrstuvw^yzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ND!D#$%&.()*+X-./tv^=
+
+EXPECTED >
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'"!"#$%&\()*+,-./:;<=>?@[\\]^_`{|}~
+
+JUST TOP
+
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_-+=
+
+MISSING:
+
+x
+'
+"
+.
+,
+;
+:
+
+
+
+GOT ALL FROM TOP ROW
+
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_-+= << CURRENT
+
+[]{}|\:;'"<,.>?/
+GOT >> []%#^.tvNDxX.^~/
+
+[ - ok
+] - ok
+{ - ok
+} - ok
+| - ok
+\ - ok
+: - ok
+; - ok
+' - 
+;
+'
+" - ok
+<
+,
+.
+>
+?
+/
+
+
+
+

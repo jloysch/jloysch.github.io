@@ -12,6 +12,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import json
 import sys
+from jinja2 import Template
 
 from flask_frozen import Freezer
 
@@ -350,6 +351,8 @@ def generateProjectShowcaseModule():
 
 @app.route('/projectspecs')
 def projectspecs():
+
+	
 	return render_template('projectspecs.html')
 
 @app.route("/projects/<subpath>/", methods=['GET', 'POST'])
@@ -485,7 +488,16 @@ def getProjectSpec(subpath):
 
 
 
-		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'])
+		link = "/blog/" + subpath + "DOCS/" + "index.html"
+		tt = ""
+		try:
+			tt = open(link)
+		except:
+			print("No links for " + subpath)
+
+		hasDocumentation = (len(tt) > 0)
+
+		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'], link=link,)
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
@@ -626,18 +638,52 @@ def getBlogSpec(subpath):
 		# read all lines at once
 		rawarticlecontents = file.read()
 		
+		#file = open(blogFolder + subpath + '/' + 'DOCS' + '/' + 'index.html',mode='r')
+		
+		#include = file.read()
+
 		# close the file
 		file.close()
+
+
+		#include = render_template(blogFolder + subpath + '/DOCS/' 'index.html')
 
 		rawlines = []
 		for line in rawarticlecontents.splitlines():
 			rawlines.append(line)
 
-		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = (len(blogManifest['assets']) > 0), funcNames = funcNames, assets=blogManifest['assets'], rawText = rawlines)
+		tt = open((blogFolder + subpath + '/DOCS/' + 'index.html'), 'r')
+
+		# Create Template Object
+		#template = Template(tt)
+
+		# Render HTML Template String
+		#include = template.render(name = "John")
+
+		include = tt.read()
+
+		#include = 'DOCS/index.html'
+
+		hasAssets = len(include) > 0
+
+		#hasAssets = ((len(blogManifest['assets']) > 0)
+
+
+		link = "/blog/" + subpath + "DOCS/" + "index.html"
+
+		return render_template('blogtemplate.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, blogTitle=blogManifest['title'], blogDescription=blogManifest['description'], technologiesUsed=blogManifest['technologies'], gallery=gallery, platform=blogManifest['platform'], hasAssets = hasAssets, funcNames = funcNames, assets=blogManifest['assets'], rawText = rawlines, include=include, link=link)
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="blog", mimetype='text/html', hideNav=False, requestedBlog=subpath)
 
-    
+
+@app.route("/blog/<path:path>")
+def blogdoc(path):
+
+	#give top level path to javadoc template then change dynamically, for now doing with just SPAN
+
+	return render_template("javadoctemplate.html")
+
+
 
 #END SPOT FOR BLOG
 @app.route("/about.html")
@@ -665,6 +711,18 @@ def getBlogSpec():
 			print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
 			yield {'subpath': blogName}
 
+@freezer.register_generator
+def blogdoc():
+	try:
+		for blogName in os.listdir(blogFolder ):
+			for docs in os.listdir(blogName + "DOCS"):
+				print("Yielding (manually) blogdoc'" + docs + "' with main ", file=sys.stdout)
+				yield {'subpath': blogName + '/' + docs}
+			yield {'subpath': blogName}
+	except:
+		print("BLOGDOC BAD YIELD")
+
+
 freezer.freeze()
 
 if __name__ == '__main__':
@@ -680,6 +738,19 @@ if __name__ == '__main__':
 			if (not blogName.startswith('.') and not blogName.startswith('_')):
 				print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
 				yield {'subpath': blogName}
+
+
+	def blogdoc():
+		try:
+			for blogName in os.listdir(blogFolder):
+				for docs in os.listdir(blogName + "DOCS"):
+					print("Yielding (manually) blogdoc'" + blogName + "' with main ", file=sys.stdout)
+					yield {'subpath': blogName + '/' + docs}
+				yield {'subpath': blogName}
+				
+		except:
+			print("BAD YIELD FOR BLOGDOC")
+
 
 	freezer.freeze()
 	#app.run(host='0.0.0.0', port=5000, debug=True, threaded=False)

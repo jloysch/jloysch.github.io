@@ -4,3 +4,12 @@ python3 -m venv venv
 export FLASK_APP='flaskApp.py'
 export FLASK_ENV='development'
 flask run
+
+
+
+python3 -m venv venv
+". venv/bin/activate /" 
+export FLASK_APP='flaskApp.py'
+export FLASK_ENV='development'
+flask run
+

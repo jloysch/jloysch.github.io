@@ -22,6 +22,34 @@
 	
 	{% block content %}
 
+	{% if hasAssets %}
+    <div>
+       
+       
+        <div class="projectSpecAssetOutlet"> 
+
+            <button type="button", class=	{% if hasAssets %} 
+                                                "buttonAssetDownload"
+                                            {% else %}
+                                                "buttonAssetDownloadNoAssets"
+                                            {% endif %}, 
+
+                                            
+                                            href="{{ link }}", download="{{ link }} ", onclick="location.href='{{link}}'"'" >
+                                            
+                                            {% if hasAssets %} 
+                                                Browse Documentation
+                                            {% else %}
+                                                
+                                                Documentation Unavailable
+                                            {% endif %}</button> 
+
+                                            
+        </div>
+        
+        </div>
+        {% endif %}
+		
 	<body ontouchstart="">
 
 			<div class="projectSpecOut">
