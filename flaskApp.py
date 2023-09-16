@@ -488,7 +488,7 @@ def getProjectSpec(subpath):
 
 
 
-		link = "/blog/" + subpath + "DOCS/" + "index.html"
+		link = "/blog/" + subpath + "/DOCS/" + "index.html"
 		tt = ""
 		try:
 			tt = open(link)
@@ -715,7 +715,7 @@ def getBlogSpec():
 def blogdoc():
 	try:
 		for blogName in os.listdir(blogFolder ):
-			for docs in os.listdir(blogName + "DOCS"):
+			for docs in os.listdir(blogName + "\DOCS"):
 				print("Yielding (manually) blogdoc'" + docs + "' with main ", file=sys.stdout)
 				yield {'subpath': blogName + '/' + docs}
 			yield {'subpath': blogName}
@@ -743,7 +743,7 @@ if __name__ == '__main__':
 	def blogdoc():
 		try:
 			for blogName in os.listdir(blogFolder):
-				for docs in os.listdir(blogName + "DOCS"):
+				for docs in os.listdir(blogName + "\DOCS"):
 					print("Yielding (manually) blogdoc'" + blogName + "' with main ", file=sys.stdout)
 					yield {'subpath': blogName + '/' + docs}
 				yield {'subpath': blogName}
