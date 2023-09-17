@@ -691,15 +691,22 @@ def blogdoc(path):
 	blogFolder = splitpath[len(splitpath)-3]
 
 
-	blogname = safeBlogName(blogFolder)
+	blogname = blogFolder
 
-	if (blogname == "SPAN Encryption"): blogname = "SPAN"
-	
-	reldocpath = "/static/blog/" + blogFolder + "/" + "DOCS/"
+	safeblogname = safeBlogName(blogname)
+
+
+	if (blogname == "SPAN Encryption"): 
+		#blogname = "SPAN"
+		safeblogname = "SPAN"
+
+	reldocpath = "/static/blog/" + safeblogname + "/" + "DOCS/"
 	
 	
 
 	modsummarylink = reldocpath + blogname + '/module-summary.html'
+
+	styleslink = "/static/blog/" + safeblogname + "/DOCS/stylesheet.css"
 
 	#url_for('static', filename='/blog/{{foldername}}/DOCS/{{blogname}}/module-summary.html') }}
 	print("MODSUMMARY > " + modsummarylink, file=sys.stdout)
