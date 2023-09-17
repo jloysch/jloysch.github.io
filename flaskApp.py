@@ -12,6 +12,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import json
 import sys
+import shutil
 from jinja2 import Template
 
 from flask_frozen import Freezer
@@ -353,14 +354,19 @@ def generateProjectShowcaseModule():
 def projectspecs():
 
 	
-	return render_template('projectspecs.html')
+	return render_template('projectspecs.html', hasDocumentation = True)
 
-@app.route("/projects/<subpath>/", methods=['GET', 'POST'])
-@app.route("/projects/<subpath>/")
+
+def safeSubpath(sub):
+	if (sub.lower() == "span encryption"): return "SPAN Encryption"
+	return sub
+
 
 #http://localhost:5000/projects/SPAN%20ENCRYPTION/download.html
 
 
+@app.route("/projects/<path:subpath>/", methods=['GET', 'POST'])
+@app.route("/projects/<path:subpath>/")
 
 #@freezer.register_generator
 def getProjectSpec(subpath):
@@ -488,14 +494,21 @@ def getProjectSpec(subpath):
 
 
 
-		link = "/blog/" + subpath + "/DOCS/" + "index.html"
-		tt = ""
-		try:
-			tt = os.listdir("/blog/" + subpath + "/DOCS/")
-		except:
-			print("No docpath " + subpath)
+		link = "/blog/" + subpath + "/DOCS/index.html"
+		
 
-		hasDocumentation = (len(tt) > 0)
+		hasDocumentation = True
+
+		try:
+			#tt = os.listdir("/blog/" + subpath + "/DOCS/")
+			print("OPENING /static" + link)
+			open('static/blog/' + subpath + "/DOCS/index.html", 'r')
+			
+		except:
+			print("No docpath " + subpath, file=sys.stdout)
+			hasDocumentation = False
+
+		#hasDocumentation = (len(tt) > 0)
 
 		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'], link=link, hasDocumentation=hasDocumentation)
 	else:
@@ -713,6 +726,16 @@ def blogdoc(path):
 
 	#exit(1)
 
+	#add hook to copy all files
+
+	#styleslink = "/static/blog/" + blogname + "/DOCS/
+	
+	if not (os.path.exists("/docs/blog/" + blogFolder + "/DOCS/")):
+		shutil.copytree("static/blog/" + blogFolder + "/DOCS/", "/docs/blog/" + blogFolder + "/DOCS/")
+
+	if not (os.path.exists("docs/static/blog/" + blogFolder + "/DOCS/")):
+		shutil.copytree("static/blog/" + blogFolder + "/DOCS/", "/docs/static/blog/" + blogFolder + "/DOCS/")
+
 	return render_template("javadoctemplate.html", foldername = foldername, blogname = blogname, reldocpath=reldocpath, modsummarylink=modsummarylink, styleslink=styleslink)
 
 
@@ -747,42 +770,43 @@ def getBlogSpec():
 def blogdoc():
 		print("/static/blog/")
 
-		try:
-			for blogName in os.listdir("/static/blog/"):
-				if (not blogName.startswith('.') and not blogName.startswith('_')):
-					print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
-					yield {'subpath': blogName}
-					yield {'subpath': blogName + '/DOCS/'}
-					yield {'subpath': blogName + '/DOCS/index.html'}
-					yield {'subpath': blogName + '/DOCS/' + safeBlogName + "/module-summary.html"}
+		for blogName in os.listdir("static/blog/"):
+			print("Opening " + blogName)
+			if (not blogName.startswith('.') and not blogName.startswith('_')):
+				print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
+				yield {'path': blogName}
+				#yield {'path': blogName + '/DOCS/'}
+				#yield {'path': blogName + '/DOCS/index.html'}
+				#yield {'path': blogName + '/DOCS/' + safeBlogName(blogName) + "/module-summary.html"}
 
-					print("BLOGDOC >")
-					print("YIELD " + blogName)
-					print("YIELD " + blogName + '/DOCS/')
-					print("YIELD " + blogName + '/DOCS/index.html')
-					print("YIELD > " + blogName + '/DOCS/' + safeBlogName + "/module-summary.html")
-					
-		except:
-			print("BAD YIELD FOR BLOGDOC " )
+				print("BLOGDOC >", file=sys.stdout)
+				print("YIELD " + blogName, file=sys.stdout)
+				print("YIELD " + blogName + '/DOCS/', file=sys.stdout)
+				print("YIELD " + blogName + '/DOCS/index.html', file=sys.stdout)
+				print("YIELD > " + blogName + '/DOCS/' + safeBlogName(blogName) + "/module-summary.html", file=sys.stdout)
+			else:
+				print("Skipping")
+
 
 
 #Manually
 def safeBlogName(blogcheckname):
 	
 	if (blogcheckname == "SPAN Encryption"): blogcheckname = "SPAN"
+	if (blogcheckname == "SPAN ENCRYPTION"): blogcheckname = "SPAN"
 	return blogcheckname
 
 freezer.freeze()
 
 if __name__ == '__main__':
 
-	def getProjectSpec(subpath):
+	def getProjectSpec():
 		for projectName in os.listdir(projectFolder):
 			if (not projectName.startswith('.') and not projectName.startswith('_')):
 				print("Yielding (manually) '" + projectName + "' with main ", file=sys.stdout)
 				yield {'subpath': projectName}
 
-	def getBlogSpec(subpath):
+	def getBlogSpec():
 		for blogName in os.listdir(blogFolder):
 			if (not blogName.startswith('.') and not blogName.startswith('_')):
 				print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
@@ -793,13 +817,13 @@ if __name__ == '__main__':
 		print("/static/blog/")
 
 		try:
-			for blogName in os.listdir("/static/blog/"):
+			for blogName in os.listdir("static/blog/"):
 				if (not blogName.startswith('.') and not blogName.startswith('_')):
 					print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
-					yield {'subpath': blogName}
-					yield {'subpath': blogName + '/DOCS/'}
-					yield {'subpath': blogName + '/DOCS/index.html'}
-					yield {'subpath': blogName + '/DOCS/' + safeBlogName + "/module-summary.html"}
+					yield {'path': blogName}
+					#yield {'path': blogName + '/DOCS/'}
+					#yield {'path': blogName + '/DOCS/index.html'}
+					#yield {'path': blogName + '/DOCS/' + safeBlogName + "/module-summary.html"}
 
 					print("BLOGDOC >")
 					print("YIELD " + blogName)
