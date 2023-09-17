@@ -676,12 +676,37 @@ def getBlogSpec(subpath):
 		return render_template('404.html', navigation=navigation_sections, crumb="blog", mimetype='text/html', hideNav=False, requestedBlog=subpath)
 
 
-@app.route("/blog/<path:path>")
+@app.route("/blog/<path:path>/")
 def blogdoc(path):
 
 	#give top level path to javadoc template then change dynamically, for now doing with just SPAN
 
-	return render_template("javadoctemplate.html")
+
+	print("OG PATH > " + path, file=sys.stdout)
+
+	foldername = path
+
+	splitpath = path.split("/")
+
+	blogFolder = splitpath[len(splitpath)-3]
+
+
+	blogname = safeBlogName(blogFolder)
+
+	if (blogname == "SPAN Encryption"): blogname = "SPAN"
+	
+	reldocpath = "/static/blog/" + blogFolder + "/" + "DOCS/"
+	
+	
+
+	modsummarylink = reldocpath + blogname + '/module-summary.html'
+
+	#url_for('static', filename='/blog/{{foldername}}/DOCS/{{blogname}}/module-summary.html') }}
+	print("MODSUMMARY > " + modsummarylink, file=sys.stdout)
+
+	#exit(1)
+
+	return render_template("javadoctemplate.html", foldername = foldername, blogname = blogname, reldocpath=reldocpath, modsummarylink=modsummarylink)
 
 
 
@@ -713,15 +738,32 @@ def getBlogSpec():
 
 @freezer.register_generator
 def blogdoc():
-	try:
-		for blogName in os.listdir(blogFolder ):
-			for docs in os.listdir(blogName + "\DOCS"):
-				print("Yielding (manually) blogdoc'" + docs + "' with main ", file=sys.stdout)
-				yield {'subpath': blogName + '/' + docs}
-			yield {'subpath': blogName}
-	except:
-		print("BLOGDOC BAD YIELD")
+		print("/static/blog/")
 
+		try:
+			for blogName in os.listdir("/static/blog/"):
+				if (not blogName.startswith('.') and not blogName.startswith('_')):
+					print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
+					yield {'subpath': blogName}
+					yield {'subpath': blogName + '/DOCS/'}
+					yield {'subpath': blogName + '/DOCS/index.html'}
+					yield {'subpath': blogName + '/DOCS/' + safeBlogName + "/module-summary.html"}
+
+					print("BLOGDOC >")
+					print("YIELD " + blogName)
+					print("YIELD " + blogName + '/DOCS/')
+					print("YIELD " + blogName + '/DOCS/index.html')
+					print("YIELD > " + blogName + '/DOCS/' + safeBlogName + "/module-summary.html")
+					
+		except:
+			print("BAD YIELD FOR BLOGDOC " )
+
+
+#Manually
+def safeBlogName(blogcheckname):
+	
+	if (blogcheckname == "SPAN ENCRYPTION"): blogcheckname = "SPAN"
+	return blogcheckname
 
 freezer.freeze()
 
@@ -741,15 +783,25 @@ if __name__ == '__main__':
 
 
 	def blogdoc():
+		print("/static/blog/")
+
 		try:
-			for blogName in os.listdir(blogFolder):
-				for docs in os.listdir(blogName + "\DOCS"):
-					print("Yielding (manually) blogdoc'" + blogName + "' with main ", file=sys.stdout)
-					yield {'subpath': blogName + '/' + docs}
-				yield {'subpath': blogName}
-				
+			for blogName in os.listdir("/static/blog/"):
+				if (not blogName.startswith('.') and not blogName.startswith('_')):
+					print("Yielding (manually) '" + blogName + "' with main ", file=sys.stdout)
+					yield {'subpath': blogName}
+					yield {'subpath': blogName + '/DOCS/'}
+					yield {'subpath': blogName + '/DOCS/index.html'}
+					yield {'subpath': blogName + '/DOCS/' + safeBlogName + "/module-summary.html"}
+
+					print("BLOGDOC >")
+					print("YIELD " + blogName)
+					print("YIELD " + blogName + '/DOCS/')
+					print("YIELD " + blogName + '/DOCS/index.html')
+					print("YIELD > " + blogName + '/DOCS/' + safeBlogName + "/module-summary.html")
+					
 		except:
-			print("BAD YIELD FOR BLOGDOC")
+			print("BAD YIELD FOR BLOGDOC " )
 
 
 	freezer.freeze()
