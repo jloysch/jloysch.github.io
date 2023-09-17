@@ -700,20 +700,20 @@ def blogdoc(path):
 		#blogname = "SPAN"
 		safeblogname = "SPAN"
 
-	reldocpath = "/static/blog/" + safeblogname + "/" + "DOCS/"
+	reldocpath = "/static/blog/" + blogFolder + "/" + "DOCS/"
 	
 	
 
 	modsummarylink = reldocpath + safeblogname + '/module-summary.html'
 
-	styleslink = "/static/blog/" + safeblogname + "/DOCS/stylesheet.css"
+	styleslink = "/static/blog/" + blogname + "/DOCS/stylesheet.css"
 
 	#url_for('static', filename='/blog/{{foldername}}/DOCS/{{blogname}}/module-summary.html') }}
 	print("MODSUMMARY > " + modsummarylink, file=sys.stdout)
 
 	#exit(1)
 
-	return render_template("javadoctemplate.html", foldername = foldername, blogname = blogname, reldocpath=reldocpath, modsummarylink=modsummarylink)
+	return render_template("javadoctemplate.html", foldername = foldername, blogname = blogname, reldocpath=reldocpath, modsummarylink=modsummarylink, styleslink=styleslink)
 
 
 
