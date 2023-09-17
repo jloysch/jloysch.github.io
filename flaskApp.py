@@ -704,7 +704,7 @@ def blogdoc(path):
 	
 	
 
-	modsummarylink = reldocpath + blogname + '/module-summary.html'
+	modsummarylink = reldocpath + safeblogname + '/module-summary.html'
 
 	styleslink = "/static/blog/" + safeblogname + "/DOCS/stylesheet.css"
 
