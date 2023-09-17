@@ -491,13 +491,13 @@ def getProjectSpec(subpath):
 		link = "/blog/" + subpath + "/DOCS/" + "index.html"
 		tt = ""
 		try:
-			tt = open(link)
+			tt = os.listdir("/blog/" + subpath + "/DOCS/")
 		except:
-			print("No links for " + subpath)
+			print("No docpath " + subpath)
 
 		hasDocumentation = (len(tt) > 0)
 
-		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'], link=link,)
+		return render_template('projectspecs.html', navigation=navigation_sections, crumb=crumb, mimetype='text/html', showcaseImage=showcase, projectTitle=projectManifest['title'], projectDescription=projectManifest['description'], technologiesUsed=projectManifest['technologies'], gallery=gallery, platform=projectManifest['platform'], hasAssets = (len(projectManifest['assets']) > 0), funcNames = funcNames, assets=projectManifest['assets'], link=link, hasDocumentation=hasDocumentation)
 	else:
 		return render_template('404.html', navigation=navigation_sections, crumb="projects", mimetype='text/html', hideNav=False, requestedProject=subpath)
 
@@ -769,7 +769,7 @@ def blogdoc():
 #Manually
 def safeBlogName(blogcheckname):
 	
-	if (blogcheckname == "SPAN ENCRYPTION"): blogcheckname = "SPAN"
+	if (blogcheckname == "SPAN Encryption"): blogcheckname = "SPAN"
 	return blogcheckname
 
 freezer.freeze()
