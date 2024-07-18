@@ -1,8 +1,8 @@
 {"title": "Body Monitor", 
 
-"description": "Body Monitor is the next step in fitness and taking care of your health. Body monitor aims to be a fully customizable app so that each user gets the most they can out of the app. Equipped with various features such as caloric breakdown with an informative chart, water tracking with reminders, exercise logs and much more.", 
+"description": "Body Monitor is the next step in fitness and taking care of your health. Body monitor aims to be a fully customizable app so that each user gets the most they can out of the app. Equipped with various features such as caloric breakdown with an informative chart, water tracking with reminders, exercise logs, firebase authentication and storage, customizable user interface, exercise options, and much more. This is my first (major) mobile Android application weighing in at over 30,000 lines of hand-written code and a year of optimizations. The app can run with all features in a 100MB APK, and uses ~250MB in full swing while delivering a smooth, stunning visual experience. Please contact for demo APK (pre-release).", 
 
-"technologies":"Java, SQL, Firebase CloudStore / CloudSync, Firebase Authentication, Android/Android OS (Oreo-target at time of writing), Android Studio, Adobe XD, SQL, Android's Room DAO, XML", 
+"technologies":"AndroidOS, Android Studio, Java, Adobe XD, SQL, Firebase CloudStore / CloudSync, Firebase Authentication, Firebase Database, Android ROOM DAO, XML/CSS, Multithreaded Programming, MVC Programming, APIs, REST/AJAX, JavaScript, Security / Secrets Management, Animation, Proguard R8, Gradle, Maven, UI, User Flow, Login, Onboarding, Forms, Performance Optimization, Logcat, VCS (GitHub), VSCode, ADB, AVD, Reactive Styling.", 
 
 "platform":"Android OS",
 

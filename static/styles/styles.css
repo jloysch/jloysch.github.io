@@ -261,8 +261,8 @@ div.projectDisplayModuleHeader {
 	
 	width: 98%;
 	max-width: 98%;
-	height: 32px;
-	max-height: 32px;
+	height: 48px;
+	max-height: 48px;
 
 	border-radius: 8px 0px 0px 0px;
 	margin-left: 2%;
@@ -505,7 +505,7 @@ div.projectDisplayModuleGalleryCollapsed:hover, div.projectDisplayModuleGalleryC
 @media screen and (max-width: 607px) {
 	a.projectDisplayModuleTitle {
 		font-weight: 100;
-		font-size: 0.8em !important;
+		font-size: 1.1em !important;
 	}
 }
 
@@ -523,7 +523,7 @@ a.projectDisplayModuleTitle {
 
 	color: var(--paletteShadeD);
 
-	font-size: 1.0em;
+	font-size: 1.5em;
 
 	font-weight: 300; /* (drools) */
 
@@ -550,7 +550,7 @@ a.projectDisplayModuleDescription {
 	margin-left: 1em;
 	margin-right: 8%;
 
-	font-size: .8em;
+	font-size: 1.0em;
 	
 	/*text-transform:capitalize;*/ /*leave to user (me >:3)*/
 
@@ -917,6 +917,8 @@ p.projectSpecParagraph {
 	font-weight: 300; 
 	font-stretch: normal; 
 	line-height: initial;
+
+	font-size: 1.5em;
 
 	max-width: 100%;
 }
